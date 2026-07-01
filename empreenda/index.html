@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empreenda Já — Meu Primeiro Negócio | Centro de Ciências de Colatina</title>
+<meta name="description" content="Curso gratuito de empreendedorismo em Colatina/ES. Tire sua ideia do papel, use IA e ferramentas ágeis, fortaleça-se emocionalmente e formalize seu negócio como MEI.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#0A1A29;
+  --plum:#0F2A40;
+  --plum-2:#163A56;
+  --cream:#FBF6EE;
+  --cream-2:#EFE7DA;
+  --coral:#FF6A3D;
+  --coral-deep:#E8501F;
+  --teal:#19C5BA;
+  --teal-deep:#009C9C;
+  --navy:#0C4884;
+  --text-dark:#0E2230;
+  --text-light:#EAF2F4;
+  --muted-light:#93AEBC;
+  --muted-dark:#5A7585;
+  --line-dark:rgba(255,255,255,.10);
+  --line-light:rgba(27,19,38,.12);
+  --maxw:1180px;
+  --radius:20px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Instrument Sans",system-ui,sans-serif;
+  background:var(--ink);
+  color:var(--text-light);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque",sans-serif;line-height:1.05;letter-spacing:-.02em;font-weight:700}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--coral);color:#fff}
+
+.eyebrow{
+  font-family:"Space Mono",monospace;
+  font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--coral);display:inline-flex;align-items:center;gap:.6rem;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--coral);display:inline-block}
+.eyebrow.center{justify-content:center}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{position:relative}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:"Instrument Sans",sans-serif;font-weight:600;font-size:1rem;
+  padding:1rem 1.7rem;border-radius:100px;border:none;cursor:pointer;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s;
+  position:relative;
+}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 10px 30px -8px rgba(255,106,61,.6)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px -10px rgba(255,106,61,.7);background:var(--coral-deep)}
+.btn-primary svg{transition:transform .3s var(--ease)}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{background:transparent;color:var(--text-light);border:1px solid var(--line-dark)}
+.btn-ghost:hover{border-color:var(--coral);color:#fff}
+
+/* ============ NAV ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:14px 0;transition:background .4s,backdrop-filter .4s,padding .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  background:rgba(22,16,31,.82);backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid var(--line-dark);padding:8px 0;
+}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.65rem;font-family:"Bricolage Grotesque";font-weight:800;font-size:1.15rem;letter-spacing:-.03em}
+.logo .spark{
+  width:34px;height:34px;border-radius:11px;
+  background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+  display:grid;place-items:center;box-shadow:0 6px 18px -6px rgba(255,106,61,.7);
+  flex-shrink:0;
+}
+.logo .spark svg{width:18px;height:18px}
+.logo b{color:var(--coral)}
+
+/* TEC360 co-brand lockup */
+.tec-logo{background-position:center;background-size:contain;background-repeat:no-repeat;display:block;background-image:url(data:image/png;base64,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)}
+.brand-lockup{display:flex;align-items:center;gap:.85rem}
+.tec-chip{background:#fff;border-radius:11px;padding:8px 12px;display:flex;align-items:center;box-shadow:0 6px 18px -8px rgba(0,0,0,.45);flex-shrink:0}
+.tec-chip .tec-logo{height:24px;width:125px}
+.brand-div{width:1px;height:34px;background:var(--line-dark)}
+.brand-course{display:flex;flex-direction:column;line-height:1.1}
+.brand-course .k{font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-light)}
+.brand-course .v{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.08rem;color:var(--text-light)}
+.brand-course .v b{color:var(--coral);font-weight:800}
+@media(max-width:520px){.brand-div,.brand-course{display:none}}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a.lnk{font-size:.92rem;color:var(--muted-light);transition:color .25s;position:relative}
+.nav-links a.lnk:hover{color:var(--text-light)}
+.nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--coral);transition:width .3s var(--ease)}
+.nav-links a.lnk:hover::after{width:100%}
+.nav .btn{padding:.7rem 1.3rem;font-size:.92rem}
+.menu-toggle{display:none;background:none;border:1px solid var(--line-dark);border-radius:10px;padding:.5rem .6rem;cursor:pointer}
+.menu-toggle span{display:block;width:20px;height:2px;background:var(--text-light);margin:4px 0;transition:.3s}
+
+/* ============ HERO ============ */
+.hero{padding:160px 0 90px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-bg .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55}
+.hero-bg .g1{width:520px;height:520px;background:var(--coral);top:-160px;right:-120px;opacity:.40}
+.hero-bg .g2{width:440px;height:440px;background:var(--teal-deep);bottom:-180px;left:-120px;opacity:.40}
+.hero-bg .g3{width:300px;height:300px;background:var(--teal);top:40%;left:50%;opacity:.12}
+.hero-bg .grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--line-dark) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000 0%,transparent 75%);
+  opacity:.5;
+}
+.hero-inner{position:relative;z-index:2;max-width:880px}
+.hero .badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:rgba(25,197,186,.10);border:1px solid rgba(25,197,186,.35);
+  color:var(--teal);font-family:"Space Mono";font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:.45rem 1rem;border-radius:100px;margin-bottom:1.8rem;
+}
+.hero .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:pulse 2s infinite}
+.presenter{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1.2rem}
+.presenter b{color:var(--teal);font-weight:700}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.6rem,6.5vw,5rem);font-weight:800;margin-bottom:1.4rem}
+.hero h1 .hl{color:var(--coral);position:relative;white-space:nowrap}
+.hero h1 .grad{
+  background:linear-gradient(100deg,var(--coral) 0%,var(--teal) 90%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--muted-light);max-width:640px;margin-bottom:2.2rem}
+.hero p.lead strong{color:var(--text-light);font-weight:600}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+
+/* data strip */
+.facts{
+  position:relative;z-index:2;margin-top:4rem;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--radius);overflow:hidden;
+}
+.fact{background:var(--plum);padding:1.5rem 1.4rem}
+.fact .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.9rem;color:var(--text-light);line-height:1}
+.fact .n .u{font-size:1rem;color:var(--coral);margin-left:.15rem}
+.fact .l{font-size:.82rem;color:var(--muted-light);margin-top:.4rem}
+
+/* ============ SECTION SHELL ============ */
+.sec{padding:100px 0}
+.sec-light{background:var(--cream);color:var(--text-dark)}
+.sec-light .eyebrow{color:var(--coral-deep)}
+.sec-light .eyebrow::before{background:var(--coral-deep)}
+.sec-head{max-width:720px;margin-bottom:3.5rem}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:1.1rem 0 1rem}
+.sec-head p{font-size:1.08rem;color:var(--muted-light)}
+.sec-light .sec-head p{color:var(--muted-dark)}
+.sec-light .sec-head h2 .grad{
+  background:linear-gradient(100deg,var(--coral-deep),var(--navy));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero h1 .grad,.sec-head h2 .grad{display:inline}
+
+/* ============ "PARA VOCÊ" CARDS ============ */
+.desire-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.dcard{
+  background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);
+  padding:2rem;position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;
+}
+.dcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--coral);transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
+.dcard:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(27,19,38,.28);border-color:transparent}
+.dcard:hover::before{transform:scaleY(1)}
+.dcard .ic{
+  width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:1.3rem;
+  background:linear-gradient(135deg,rgba(255,106,61,.14),rgba(122,91,214,.14));color:var(--coral-deep);
+}
+.dcard .ic svg{width:26px;height:26px}
+.dcard h3{font-size:1.3rem;margin-bottom:.6rem;color:var(--text-dark)}
+.dcard p{color:var(--muted-dark);font-size:.97rem}
+
+/* ============ "CAPAZ DE FAZER" ============ */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.skill{
+  background:var(--plum);border:1px solid var(--line-dark);border-radius:var(--radius);padding:1.8rem;
+  transition:transform .35s var(--ease),background .35s,border-color .35s;
+}
+.skill:hover{transform:translateY(-5px);background:var(--plum-2);border-color:rgba(255,106,61,.4)}
+.skill .num{font-family:"Space Mono";font-size:.78rem;color:var(--coral);letter-spacing:.1em}
+.skill .ic{width:46px;height:46px;margin:1rem 0 1.1rem;color:var(--teal)}
+.skill .ic svg{width:46px;height:46px}
+.skill p{color:var(--text-light);font-size:1rem;line-height:1.5}
+
+/* ============ TRILHA (3 pilares) ============ */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.pillar{
+  background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);padding:2.2rem;
+  position:relative;transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.pillar:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(27,19,38,.25)}
+.pillar .tag{font-family:"Space Mono";font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)}
+.pillar .ic{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;margin:1.2rem 0 1.3rem;background:var(--cream-2);color:var(--coral-deep)}
+.pillar .ic svg{width:30px;height:30px}
+.pillar h3{font-size:1.35rem;color:var(--text-dark);margin-bottom:.7rem}
+.pillar p{color:var(--muted-dark);font-size:.97rem}
+
+/* ============ MÓDULOS (signature) ============ */
+.mod-tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.mod-tab{
+  font-family:"Instrument Sans";font-weight:600;font-size:.95rem;
+  padding:.75rem 1.4rem;border-radius:100px;border:1px solid var(--line-dark);
+  background:transparent;color:var(--muted-light);cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:.55rem;
+}
+.mod-tab .mt-ic{width:16px;height:16px}
+.mod-tab:hover{color:var(--text-light);border-color:var(--coral)}
+.mod-tab.active{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 8px 24px -10px rgba(255,106,61,.7)}
+
+.mod-panel{display:none}
+.mod-panel.active{display:block;animation:fade .5s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* roadmap (presencial) */
+.roadmap{position:relative;padding-left:0}
+.step{
+  border:1px solid var(--line-dark);border-radius:16px;margin-bottom:1rem;overflow:hidden;
+  background:var(--plum);transition:border-color .3s,background .3s;
+}
+.step:hover{border-color:rgba(255,106,61,.4)}
+.step.open{background:var(--plum-2);border-color:rgba(255,106,61,.5)}
+.step-head{display:flex;align-items:center;gap:1.2rem;padding:1.3rem 1.5rem;cursor:pointer;user-select:none}
+.step-no{
+  width:48px;height:48px;border-radius:13px;flex-shrink:0;display:grid;place-items:center;
+  font-family:"Bricolage Grotesque";font-weight:800;font-size:1.2rem;
+  background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;
+}
+.step-title{flex:1}
+.step-title .et{font-family:"Space Mono";font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.step-title h4{font-size:1.18rem;margin-top:.2rem;color:var(--text-light)}
+.step-chev{width:22px;height:22px;color:var(--muted-light);transition:transform .35s var(--ease);flex-shrink:0}
+.step.open .step-chev{transform:rotate(180deg);color:var(--coral)}
+.step-body{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+.step-body-inner{padding:0 1.5rem 1.5rem 5.7rem}
+.step-body ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.step-body li{display:flex;gap:.7rem;align-items:flex-start;color:var(--muted-light);font-size:.97rem}
+.step-body li svg{width:18px;height:18px;color:var(--coral);flex-shrink:0;margin-top:3px}
+
+/* simple list panels (EAD / terapêutico) */
+.list-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
+.litem{
+  display:flex;gap:.9rem;align-items:flex-start;padding:1.1rem 1.3rem;
+  background:var(--plum);border:1px solid var(--line-dark);border-radius:14px;transition:.3s;
+}
+.litem:hover{border-color:rgba(25,197,186,.4);background:var(--plum-2)}
+.litem .chk{width:24px;height:24px;border-radius:7px;background:rgba(25,197,186,.14);display:grid;place-items:center;flex-shrink:0;color:var(--teal)}
+.litem .chk svg{width:14px;height:14px}
+.litem span{font-size:.96rem;color:var(--text-light)}
+.litem.big{grid-column:span 2}
+.panel-note{font-size:.9rem;color:var(--muted-light);margin-bottom:1.6rem;font-style:italic}
+
+/* ============ AGENDA / TURMAS ============ */
+.agenda-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.turma-switch{display:inline-flex;background:#fff;border:1px solid var(--line-light);border-radius:100px;padding:5px;margin-bottom:1.8rem}
+.turma-switch button{
+  font-family:"Instrument Sans";font-weight:600;font-size:.92rem;border:none;background:transparent;color:var(--muted-dark);
+  padding:.6rem 1.3rem;border-radius:100px;cursor:pointer;transition:.3s;
+}
+.turma-switch button.active{background:var(--text-dark);color:#fff}
+.agenda h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:.5rem}
+.agenda .hours{font-family:"Space Mono";color:var(--coral-deep);font-size:.95rem;margin-bottom:1.6rem;letter-spacing:.02em}
+.info-rows{display:flex;flex-direction:column;gap:.2rem}
+.irow{display:flex;align-items:center;gap:1.1rem;padding:1.05rem 0;border-bottom:1px solid var(--line-light)}
+.irow:last-child{border-bottom:none}
+.irow .ic{width:42px;height:42px;border-radius:12px;background:var(--cream-2);display:grid;place-items:center;color:var(--coral-deep);flex-shrink:0}
+.irow .ic svg{width:20px;height:20px}
+.irow .k{font-size:.78rem;color:var(--muted-dark);text-transform:uppercase;letter-spacing:.08em;font-family:"Space Mono"}
+.irow .v{font-size:1.05rem;font-weight:600;color:var(--text-dark)}
+.irow .v .time{color:var(--coral-deep)}
+
+/* hours breakdown card */
+.hours-card{
+  background:linear-gradient(160deg,var(--plum) 0%,var(--ink) 100%);
+  border:1px solid var(--line-dark);border-radius:var(--radius);padding:2.5rem;position:relative;overflow:hidden;
+}
+.hours-card::after{content:"";position:absolute;width:240px;height:240px;background:var(--coral);filter:blur(80px);opacity:.25;top:-80px;right:-60px}
+.hours-card .big{position:relative;font-family:"Bricolage Grotesque";font-weight:800;font-size:4.5rem;line-height:.9;color:#fff}
+.hours-card .big span{font-size:1.4rem;color:var(--coral)}
+.hours-card .sub{position:relative;color:var(--muted-light);margin:.6rem 0 2rem}
+.hbreak{position:relative;display:flex;flex-direction:column;gap:1rem}
+.hbar{position:relative}
+.hbar .top{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.45rem}
+.hbar .top b{font-weight:600;color:var(--text-light)}
+.hbar .top span{color:var(--muted-light);font-family:"Space Mono";font-size:.82rem}
+.hbar .track{height:8px;border-radius:100px;background:var(--line-dark);overflow:hidden}
+.hbar .fill{height:100%;border-radius:100px;width:0;transition:width 1.2s var(--ease)}
+.hbar.b1 .fill{background:linear-gradient(90deg,var(--coral),var(--coral-deep))}
+.hbar.b2 .fill{background:linear-gradient(90deg,var(--teal),var(--teal-deep))}
+.hbar.b3 .fill{background:linear-gradient(90deg,var(--navy),#1A6AA8)}
+
+/* ============ METODOLOGIA ============ */
+.method{background:var(--plum);overflow:hidden}
+.method .glow{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(110px);opacity:.16;background:var(--teal-deep);bottom:-200px;right:-100px;pointer-events:none}
+.method-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:3.5rem;align-items:center}
+.method h2{font-size:clamp(2rem,4vw,3rem);margin:1rem 0 1.4rem}
+.method h2 .grad{background:linear-gradient(100deg,var(--coral),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline}
+.method p{color:var(--muted-light);font-size:1.05rem;margin-bottom:1.1rem}
+.method-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
+.mtag{font-size:.85rem;padding:.5rem 1rem;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid var(--line-dark);color:var(--text-light)}
+.mtag b{color:var(--coral)}
+.method-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.mv{background:var(--ink);border:1px solid var(--line-dark);border-radius:16px;padding:1.6rem;transition:.35s}
+.mv:hover{transform:translateY(-5px);border-color:rgba(255,106,61,.4)}
+.mv .ic{width:44px;height:44px;color:var(--coral);margin-bottom:.9rem}
+.mv .ic svg{width:44px;height:44px}
+.mv h4{font-size:1.05rem;color:var(--text-light);margin-bottom:.3rem}
+.mv p{font-size:.88rem;color:var(--muted-light);margin:0}
+.mv:nth-child(2){margin-top:1.8rem}
+.mv:nth-child(3){margin-top:-1.8rem}
+
+/* ============ INSTRUTORAS ============ */
+.teach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem}
+.teach{
+  background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);padding:2.2rem;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.teach:hover{transform:translateY(-6px);box-shadow:0 26px 54px -26px rgba(27,19,38,.3)}
+.teach-top{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.4rem}
+.teach .av{
+  width:74px;height:74px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
+  font-family:"Bricolage Grotesque";font-weight:800;font-size:1.7rem;color:#fff;
+}
+.teach.t1 .av{background:linear-gradient(135deg,var(--coral),var(--coral-deep))}
+.teach.t2 .av{background:linear-gradient(135deg,var(--navy),#1A6AA8)}
+.teach h3{font-size:1.3rem;color:var(--text-dark)}
+.teach .role{font-family:"Space Mono";font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-deep);margin-top:.25rem}
+.teach p{color:var(--muted-dark);font-size:.95rem}
+
+/* ============ FAQ ============ */
+.faq-item{border-bottom:1px solid var(--line-dark)}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  padding:1.4rem 0;font-family:"Bricolage Grotesque";font-weight:600;font-size:1.12rem;color:var(--text-light);
+}
+.faq-q .pm{width:30px;height:30px;border-radius:9px;border:1px solid var(--line-dark);flex-shrink:0;display:grid;place-items:center;transition:.3s;position:relative}
+.faq-q .pm::before,.faq-q .pm::after{content:"";position:absolute;background:var(--coral);transition:.3s}
+.faq-q .pm::before{width:12px;height:2px}
+.faq-q .pm::after{width:2px;height:12px}
+.faq-item.open .faq-q .pm{background:var(--coral);border-color:var(--coral)}
+.faq-item.open .faq-q .pm::before,.faq-item.open .faq-q .pm::after{background:#fff}
+.faq-item.open .faq-q .pm::after{transform:scaleY(0)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.faq-a p{padding:0 0 1.5rem;color:var(--muted-light);font-size:1rem;max-width:760px}
+.faq-a p a{color:var(--coral);font-weight:600}
+
+/* ============ CTA FINAL ============ */
+.final{padding:0 24px 100px}
+.final-card{
+  max-width:var(--maxw);margin:0 auto;border-radius:32px;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,var(--coral) 0%,var(--coral-deep) 55%,#B83D12 100%);
+  padding:5rem 3rem;text-align:center;
+}
+.final-card .mesh{position:absolute;inset:0;opacity:.25;
+  background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.5),transparent 40%),radial-gradient(circle at 80% 70%,var(--navy),transparent 45%);
+}
+.final-card .inner{position:relative;z-index:2}
+.final-card h2{font-size:clamp(2.2rem,5vw,3.6rem);color:#fff;margin-bottom:1rem;font-weight:800}
+.final-card p{color:rgba(255,255,255,.92);font-size:1.15rem;max-width:560px;margin:0 auto 2.4rem}
+.final-card .btn{background:#fff;color:var(--coral-deep);font-size:1.08rem;padding:1.15rem 2.4rem}
+.final-card .btn:hover{transform:translateY(-3px);box-shadow:0 20px 50px -12px rgba(0,0,0,.4)}
+.final-card .micro{margin-top:1.4rem;font-size:.88rem;color:rgba(255,255,255,.8);font-family:"Space Mono"}
+
+/* ============ FOOTER ============ */
+footer{padding:60px 0 40px;border-top:1px solid var(--line-dark)}
+.foot{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.foot .logo{margin-bottom:1rem}
+.foot p{color:var(--muted-light);font-size:.92rem;max-width:340px}
+.foot-meta{text-align:right}
+.foot-meta a{color:var(--muted-light);font-size:.92rem;display:block;margin-bottom:.5rem;transition:.25s}
+.foot-meta a:hover{color:var(--coral)}
+.copyright{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line-dark);font-size:.82rem;color:var(--muted-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+/* ============ REVEAL ANIM ============ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.40s}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:980px){
+  .agenda-wrap,.method-inner{grid-template-columns:1fr;gap:2.2rem}
+  .method-visual{max-width:480px}
+  .mv:nth-child(2),.mv:nth-child(3){margin-top:0}
+}
+@media(max-width:760px){
+  .nav-links{
+    position:fixed;top:62px;left:0;right:0;background:rgba(22,16,31,.97);backdrop-filter:blur(20px);
+    flex-direction:column;align-items:stretch;gap:0;padding:1rem 24px 2rem;border-bottom:1px solid var(--line-dark);
+    transform:translateY(-130%);transition:transform .4s var(--ease);
+  }
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a.lnk{padding:.9rem 0;border-bottom:1px solid var(--line-dark)}
+  .nav-links .btn{margin-top:1rem;justify-content:center}
+  .menu-toggle{display:block}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .desire-grid,.skills-grid,.pillars,.teach-grid,.list-grid,.method-visual{grid-template-columns:1fr}
+  .litem.big{grid-column:span 1}
+  .step-body-inner{padding-left:1.5rem}
+  .hero{padding:130px 0 70px}
+  .sec{padding:70px 0}
+  .final-card{padding:3.5rem 1.6rem}
+  .foot-meta{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#topo" class="brand-lockup" aria-label="TEC360 — Empreenda Já">
+      <span class="tec-chip"><span class="tec-logo" role="img" aria-label="TEC360"></span></span>
+      <span class="brand-div"></span>
+      <span class="brand-course"><span class="k">Curso</span><span class="v">Empreenda <b>Já</b></span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a class="lnk" href="#beneficios">Para você</a>
+      <a class="lnk" href="#modulos">Módulos</a>
+      <a class="lnk" href="#agenda">Agenda</a>
+      <a class="lnk" href="#instrutoras">Instrutoras</a>
+      <a class="lnk" href="#faq">Dúvidas</a>
+      <a class="btn btn-primary" href="#inscricao">Inscreva-se</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="topo">
+  <div class="hero-bg">
+    <div class="grid"></div>
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+  </div>
+  <div class="wrap hero-inner">
+    <p class="presenter reveal in">Uma realização <b>TEC360</b> · Escola de tecnologia e negócios</p>
+    <span class="badge"><span class="dot"></span>Turmas 1 e 2 · Agosto · Colatina/ES</span>
+    <h1 class="reveal in">
+      Tire sua ideia do papel e abra o seu
+      <span class="grad">primeiro negócio</span>.
+    </h1>
+    <p class="lead reveal in d1">
+      Um curso de empreendedorismo <strong>prático, humano e tecnológico</strong> para transformar talentos em renda — com inteligência artificial, ferramentas ágeis, apoio emocional e o caminho completo até a sua formalização como <strong>MEI</strong>.
+    </p>
+    <div class="hero-cta reveal in d2">
+      <a href="#inscricao" class="btn btn-primary">
+        Quero me inscrever
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#modulos" class="btn btn-ghost">Ver os módulos</a>
+    </div>
+
+    <div class="facts reveal in d3">
+      <div class="fact"><div class="n">24<span class="u">h</span></div><div class="l">Carga horária total</div></div>
+      <div class="fact"><div class="n">05</div><div class="l">Encontros presenciais</div></div>
+      <div class="fact"><div class="n">3<span class="u">×</span></div><div class="l">Presencial · EAD · Online</div></div>
+      <div class="fact"><div class="n">MEI</div><div class="l">Formalização garantida</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA VOCÊ ============ -->
+<section class="sec sec-light" id="beneficios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Este curso é para você</span>
+      <h2>Feito para quem quer <span class="grad">começar de verdade</span></h2>
+      <p>Sem enrolação e com o pé no chão. Se você se identifica com algum destes objetivos, este curso foi desenhado para você.</p>
+    </div>
+    <div class="desire-grid">
+      <div class="dcard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Tirar a ideia do papel</h3>
+        <p>Explore um caminho envolvente, simples e pé no chão para transformar seus talentos em uma fonte de renda real.</p>
+      </div>
+      <div class="dcard reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 11.1A8.4 8.4 0 1 1 7.5 4.4M21 3l-9 9-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Empreender com confiança</h3>
+        <p>Aprenda a gerir o estresse, romper ciclos que te travam e fortalecer suas escolhas para seguir firme na jornada.</p>
+      </div>
+      <div class="dcard reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>Dominar IA e ferramentas digitais</h3>
+        <p>Use ChatGPT, inteligência artificial e metodologias ágeis para criar e impulsionar as estratégias do seu negócio.</p>
+      </div>
+      <div class="dcard reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Conquistar dignidade e independência</h3>
+        <p>Transforme uma atividade informal em um negócio legalizado e estruturado, com o passo a passo completo para virar MEI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPAZ DE FAZER ============ -->
+<section class="sec" id="resultados">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Resultados</span>
+      <h2>O que você será capaz de fazer</h2>
+      <p style="margin:0 auto">Ao final do curso, você sai com um negócio planejado, ferramentas dominadas e o caminho da formalização trilhado.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill reveal">
+        <div class="num">/ 01</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><rect x="8" y="10" width="32" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 18h32M14 26h10M14 31h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <p>Planejar seu próprio negócio de forma simples, transformando ideias comuns em um empreendimento real e lucrativo.</p>
+      </div>
+      <div class="skill reveal d1">
+        <div class="num">/ 02</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/><rect x="9" y="26" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="26" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/></svg></div>
+        <p>Usar ferramentas ágeis de mercado como Canvas, 5W2H e o Mini Design Sprint para validar suas ideias.</p>
+      </div>
+      <div class="skill reveal d2">
+        <div class="num">/ 03</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 8a8 8 0 0 0-5 14.2c.8.7 1.3 1.7 1.3 2.8V28h7.4v-3c0-1.1.5-2.1 1.3-2.8A8 8 0 0 0 24 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 33h8M21 38h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <p>Aplicar inteligência artificial e ChatGPT para criar estratégias, conteúdos e soluções para o seu negócio.</p>
+      </div>
+      <div class="skill reveal">
+        <div class="num">/ 04</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 8v32M16 14h12a4 4 0 0 1 0 8H20a4 4 0 0 0 0 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p>Gerenciar com clareza suas finanças pessoais e empresariais, com precificação simples e justa.</p>
+      </div>
+      <div class="skill reveal d1">
+        <div class="num">/ 05</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M14 22l8-12 8 12M12 22h24v14a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V22Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 38v-7h8v7" stroke="currentColor" stroke-width="2"/></svg></div>
+        <p>Formalizar o negócio passo a passo como MEI, garantindo direitos sociais, dignidade e acesso a crédito.</p>
+      </div>
+      <div class="skill reveal d2">
+        <div class="num">/ 06</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 42s14-8 14-19a8 8 0 0 0-14-5 8 8 0 0 0-14 5c0 11 14 19 14 19Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <p>Desenvolver autoconfiança, inteligência emocional e resiliência para superar os desafios do dia a dia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRILHA / 3 PILARES ============ -->
+<section class="sec sec-light" id="trilha">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Trilha de aprendizagem</span>
+      <h2>Três frentes que <span class="grad">trabalham juntas</span></h2>
+      <p>Uma metodologia híbrida que combina teoria e prática desde a primeira aula, com apoio emocional ao longo de toda a jornada.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="tag">Presencial · EAD · Online</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M2 6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Z" stroke="currentColor" stroke-width="1.8"/><path d="m17 9 4-2v8l-4-2M7 20h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Aulas práticas</h3>
+        <p>Encontros presenciais, videoaulas EAD e sessões online se combinam numa abordagem dinâmica baseada em projetos (PBL).</p>
+      </div>
+      <div class="pillar reveal d1">
+        <span class="tag">Material de apoio</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H4V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H20V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Materiais completos</h3>
+        <p>Livro impresso, materiais de apoio visuais e um projeto prático que aprofunda cada tópico discutido em aula.</p>
+      </div>
+      <div class="pillar reveal d2">
+        <span class="tag">Suporte emocional</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.7-7 10-7 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 11.5h2l1-2 1.5 3 1-1.5h1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Sessões terapêuticas online</h3>
+        <p>Fortalecem e empoderam emocionalmente cada participante para desenvolver o negócio com confiança e evitar a desistência.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÓDULOS (signature) ============ -->
+<section class="sec" id="modulos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Conteúdo programático</span>
+      <h2>Conheça os módulos da formação</h2>
+      <p>Da descoberta do seu potencial até a formalização. Explore cada frente do curso.</p>
+    </div>
+
+    <div class="mod-tabs reveal d1">
+      <button class="mod-tab active" data-panel="presencial">
+        <svg class="mt-ic" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Presencial
+      </button>
+      <button class="mod-tab" data-panel="ead">
+        <svg class="mt-ic" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        EAD
+      </button>
+      <button class="mod-tab" data-panel="terapeutico">
+        <svg class="mt-ic" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.7-7 10-7 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Terapêutico
+      </button>
+    </div>
+
+    <!-- PRESENCIAL: roadmap -->
+    <div class="mod-panel active" id="panel-presencial">
+      <div class="roadmap">
+        <div class="step open">
+          <div class="step-head">
+            <div class="step-no">I</div>
+            <div class="step-title"><div class="et">Módulo I</div><h4>Descobrindo Meu Potencial Empreendedor</h4></div>
+            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step-body"><div class="step-body-inner"><ul>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Dinâmica "Do que sou capaz"</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mapa de Talentos</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Discussão sobre tipos de empreendedorismo</li>
+          </ul></div></div>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-no">II</div>
+            <div class="step-title"><div class="et">Módulo II</div><h4>Começando com o que eu tenho</h4></div>
+            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step-body"><div class="step-body-inner"><ul>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Ideia de Negócio em 1 folha</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Criando com IA — Introdução ao ChatGPT</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Matriz: O que sei fazer × O que posso vender</li>
+          </ul></div></div>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-no">III</div>
+            <div class="step-title"><div class="et">Módulo III</div><h4>Planejamento Simples e Pé no Chão</h4></div>
+            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step-body"><div class="step-body-inner"><ul>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Ferramentas 5W2H e Canvas</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Dinâmica "Meu primeiro passo"</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mini Design Sprint: testando ideias de negócios</li>
+          </ul></div></div>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-no">IV</div>
+            <div class="step-title"><div class="et">Módulo IV</div><h4>Vendendo do Meu Jeito</h4></div>
+            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step-body"><div class="step-body-inner"><ul>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Simulação de vendas</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Criação de pitch simples</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Exercícios práticos com WhatsApp e redes sociais</li>
+          </ul></div></div>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-no">V</div>
+            <div class="step-title"><div class="et">Módulo V</div><h4>Formalizando e Crescendo</h4></div>
+            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step-body"><div class="step-body-inner"><ul>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Passo a passo para ser MEI</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Planejamento de crescimento</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gravação do pitch final</li>
+          </ul></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EAD -->
+    <div class="mod-panel" id="panel-ead">
+      <p class="panel-note">Videoaulas complementares para assistir no seu ritmo — 5 horas de conteúdo flexível.</p>
+      <div class="list-grid">
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Autoconfiança e mentalidade empreendedora</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Transformando talentos em ideias de negócio</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Finanças para empreendedores iniciantes — Parte 1</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Precificação simples e justa — Parte 2</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Organização pessoal para empreender</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Transformando plano em ação</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Ferramentas digitais e produtividade</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Marketing pessoal e comunicação com o cliente</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Oportunidades: editais e programas de apoio</span></div>
+        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Construindo rede de apoio e crescimento</span></div>
+      </div>
+    </div>
+
+    <!-- TERAPÊUTICO -->
+    <div class="mod-panel" id="panel-terapeutico">
+      <p class="panel-note">Encontros online de fortalecimento emocional — 4 horas de cuidado com você.</p>
+      <div class="list-grid">
+        <div class="litem big"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Conhecendo a si:</b> identidade, história e crenças</span></div>
+        <div class="litem big"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Você e seus relacionamentos:</b> comunicação e posicionamento</span></div>
+        <div class="litem big"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Você e seu trabalho:</b> coragem e responsabilidade</span></div>
+        <div class="litem big"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Integração e clareza:</b> rompendo ciclos e fortalecendo escolhas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGENDA / TURMAS ============ -->
+<section class="sec sec-light" id="agenda">
+  <div class="wrap">
+    <div class="agenda-wrap">
+      <div class="agenda reveal">
+        <span class="eyebrow">Carga horária e periodicidade</span>
+        <div class="turma-switch" role="tablist" style="margin-top:1.2rem">
+          <button class="active" data-turma="1">Turma 1 · Tarde</button>
+          <button data-turma="2">Turma 2 · Noite</button>
+        </div>
+        <h2>5 segundas-feiras de agosto</h2>
+        <div class="hours" id="turmaHours">15h presencial · 5h EAD · 4h online — das <b class="time">13h às 16h</b></div>
+
+        <div class="info-rows">
+          <div class="irow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <div><div class="k">Datas presenciais</div><div class="v">03, 10, 17, 24 e 31 de agosto</div></div>
+          </div>
+          <div class="irow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="k">Horário</div><div class="v"><span class="time" id="turmaTime">13h às 16h</span></div></div>
+          </div>
+          <div class="irow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
+            <div><div class="k">Local</div><div class="v">Centro de Ciências de Colatina<br><span style="font-weight:400;color:var(--muted-dark);font-size:.92rem">Praça do Sol Poente</span></div></div>
+          </div>
+        </div>
+        <a href="#inscricao" class="btn btn-primary" style="margin-top:2rem">Garantir minha vaga
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hours-card reveal d2">
+        <div class="big">24<span>h</span></div>
+        <div class="sub">de formação completa, distribuídas em três frentes</div>
+        <div class="hbreak">
+          <div class="hbar b1">
+            <div class="top"><b>Presencial</b><span>15h</span></div>
+            <div class="track"><div class="fill" data-w="62%"></div></div>
+          </div>
+          <div class="hbar b2">
+            <div class="top"><b>EAD · videoaulas</b><span>5h</span></div>
+            <div class="track"><div class="fill" data-w="21%"></div></div>
+          </div>
+          <div class="hbar b3">
+            <div class="top"><b>Terapêutico online</b><span>4h</span></div>
+            <div class="track"><div class="fill" data-w="17%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METODOLOGIA ============ -->
+<section class="sec method" id="metodologia">
+  <div class="glow"></div>
+  <div class="wrap method-inner">
+    <div class="reveal">
+      <span class="eyebrow">Metodologia de ensino</span>
+      <h2>Holística, híbrida e <span class="grad">totalmente prática</span></h2>
+      <p>Pela abordagem <strong style="color:var(--text-light)">Project Based Learning</strong>, você participa de encontros presenciais para mentoria e networking, complementados por videoaulas flexíveis e ferramentas ágeis de mercado.</p>
+      <p>O grande diferencial é o suporte terapêutico online integrado, que trabalha inteligência emocional, autoestima e resiliência — preparando você para superar barreiras comportamentais e consolidar seu negócio com segurança.</p>
+      <div class="method-tags">
+        <span class="mtag"><b>PBL</b> · Aprendizado por projetos</span>
+        <span class="mtag"><b>IA</b> · ChatGPT na prática</span>
+        <span class="mtag"><b>Canvas</b> · 5W2H · Design Sprint</span>
+        <span class="mtag"><b>MEI</b> · Formalização guiada</span>
+      </div>
+    </div>
+    <div class="method-visual reveal d2">
+      <div class="mv">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 6 8 14v12c0 9 7 14 16 16 9-2 16-7 16-16V14L24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m18 24 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Presencial</h4><p>Mentoria, dinâmicas e networking no Centro de Ciências.</p>
+      </div>
+      <div class="mv">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><rect x="6" y="8" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 42h16M24 34v8M20 18l8 3-8 3v-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h4>EAD</h4><p>Videoaulas no seu ritmo, para aprofundar cada tema.</p>
+      </div>
+      <div class="mv">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 40s-13-8-13-19a7.5 7.5 0 0 1 13-5 7.5 7.5 0 0 1 13 5c0 11-13 19-13 19Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h4>Terapêutico</h4><p>Apoio emocional para você seguir firme até o fim.</p>
+      </div>
+      <div class="mv">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="2"/><path d="M12 40c0-7 5.4-12 12-12s12 5 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h4>Mentoria</h4><p>Acompanhamento de quem entende de negócios e pessoas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTRUTORAS ============ -->
+<section class="sec sec-light" id="instrutoras">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Com quem você vai aprender</span>
+      <h2>Quem conduz a sua jornada</h2>
+    </div>
+    <div class="teach-grid">
+      <div class="teach t1 reveal">
+        <div class="teach-top">
+          <div class="av">RG</div>
+          <div><h3>Rosilane Gripa Bustamante</h3><div class="role">Especialista em MEI e Gestão Pública</div></div>
+        </div>
+        <p>Servidora pública e Diretora do CIAMPE Serra desde 2022, com ampla experiência em atendimento ao público, planejamento estratégico, liderança e captação de recursos. À frente do CIAMPE, conquistou os Troféus Ouro (2023) e Diamante (2025) da Rede Capixaba de Salas do Empreendedor por iniciativas de desburocratização e modernização. Gestora do premiado projeto Ciampe Serra Virtual e Coordenadora de Planejamento Estratégico da SEDEC.</p>
+      </div>
+      <div class="teach t2 reveal d1">
+        <div class="teach-top">
+          <div class="av">JR</div>
+          <div><h3>Josivania dos Reis Ferreira</h3><div class="role">Terapeuta Integrativa</div></div>
+        </div>
+        <p>Há 5 anos como Terapeuta Integrativa, com mais de 500 atendimentos focados na integração de mente, corpo e emoções. Desenvolve protocolos personalizados de autoconhecimento usando Análise Corporal e Comportamental, PNL e Hipnose Clínica, e é graduanda em Psicanálise Clínica. Tem sólida base em Administração de Empresas e mais de 12 anos como analista de licitações, trazendo organização e visão estratégica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap" style="max-width:900px">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Dúvidas mais comuns</span>
+      <h2>Ainda com perguntas?</h2>
+    </div>
+    <div class="faq" id="faq">
+      <div class="faq-item">
+        <button class="faq-q">Para quem é este curso?<span class="pm"></span></button>
+        <div class="faq-a"><p>Para estudantes, empreendedores e cidadãos de comunidades em situação de vulnerabilidade social na região de Colatina/ES que querem criar e gerenciar o próprio negócio — mesmo começando do zero.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Preciso já ter um negócio ou experiência?<span class="pm"></span></button>
+        <div class="faq-a"><p>Não. O curso foi pensado justamente para o seu primeiro negócio. Começamos descobrindo seus talentos e seguimos, passo a passo, até a formalização como MEI.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Qual a diferença entre a Turma 1 e a Turma 2?<span class="pm"></span></button>
+        <div class="faq-a"><p>O conteúdo é o mesmo nas duas turmas. A diferença é só o horário dos encontros presenciais: a Turma 1 acontece das 13h às 16h e a Turma 2 das 19h às 22h. Escolha a que melhor encaixa na sua rotina.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como funcionam as aulas presenciais, EAD e online?<span class="pm"></span></button>
+        <div class="faq-a"><p>São 15h presenciais no Centro de Ciências de Colatina, 5h de videoaulas EAD para assistir no seu ritmo e 4h de sessões terapêuticas online de apoio emocional. Tudo integrado numa única jornada de 24 horas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">O que são as sessões terapêuticas?<span class="pm"></span></button>
+        <div class="faq-a"><p>Encontros online que fortalecem você emocionalmente — trabalhando autoestima, resiliência e clareza — para que desenvolva o negócio com mais confiança e não desista no meio do caminho.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Vou sair do curso com meu negócio formalizado?<span class="pm"></span></button>
+        <div class="faq-a"><p>Sim. O Módulo V traz o passo a passo completo para você se tornar MEI, garantindo direitos sociais, dignidade e acesso a crédito para crescer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como faço a minha inscrição?<span class="pm"></span></button>
+        <div class="faq-a"><p>Clique em qualquer botão <a href="#inscricao">"Inscreva-se"</a> nesta página. As vagas são limitadas e a inscrição é por ordem de chegada. <em style="color:var(--muted-light)">[Substitua o link/WhatsApp de inscrição no código.]</em></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<div class="final" id="inscricao">
+  <div class="final-card reveal">
+    <div class="mesh"></div>
+    <div class="inner">
+      <h2>Sua ideia merece sair do papel.</h2>
+      <p>Vagas limitadas para as turmas de agosto. Dê o primeiro passo rumo ao seu próprio negócio.</p>
+      <!-- TROQUE o href abaixo pelo seu link de inscrição ou WhatsApp -->
+      <a href="#" class="btn">Quero garantir minha vaga
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="micro">Turmas 1 e 2 · Colatina/ES · Agosto</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <span class="tec-chip" style="margin-bottom:1.1rem"><span class="tec-logo" role="img" aria-label="TEC360" style="height:30px;width:156px"></span></span>
+      <p><b style="color:var(--text-light)">Empreenda Já — Meu Primeiro Negócio</b> é um curso realizado pela TEC360, Escola de Tecnologia e Negócios. Capacitação em empreendedorismo para transformação social: do talento à formalização como MEI.</p>
+    </div>
+    <div class="foot-meta">
+      <a href="#beneficios">Para você</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#instrutoras">Instrutoras</a>
+      <a href="#inscricao">Inscreva-se</a>
+    </div>
+  </div>
+  <div class="wrap copyright">
+    <span>© 2025 TEC360 · Escola de Tecnologia e Negócios. Todos os direitos reservados.</span>
+    <span>Centro de Ciências de Colatina · Praça do Sol Poente</span>
+  </div>
+</footer>
+
+<script>
+/* ===== nav scroll ===== */
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
+
+/* ===== mobile menu ===== */
+const tgl=document.getElementById('menuToggle'),links=document.getElementById('navLinks');
+tgl.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+/* ===== reveal on scroll ===== */
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== module tabs ===== */
+document.querySelectorAll('.mod-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.mod-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.mod-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* ===== roadmap accordion ===== */
+document.querySelectorAll('.step-head').forEach(h=>{
+  h.addEventListener('click',()=>{
+    const step=h.parentElement,body=step.querySelector('.step-body');
+    const isOpen=step.classList.contains('open');
+    document.querySelectorAll('.step').forEach(s=>{s.classList.remove('open');s.querySelector('.step-body').style.maxHeight=null});
+    if(!isOpen){step.classList.add('open');body.style.maxHeight=body.scrollHeight+'px'}
+  });
+});
+/* open first step height */
+addEventListener('load',()=>{const o=document.querySelector('.step.open .step-body');if(o)o.style.maxHeight=o.scrollHeight+'px'});
+
+/* ===== FAQ accordion ===== */
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement,a=item.querySelector('.faq-a');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
+    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+
+/* ===== turma switch ===== */
+const turmaData={
+  '1':{time:'13h às 16h',hours:'15h presencial · 5h EAD · 4h online — das <b class="time">13h às 16h</b>'},
+  '2':{time:'19h às 22h',hours:'15h presencial · 5h EAD · 4h online — das <b class="time">19h às 22h</b>'}
+};
+document.querySelectorAll('.turma-switch button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.turma-switch button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const d=turmaData[b.dataset.turma];
+    document.getElementById('turmaTime').textContent=d.time;
+    document.getElementById('turmaHours').innerHTML=d.hours;
+  });
+});
+
+/* ===== animate hour bars when visible ===== */
+const barIO=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w);barIO.unobserve(e.target)}})},{threshold:.3});
+const hc=document.querySelector('.hours-card');if(hc)barIO.observe(hc);
+</script>
+</body>
+</html>
