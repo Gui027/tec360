@@ -323,15 +323,13 @@ header.scrolled{
 .method-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
 .mtag{font-size:.85rem;padding:.5rem 1rem;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid var(--line-dark);color:var(--text-light)}
 .mtag b{color:var(--coral)}
-.method-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.mv{background:var(--ink);border:1px solid var(--line-dark);border-radius:16px;padding:1.6rem;transition:.35s}
+.method-visual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem;align-items:stretch}
+.mv{background:var(--ink);border:1px solid var(--line-dark);border-radius:16px;padding:1.65rem 1.7rem;min-height:178px;display:flex;flex-direction:column;justify-content:center;transition:.35s}
 .mv:hover{transform:translateY(-5px);border-color:rgba(255,106,61,.4)}
 .mv .ic{width:44px;height:44px;color:var(--coral);margin-bottom:.9rem}
 .mv .ic svg{width:44px;height:44px}
 .mv h4{font-size:1.05rem;color:var(--text-light);margin-bottom:.3rem}
 .mv p{font-size:.88rem;color:var(--muted-light);margin:0}
-.mv:nth-child(2){margin-top:1.8rem}
-.mv:nth-child(3){margin-top:-1.8rem}
 
 /* ============ INSTRUTORAS ============ */
 .teach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem}
@@ -405,7 +403,6 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line-dark)}
 @media(max-width:980px){
   .agenda-wrap,.method-inner{grid-template-columns:1fr;gap:2.2rem}
   .method-visual{max-width:480px}
-  .mv:nth-child(2),.mv:nth-child(3){margin-top:0}
 }
 @media(max-width:760px){
   .nav-links{
