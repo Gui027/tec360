@@ -1,986 +1,3241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Empreenda Já — Meu Primeiro Negócio | Centro de Ciências de Colatina</title>
-<link rel="icon" type="image/png" href="https://i.postimg.cc/vmy36gn2/favicon-V2.png">
-<meta name="description" content="Curso gratuito de empreendedorismo em Colatina/ES. Tire sua ideia do papel, use IA e ferramentas ágeis, fortaleça-se emocionalmente e formalize seu negócio como MEI.">
-<script>
-if (window.location.pathname.endsWith('/index.html')) {
-  window.history.replaceState(null, '', window.location.pathname.replace(/\/index\.html$/i, '/') + window.location.search + window.location.hash);
-}
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Empreenda Já — Meu Primeiro Negócio | Centro de Ciências de Colatina
+    </title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://i.postimg.cc/vmy36gn2/favicon-V2.png"
+    />
+    <meta
+      name="description"
+      content="Curso gratuito de empreendedorismo em Colatina/ES. Tire sua ideia do papel, use IA e ferramentas ágeis, fortaleça-se emocionalmente e formalize seu negócio como MEI."
+    />
+    <script>
+      if (window.location.pathname.endsWith("/index.html")) {
+        window.history.replaceState(
+          null,
+          "",
+          window.location.pathname.replace(/\/index\.html$/i, "/") +
+            window.location.search +
+            window.location.hash,
+        );
+      }
+    </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
-/* ============ TOKENS ============ */
-:root{
-  --ink:#0A1A29;
-  --plum:#0F2A40;
-  --plum-2:#163A56;
-  --cream:#FBF6EE;
-  --cream-2:#EFE7DA;
-  --coral:#FF6A3D;
-  --coral-deep:#E8501F;
-  --teal:#19C5BA;
-  --teal-deep:#009C9C;
-  --navy:#0C4884;
-  --text-dark:#0E2230;
-  --text-light:#EAF2F4;
-  --muted-light:#93AEBC;
-  --muted-dark:#5A7585;
-  --line-dark:rgba(255,255,255,.10);
-  --line-light:rgba(27,19,38,.12);
-  --maxw:1180px;
-  --radius:20px;
-  --ease:cubic-bezier(.2,.7,.2,1);
-}
+    <style>
+      /* ============ TOKENS ============ */
+      :root {
+        --ink: #0a1a29;
+        --plum: #0f2a40;
+        --plum-2: #163a56;
+        --cream: #fbf6ee;
+        --cream-2: #efe7da;
+        --coral: #ff6a3d;
+        --coral-deep: #e8501f;
+        --teal: #19c5ba;
+        --teal-deep: #009c9c;
+        --navy: #0c4884;
+        --text-dark: #0e2230;
+        --text-light: #eaf2f4;
+        --muted-light: #93aebc;
+        --muted-dark: #5a7585;
+        --line-dark: rgba(255, 255, 255, 0.1);
+        --line-light: rgba(27, 19, 38, 0.12);
+        --maxw: 1180px;
+        --radius: 20px;
+        --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:"Instrument Sans",system-ui,sans-serif;
-  background:var(--ink);
-  color:var(--text-light);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-h1,h2,h3,h4{font-family:"Bricolage Grotesque",sans-serif;line-height:1.05;letter-spacing:-.02em;font-weight:700}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-::selection{background:var(--coral);color:#fff}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Instrument Sans", system-ui, sans-serif;
+        background: var(--ink);
+        color: var(--text-light);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Bricolage Grotesque", sans-serif;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      ::selection {
+        background: var(--coral);
+        color: #fff;
+      }
 
-.eyebrow{
-  font-family:"Space Mono",monospace;
-  font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--coral);display:inline-flex;align-items:center;gap:.6rem;
-}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--coral);display:inline-block}
-.eyebrow.center{justify-content:center}
+      .eyebrow {
+        font-family: "Space Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--coral);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: var(--coral);
+        display: inline-block;
+      }
+      .eyebrow.center {
+        justify-content: center;
+      }
 
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-section{position:relative}
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        position: relative;
+      }
 
-/* ============ BUTTONS ============ */
-.btn{
-  display:inline-flex;align-items:center;gap:.6rem;
-  font-family:"Instrument Sans",sans-serif;font-weight:600;font-size:1rem;
-  padding:1rem 1.7rem;border-radius:100px;border:none;cursor:pointer;
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s;
-  position:relative;
-}
-.btn-primary{background:var(--coral);color:#fff;box-shadow:0 10px 30px -8px rgba(255,106,61,.6)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px -10px rgba(255,106,61,.7);background:var(--coral-deep)}
-.btn-primary svg{transition:transform .3s var(--ease)}
-.btn-primary:hover svg{transform:translateX(4px)}
-.btn-ghost{background:transparent;color:var(--text-light);border:1px solid var(--line-dark)}
-.btn-ghost:hover{border-color:var(--coral);color:#fff}
+      /* ============ BUTTONS ============ */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: "Instrument Sans", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 1rem 1.7rem;
+        border-radius: 100px;
+        border: none;
+        cursor: pointer;
+        transition:
+          transform 0.3s var(--ease),
+          box-shadow 0.3s var(--ease),
+          background 0.3s;
+        position: relative;
+      }
+      .btn-primary {
+        background: var(--coral);
+        color: #fff;
+        box-shadow: 0 10px 30px -8px rgba(255, 106, 61, 0.6);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 40px -10px rgba(255, 106, 61, 0.7);
+        background: var(--coral-deep);
+      }
+      .btn-primary svg {
+        transition: transform 0.3s var(--ease);
+      }
+      .btn-primary:hover svg {
+        transform: translateX(4px);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--text-light);
+        border: 1px solid var(--line-dark);
+      }
+      .btn-ghost:hover {
+        border-color: var(--coral);
+        color: #fff;
+      }
 
-/* ============ NAV ============ */
-header{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:14px 0;transition:background .4s,backdrop-filter .4s,padding .4s,border-color .4s;
-  border-bottom:1px solid transparent;
-}
-header.scrolled{
-  background:rgba(22,16,31,.82);backdrop-filter:blur(18px) saturate(140%);
-  border-bottom:1px solid var(--line-dark);padding:8px 0;
-}
-.nav{display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:.65rem;font-family:"Bricolage Grotesque";font-weight:800;font-size:1.15rem;letter-spacing:-.03em}
-.logo .spark{
-  width:34px;height:34px;border-radius:11px;
-  background:linear-gradient(135deg,var(--coral),var(--coral-deep));
-  display:grid;place-items:center;box-shadow:0 6px 18px -6px rgba(255,106,61,.7);
-  flex-shrink:0;
-}
-.logo .spark svg{width:18px;height:18px}
-.logo b{color:var(--coral)}
+      /* ============ NAV ============ */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 14px 0;
+        transition:
+          background 0.4s,
+          backdrop-filter 0.4s,
+          padding 0.4s,
+          border-color 0.4s;
+        border-bottom: 1px solid transparent;
+      }
+      header.scrolled {
+        background: rgba(22, 16, 31, 0.82);
+        backdrop-filter: blur(18px) saturate(140%);
+        border-bottom: 1px solid var(--line-dark);
+        padding: 8px 0;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-family: "Bricolage Grotesque";
+        font-weight: 800;
+        font-size: 1.15rem;
+        letter-spacing: -0.03em;
+      }
+      .logo .spark {
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+        background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+        display: grid;
+        place-items: center;
+        box-shadow: 0 6px 18px -6px rgba(255, 106, 61, 0.7);
+        flex-shrink: 0;
+      }
+      .logo .spark svg {
+        width: 18px;
+        height: 18px;
+      }
+      .logo b {
+        color: var(--coral);
+      }
 
-/* TEC360 co-brand lockup */
-.tec-logo{background-position:center;background-size:contain;background-repeat:no-repeat;display:block;background-image:url(https://i.postimg.cc/DzRK1c2W/logo-tec360-v2.png)}
-.brand-lockup{display:flex;align-items:center;gap:.85rem}
-.tec-chip{display:flex;align-items:center;flex-shrink:0}
-.tec-chip .tec-logo{height:24px;width:125px}
-.brand-div{width:1px;height:34px;background:var(--line-dark)}
-.brand-course{display:flex;flex-direction:column;line-height:1.1}
-.brand-course .k{font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-light)}
-.brand-course .v{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.08rem;color:var(--text-light)}
-.brand-course .v b{color:var(--coral);font-weight:800}
-@media(max-width:520px){.brand-div,.brand-course{display:none}}
-.nav-links{display:flex;align-items:center;gap:2rem}
-.nav-links a.lnk{font-size:.92rem;color:var(--muted-light);transition:color .25s;position:relative}
-.nav-links a.lnk:hover{color:var(--text-light)}
-.nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--coral);transition:width .3s var(--ease)}
-.nav-links a.lnk:hover::after{width:100%}
-.nav .btn{padding:.7rem 1.3rem;font-size:.92rem}
-.menu-toggle{display:none;background:none;border:1px solid var(--line-dark);border-radius:10px;padding:.5rem .6rem;cursor:pointer}
-.menu-toggle span{display:block;width:20px;height:2px;background:var(--text-light);margin:4px 0;transition:.3s}
+      /* TEC360 co-brand lockup */
+      .tec-logo {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        background-image: url(https://i.postimg.cc/DzRK1c2W/logo-tec360-v2.png);
+      }
+      .brand-lockup {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+      }
+      .tec-chip {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .tec-chip .tec-logo {
+        height: 24px;
+        width: 125px;
+      }
+      .brand-div {
+        width: 1px;
+        height: 34px;
+        background: var(--line-dark);
+      }
+      .brand-course {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+      .brand-course .k {
+        font-family: "Space Mono", monospace;
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted-light);
+      }
+      .brand-course .v {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-weight: 800;
+        font-size: 1.08rem;
+        color: var(--text-light);
+      }
+      .brand-course .v b {
+        color: var(--coral);
+        font-weight: 800;
+      }
+      @media (max-width: 520px) {
+        .brand-div,
+        .brand-course {
+          display: none;
+        }
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .nav-links a.lnk {
+        font-size: 0.92rem;
+        color: var(--muted-light);
+        transition: color 0.25s;
+        position: relative;
+      }
+      .nav-links a.lnk:hover {
+        color: var(--text-light);
+      }
+      .nav-links a.lnk::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: var(--coral);
+        transition: width 0.3s var(--ease);
+      }
+      .nav-links a.lnk:hover::after {
+        width: 100%;
+      }
+      .nav .btn {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.92rem;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: 1px solid var(--line-dark);
+        border-radius: 10px;
+        padding: 0.5rem 0.6rem;
+        cursor: pointer;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: var(--text-light);
+        margin: 4px 0;
+        transition: 0.3s;
+      }
 
-/* ============ HERO ============ */
-.hero{padding:160px 0 90px;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-.hero-bg .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55}
-.hero-bg .g1{width:520px;height:520px;background:var(--coral);top:-160px;right:-120px;opacity:.40}
-.hero-bg .g2{width:440px;height:440px;background:var(--teal-deep);bottom:-180px;left:-120px;opacity:.40}
-.hero-bg .g3{width:300px;height:300px;background:var(--teal);top:40%;left:50%;opacity:.12}
-.hero-bg .grid{
-  position:absolute;inset:0;
-  background-image:linear-gradient(var(--line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--line-dark) 1px,transparent 1px);
-  background-size:60px 60px;
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000 0%,transparent 75%);
-  opacity:.5;
-}
-.hero-inner{position:relative;z-index:2;max-width:880px}
-.hero .badge{
-  display:inline-flex;align-items:center;gap:.6rem;
-  background:rgba(25,197,186,.10);border:1px solid rgba(25,197,186,.35);
-  color:var(--teal);font-family:"Space Mono";font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-  padding:.45rem 1rem;border-radius:100px;margin-bottom:1.8rem;
-}
-.hero .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:pulse 2s infinite}
-.presenter{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1.2rem}
-.presenter b{color:var(--teal);font-weight:700}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:clamp(2.6rem,6.5vw,5rem);font-weight:800;margin-bottom:1.4rem}
-.hero h1 .hl{color:var(--coral);position:relative;white-space:nowrap}
-.hero h1 .grad{
-  background:linear-gradient(100deg,var(--coral) 0%,var(--teal) 90%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-}
-.hero p.lead{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--muted-light);max-width:640px;margin-bottom:2.2rem}
-.hero p.lead strong{color:var(--text-light);font-weight:600}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+      /* ============ HERO ============ */
+      .hero {
+        padding: 160px 0 90px;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .hero-bg .glow {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        opacity: 0.55;
+      }
+      .hero-bg .g1 {
+        width: 520px;
+        height: 520px;
+        background: var(--coral);
+        top: -160px;
+        right: -120px;
+        opacity: 0.4;
+      }
+      .hero-bg .g2 {
+        width: 440px;
+        height: 440px;
+        background: var(--teal-deep);
+        bottom: -180px;
+        left: -120px;
+        opacity: 0.4;
+      }
+      .hero-bg .g3 {
+        width: 300px;
+        height: 300px;
+        background: var(--teal);
+        top: 40%;
+        left: 50%;
+        opacity: 0.12;
+      }
+      .hero-bg .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(var(--line-dark) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(
+          ellipse 80% 60% at 50% 30%,
+          #000 0%,
+          transparent 75%
+        );
+        opacity: 0.5;
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 880px;
+      }
+      .hero .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(25, 197, 186, 0.1);
+        border: 1px solid rgba(25, 197, 186, 0.35);
+        color: var(--teal);
+        font-family: "Space Mono";
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 0.45rem 1rem;
+        border-radius: 100px;
+        margin-bottom: 1.8rem;
+      }
+      .hero .badge .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--teal);
+        box-shadow: 0 0 12px var(--teal);
+        animation: pulse 2s infinite;
+      }
+      .presenter {
+        font-family: "Space Mono", monospace;
+        font-size: 0.74rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted-light);
+        margin-bottom: 1.2rem;
+      }
+      .presenter b {
+        color: var(--teal);
+        font-weight: 700;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+      .hero h1 {
+        font-size: clamp(2.6rem, 6.5vw, 5rem);
+        font-weight: 800;
+        margin-bottom: 1.4rem;
+      }
+      .hero h1 .hl {
+        color: var(--coral);
+        position: relative;
+        white-space: nowrap;
+      }
+      .hero h1 .grad {
+        background: linear-gradient(100deg, var(--coral) 0%, var(--teal) 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero p.lead {
+        font-size: clamp(1.05rem, 2vw, 1.28rem);
+        color: var(--muted-light);
+        max-width: 640px;
+        margin-bottom: 2.2rem;
+      }
+      .hero p.lead strong {
+        color: var(--text-light);
+        font-weight: 600;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
 
-/* data strip */
-.facts{
-  position:relative;z-index:2;margin-top:4rem;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-  background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--radius);overflow:hidden;
-}
-.fact{background:var(--plum);padding:1.5rem 1.4rem}
-.fact .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.9rem;color:var(--text-light);line-height:1}
-.fact .n .u{font-size:1rem;color:var(--coral);margin-left:.15rem}
-.fact .l{font-size:.82rem;color:var(--muted-light);margin-top:.4rem}
+      /* data strip */
+      .facts {
+        position: relative;
+        z-index: 2;
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line-dark);
+        border: 1px solid var(--line-dark);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+      .fact {
+        background: var(--plum);
+        padding: 1.5rem 1.4rem;
+      }
+      .fact .n {
+        font-family: "Bricolage Grotesque";
+        font-weight: 800;
+        font-size: 1.9rem;
+        color: var(--text-light);
+        line-height: 1;
+      }
+      .fact .n .u {
+        font-size: 1rem;
+        color: var(--coral);
+        margin-left: 0.15rem;
+      }
+      .fact .l {
+        font-size: 0.82rem;
+        color: var(--muted-light);
+        margin-top: 0.4rem;
+      }
 
-/* ============ SECTION SHELL ============ */
-.sec{padding:100px 0}
-.sec-light{background:var(--cream);color:var(--text-dark)}
-.sec-light .eyebrow{color:var(--coral-deep)}
-.sec-light .eyebrow::before{background:var(--coral-deep)}
-.sec-head{max-width:720px;margin-bottom:3.5rem}
-.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.sec-head h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:1.1rem 0 1rem}
-.sec-head p{font-size:1.08rem;color:var(--muted-light)}
-.sec-light .sec-head p{color:var(--muted-dark)}
-.sec-light .sec-head h2 .grad{
-  background:linear-gradient(100deg,var(--coral-deep),var(--navy));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-}
-.hero h1 .grad,.sec-head h2 .grad{display:inline}
+      /* ============ SECTION SHELL ============ */
+      .sec {
+        padding: 100px 0;
+      }
+      .sec-light {
+        background: var(--cream);
+        color: var(--text-dark);
+      }
+      .sec-light .eyebrow {
+        color: var(--coral-deep);
+      }
+      .sec-light .eyebrow::before {
+        background: var(--coral-deep);
+      }
+      .sec-head {
+        max-width: 720px;
+        margin-bottom: 3.5rem;
+      }
+      .sec-head.center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .sec-head h2 {
+        font-size: clamp(2rem, 4.4vw, 3.2rem);
+        margin: 1.1rem 0 1rem;
+      }
+      .sec-head p {
+        font-size: 1.08rem;
+        color: var(--muted-light);
+      }
+      .sec-light .sec-head p {
+        color: var(--muted-dark);
+      }
+      .sec-light .sec-head h2 .grad {
+        background: linear-gradient(100deg, var(--coral-deep), var(--navy));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero h1 .grad,
+      .sec-head h2 .grad {
+        display: inline;
+      }
 
-/* ============ "PARA VOCÊ" CARDS ============ */
-.desire-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
-.dcard{
-  background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);
-  padding:2rem;position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;
-}
-.dcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--coral);transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
-.dcard:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(27,19,38,.28);border-color:transparent}
-.dcard:hover::before{transform:scaleY(1)}
-.dcard .ic{
-  width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:1.3rem;
-  background:linear-gradient(135deg,rgba(255,106,61,.14),rgba(122,91,214,.14));color:var(--coral-deep);
-}
-.dcard .ic svg{width:26px;height:26px}
-.dcard h3{font-size:1.3rem;margin-bottom:.6rem;color:var(--text-dark)}
-.dcard p{color:var(--muted-dark);font-size:.97rem}
+      /* ============ VÍDEO DE APRESENTAÇÃO ============ */
+      .video-sec {
+        padding: 90px 0 130px;
+        position: relative;
+        overflow: hidden;
+      }
+      .video-sec .wave-divider {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        line-height: 0;
+        pointer-events: none;
+      }
+      .video-sec .wave-divider svg {
+        width: 100%;
+        height: 90px;
+        display: block;
+      }
+      .video-sec .wave-divider path {
+        fill: var(--cream);
+      }
+      .video-frame {
+        max-width: 560px;
+        margin: 0 auto;
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.55);
+        border: 1px solid var(--line-dark);
+      }
+      .video-frame .video-ratio {
+        position: relative;
+        padding: 75% 0 0 0;
+      }
+      .video-frame .video-ratio iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      @media (max-width: 720px) {
+        .video-sec {
+          padding: 60px 0 80px;
+        }
+        .video-sec .wave-divider svg {
+          height: 60px;
+        }
+        .video-frame {
+          max-width: 400px;
+          border-radius: 24px;
+        }
+      }
 
-/* ============ "CAPAZ DE FAZER" ============ */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.skill{
-  background:var(--plum);border:1px solid var(--line-dark);border-radius:var(--radius);padding:1.8rem;
-  transition:transform .35s var(--ease),background .35s,border-color .35s;
-}
-.skill:hover{transform:translateY(-5px);background:var(--plum-2);border-color:rgba(255,106,61,.4)}
-.skill .num{font-family:"Space Mono";font-size:.78rem;color:var(--coral);letter-spacing:.1em}
-.skill .ic{width:46px;height:46px;margin:1rem 0 1.1rem;color:var(--teal)}
-.skill .ic svg{width:46px;height:46px}
-.skill p{color:var(--text-light);font-size:1rem;line-height:1.5}
+      /* ============ "PARA VOCÊ" CARDS ============ */
+      .desire-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem;
+      }
+      .dcard {
+        background: #fff;
+        border: 1px solid var(--line-light);
+        border-radius: var(--radius);
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.4s var(--ease),
+          box-shadow 0.4s var(--ease),
+          border-color 0.4s;
+      }
+      .dcard::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--coral);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.4s var(--ease);
+      }
+      .dcard:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px -24px rgba(27, 19, 38, 0.28);
+        border-color: transparent;
+      }
+      .dcard:hover::before {
+        transform: scaleY(1);
+      }
+      .dcard .ic {
+        width: 54px;
+        height: 54px;
+        border-radius: 15px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 1.3rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 106, 61, 0.14),
+          rgba(122, 91, 214, 0.14)
+        );
+        color: var(--coral-deep);
+      }
+      .dcard .ic svg {
+        width: 26px;
+        height: 26px;
+      }
+      .dcard h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: var(--text-dark);
+      }
+      .dcard p {
+        color: var(--muted-dark);
+        font-size: 0.97rem;
+      }
 
-/* ============ TRILHA (3 pilares) ============ */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.pillar{
-  background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);padding:2.2rem;
-  position:relative;transition:transform .4s var(--ease),box-shadow .4s var(--ease);
-}
-.pillar:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(27,19,38,.25)}
-.pillar .tag{font-family:"Space Mono";font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)}
-.pillar .ic{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;margin:1.2rem 0 1.3rem;background:var(--cream-2);color:var(--coral-deep)}
-.pillar .ic svg{width:30px;height:30px}
-.pillar h3{font-size:1.35rem;color:var(--text-dark);margin-bottom:.7rem}
-.pillar p{color:var(--muted-dark);font-size:.97rem}
+      /* ============ "CAPAZ DE FAZER" ============ */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+      }
+      .skill {
+        background: var(--plum);
+        border: 1px solid var(--line-dark);
+        border-radius: var(--radius);
+        padding: 1.8rem;
+        transition:
+          transform 0.35s var(--ease),
+          background 0.35s,
+          border-color 0.35s;
+      }
+      .skill:hover {
+        transform: translateY(-5px);
+        background: var(--plum-2);
+        border-color: rgba(255, 106, 61, 0.4);
+      }
+      .skill .num {
+        font-family: "Space Mono";
+        font-size: 0.78rem;
+        color: var(--coral);
+        letter-spacing: 0.1em;
+      }
+      .skill .ic {
+        width: 46px;
+        height: 46px;
+        margin: 1rem 0 1.1rem;
+        color: var(--teal);
+      }
+      .skill .ic svg {
+        width: 46px;
+        height: 46px;
+      }
+      .skill p {
+        color: var(--text-light);
+        font-size: 1rem;
+        line-height: 1.5;
+      }
 
-/* ============ MÓDULOS (signature) ============ */
-.mod-tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.mod-tab{
-  font-family:"Instrument Sans";font-weight:600;font-size:.95rem;
-  padding:.75rem 1.4rem;border-radius:100px;border:1px solid var(--line-dark);
-  background:transparent;color:var(--muted-light);cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:.55rem;
-}
-.mod-tab .mt-ic{width:16px;height:16px}
-.mod-tab:hover{color:var(--text-light);border-color:var(--coral)}
-.mod-tab.active{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 8px 24px -10px rgba(255,106,61,.7)}
+      /* ============ TRILHA (3 pilares) ============ */
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem;
+      }
+      .pillar {
+        background: #fff;
+        border: 1px solid var(--line-light);
+        border-radius: var(--radius);
+        padding: 2.2rem;
+        position: relative;
+        transition:
+          transform 0.4s var(--ease),
+          box-shadow 0.4s var(--ease);
+      }
+      .pillar:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px -24px rgba(27, 19, 38, 0.25);
+      }
+      .pillar .tag {
+        font-family: "Space Mono";
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+      .pillar .ic {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        margin: 1.2rem 0 1.3rem;
+        background: var(--cream-2);
+        color: var(--coral-deep);
+      }
+      .pillar .ic svg {
+        width: 30px;
+        height: 30px;
+      }
+      .pillar h3 {
+        font-size: 1.35rem;
+        color: var(--text-dark);
+        margin-bottom: 0.7rem;
+      }
+      .pillar p {
+        color: var(--muted-dark);
+        font-size: 0.97rem;
+      }
 
-.mod-panel{display:none}
-.mod-panel.active{display:block;animation:fade .5s var(--ease)}
-@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+      /* ============ MÓDULOS (signature) ============ */
+      .mod-tabs {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+      }
+      .mod-tab {
+        font-family: "Instrument Sans";
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.75rem 1.4rem;
+        border-radius: 100px;
+        border: 1px solid var(--line-dark);
+        background: transparent;
+        color: var(--muted-light);
+        cursor: pointer;
+        transition: 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+      .mod-tab .mt-ic {
+        width: 16px;
+        height: 16px;
+      }
+      .mod-tab:hover {
+        color: var(--text-light);
+        border-color: var(--coral);
+      }
+      .mod-tab.active {
+        background: var(--coral);
+        border-color: var(--coral);
+        color: #fff;
+        box-shadow: 0 8px 24px -10px rgba(255, 106, 61, 0.7);
+      }
 
-/* roadmap (presencial) */
-.roadmap{position:relative;padding-left:0}
-.step{
-  border:1px solid var(--line-dark);border-radius:16px;margin-bottom:1rem;overflow:hidden;
-  background:var(--plum);transition:border-color .3s,background .3s;
-}
-.step:hover{border-color:rgba(255,106,61,.4)}
-.step.open{background:var(--plum-2);border-color:rgba(255,106,61,.5)}
-.step-head{display:flex;align-items:center;gap:1.2rem;padding:1.3rem 1.5rem;cursor:pointer;user-select:none}
-.step-no{
-  width:48px;height:48px;border-radius:13px;flex-shrink:0;display:grid;place-items:center;
-  font-family:"Bricolage Grotesque";font-weight:800;font-size:1.2rem;
-  background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;
-}
-.step-title{flex:1}
-.step-title .et{font-family:"Space Mono";font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
-.step-title h4{font-size:1.18rem;margin-top:.2rem;color:var(--text-light)}
-.step-chev{width:22px;height:22px;color:var(--muted-light);transition:transform .35s var(--ease);flex-shrink:0}
-.step.open .step-chev{transform:rotate(180deg);color:var(--coral)}
-.step-body{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
-.step-body-inner{padding:0 1.5rem 1.5rem 5.7rem}
-.step-body ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.step-body li{display:flex;gap:.7rem;align-items:flex-start;color:var(--muted-light);font-size:.97rem}
-.step-body li svg{width:18px;height:18px;color:var(--coral);flex-shrink:0;margin-top:3px}
+      .mod-panel {
+        display: none;
+      }
+      .mod-panel.active {
+        display: block;
+        animation: fade 0.5s var(--ease);
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
 
-/* simple list panels (EAD / terapêutico) */
-.list-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
-.litem{
-  display:flex;gap:.9rem;align-items:flex-start;padding:1.1rem 1.3rem;
-  background:var(--plum);border:1px solid var(--line-dark);border-radius:14px;transition:.3s;
-}
-.litem:hover{border-color:rgba(25,197,186,.4);background:var(--plum-2)}
-.litem .chk{width:24px;height:24px;border-radius:7px;background:rgba(25,197,186,.14);display:grid;place-items:center;flex-shrink:0;color:var(--teal)}
-.litem .chk svg{width:14px;height:14px}
-.litem span{font-size:.96rem;color:var(--text-light)}
-.litem.big{grid-column:span 2}
-.panel-note{font-size:.9rem;color:var(--muted-light);margin-bottom:1.6rem;font-style:italic}
+      /* roadmap (presencial) */
+      .roadmap {
+        position: relative;
+        padding-left: 0;
+      }
+      .step {
+        border: 1px solid var(--line-dark);
+        border-radius: 16px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        background: var(--plum);
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .step:hover {
+        border-color: rgba(255, 106, 61, 0.4);
+      }
+      .step.open {
+        background: var(--plum-2);
+        border-color: rgba(255, 106, 61, 0.5);
+      }
+      .step-head {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1.3rem 1.5rem;
+        cursor: pointer;
+        user-select: none;
+      }
+      .step-no {
+        width: 48px;
+        height: 48px;
+        border-radius: 13px;
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        font-family: "Bricolage Grotesque";
+        font-weight: 800;
+        font-size: 1.2rem;
+        background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+        color: #fff;
+      }
+      .step-title {
+        flex: 1;
+      }
+      .step-title .et {
+        font-family: "Space Mono";
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--teal);
+      }
+      .step-title h4 {
+        font-size: 1.18rem;
+        margin-top: 0.2rem;
+        color: var(--text-light);
+      }
+      .step-chev {
+        width: 22px;
+        height: 22px;
+        color: var(--muted-light);
+        transition: transform 0.35s var(--ease);
+        flex-shrink: 0;
+      }
+      .step.open .step-chev {
+        transform: rotate(180deg);
+        color: var(--coral);
+      }
+      .step-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.45s var(--ease);
+      }
+      .step-body-inner {
+        padding: 0 1.5rem 1.5rem 5.7rem;
+      }
+      .step-body ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .step-body li {
+        display: flex;
+        gap: 0.7rem;
+        align-items: flex-start;
+        color: var(--muted-light);
+        font-size: 0.97rem;
+      }
+      .step-body li svg {
+        width: 18px;
+        height: 18px;
+        color: var(--coral);
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
 
-/* ============ AGENDA / TURMAS ============ */
-.agenda-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.turma-switch{display:inline-flex;background:#fff;border:1px solid var(--line-light);border-radius:100px;padding:5px;margin-bottom:1.8rem}
-.turma-switch button{
-  font-family:"Instrument Sans";font-weight:600;font-size:.92rem;border:none;background:transparent;color:var(--muted-dark);
-  padding:.6rem 1.3rem;border-radius:100px;cursor:pointer;transition:.3s;
-}
-.turma-switch button.active{background:var(--text-dark);color:#fff}
-.agenda h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:.5rem}
-.agenda .hours{font-family:"Space Mono";color:var(--coral-deep);font-size:.95rem;margin-bottom:1.6rem;letter-spacing:.02em}
-.info-rows{display:flex;flex-direction:column;gap:.2rem}
-.irow{display:flex;align-items:center;gap:1.1rem;padding:1.05rem 0;border-bottom:1px solid var(--line-light)}
-.irow:last-child{border-bottom:none}
-.irow .ic{width:42px;height:42px;border-radius:12px;background:var(--cream-2);display:grid;place-items:center;color:var(--coral-deep);flex-shrink:0}
-.irow .ic svg{width:20px;height:20px}
-.irow .k{font-size:.78rem;color:var(--muted-dark);text-transform:uppercase;letter-spacing:.08em;font-family:"Space Mono"}
-.irow .v{font-size:1.05rem;font-weight:600;color:var(--text-dark)}
-.irow .v .time{color:var(--coral-deep)}
+      /* simple list panels (EAD / terapêutico) */
+      .list-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.9rem;
+      }
+      .litem {
+        display: flex;
+        gap: 0.9rem;
+        align-items: flex-start;
+        padding: 1.1rem 1.3rem;
+        background: var(--plum);
+        border: 1px solid var(--line-dark);
+        border-radius: 14px;
+        transition: 0.3s;
+      }
+      .litem:hover {
+        border-color: rgba(25, 197, 186, 0.4);
+        background: var(--plum-2);
+      }
+      .litem .chk {
+        width: 24px;
+        height: 24px;
+        border-radius: 7px;
+        background: rgba(25, 197, 186, 0.14);
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        color: var(--teal);
+      }
+      .litem .chk svg {
+        width: 14px;
+        height: 14px;
+      }
+      .litem span {
+        font-size: 0.96rem;
+        color: var(--text-light);
+      }
+      .litem.big {
+        grid-column: span 2;
+      }
+      .panel-note {
+        font-size: 0.9rem;
+        color: var(--muted-light);
+        margin-bottom: 1.6rem;
+        font-style: italic;
+      }
 
-/* hours breakdown card */
-.hours-card{
-  background:linear-gradient(160deg,var(--plum) 0%,var(--ink) 100%);
-  border:1px solid var(--line-dark);border-radius:var(--radius);padding:2.5rem;position:relative;overflow:hidden;
-}
-.hours-card::after{content:"";position:absolute;width:240px;height:240px;background:var(--coral);filter:blur(80px);opacity:.25;top:-80px;right:-60px}
-.hours-card .big{position:relative;font-family:"Bricolage Grotesque";font-weight:800;font-size:4.5rem;line-height:.9;color:#fff}
-.hours-card .big span{font-size:1.4rem;color:var(--coral)}
-.hours-card .sub{position:relative;color:var(--muted-light);margin:.6rem 0 2rem}
-.hbreak{position:relative;display:flex;flex-direction:column;gap:1rem}
-.hbar{position:relative}
-.hbar .top{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.45rem}
-.hbar .top b{font-weight:600;color:var(--text-light)}
-.hbar .top span{color:var(--muted-light);font-family:"Space Mono";font-size:.82rem}
-.hbar .track{height:8px;border-radius:100px;background:var(--line-dark);overflow:hidden}
-.hbar .fill{height:100%;border-radius:100px;width:0;transition:width 1.2s var(--ease)}
-.hbar.b1 .fill{background:linear-gradient(90deg,var(--coral),var(--coral-deep))}
-.hbar.b2 .fill{background:linear-gradient(90deg,var(--teal),var(--teal-deep))}
-.hbar.b3 .fill{background:linear-gradient(90deg,var(--navy),#1A6AA8)}
+      /* ============ AGENDA / TURMAS ============ */
+      .agenda-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .turma-switch {
+        display: inline-flex;
+        background: #fff;
+        border: 1px solid var(--line-light);
+        border-radius: 100px;
+        padding: 5px;
+        margin-bottom: 1.8rem;
+      }
+      .turma-switch button {
+        font-family: "Instrument Sans";
+        font-weight: 600;
+        font-size: 0.92rem;
+        border: none;
+        background: transparent;
+        color: var(--muted-dark);
+        padding: 0.6rem 1.3rem;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .turma-switch button.active {
+        background: var(--text-dark);
+        color: #fff;
+      }
+      .agenda h2 {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        margin-bottom: 0.5rem;
+      }
+      .agenda .hours {
+        font-family: "Space Mono";
+        color: var(--coral-deep);
+        font-size: 0.95rem;
+        margin-bottom: 1.6rem;
+        letter-spacing: 0.02em;
+      }
+      .info-rows {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .irow {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+        padding: 1.05rem 0;
+        border-bottom: 1px solid var(--line-light);
+      }
+      .irow:last-child {
+        border-bottom: none;
+      }
+      .irow .ic {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: var(--cream-2);
+        display: grid;
+        place-items: center;
+        color: var(--coral-deep);
+        flex-shrink: 0;
+      }
+      .irow .ic svg {
+        width: 20px;
+        height: 20px;
+      }
+      .irow .k {
+        font-size: 0.78rem;
+        color: var(--muted-dark);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-family: "Space Mono";
+      }
+      .irow .v {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+      .irow .v .time {
+        color: var(--coral-deep);
+      }
 
-/* ============ METODOLOGIA ============ */
-.method{background:var(--plum);overflow:hidden}
-.method .glow{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(110px);opacity:.16;background:var(--teal-deep);bottom:-200px;right:-100px;pointer-events:none}
-.method-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:3.5rem;align-items:center}
-.method h2{font-size:clamp(2rem,4vw,3rem);margin:1rem 0 1.4rem}
-.method h2 .grad{background:linear-gradient(100deg,var(--coral),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline}
-.method p{color:var(--muted-light);font-size:1.05rem;margin-bottom:1.1rem}
-.method-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
-.mtag{font-size:.85rem;padding:.5rem 1rem;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid var(--line-dark);color:var(--text-light)}
-.mtag b{color:var(--coral)}
-.method-visual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem;align-items:stretch}
-.mv{background:var(--ink);border:1px solid var(--line-dark);border-radius:16px;padding:1.65rem 1.7rem;min-height:178px;display:flex;flex-direction:column;justify-content:center;transition:.35s}
-.mv:hover{transform:translateY(-5px);border-color:rgba(255,106,61,.4)}
-.mv .ic{width:44px;height:44px;color:var(--coral);margin-bottom:.9rem}
-.mv .ic svg{width:44px;height:44px}
-.mv h4{font-size:1.05rem;color:var(--text-light);margin-bottom:.3rem}
-.mv p{font-size:.88rem;color:var(--muted-light);margin:0}
+      /* hours breakdown card */
+      .hours-card {
+        background: linear-gradient(160deg, var(--plum) 0%, var(--ink) 100%);
+        border: 1px solid var(--line-dark);
+        border-radius: var(--radius);
+        padding: 2.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hours-card::after {
+        content: "";
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        background: var(--coral);
+        filter: blur(80px);
+        opacity: 0.25;
+        top: -80px;
+        right: -60px;
+      }
+      .hours-card .big {
+        position: relative;
+        font-family: "Bricolage Grotesque";
+        font-weight: 800;
+        font-size: 4.5rem;
+        line-height: 0.9;
+        color: #fff;
+      }
+      .hours-card .big span {
+        font-size: 1.4rem;
+        color: var(--coral);
+      }
+      .hours-card .sub {
+        position: relative;
+        color: var(--muted-light);
+        margin: 0.6rem 0 2rem;
+      }
+      .hbreak {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hbar {
+        position: relative;
+      }
+      .hbar .top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        margin-bottom: 0.45rem;
+      }
+      .hbar .top b {
+        font-weight: 600;
+        color: var(--text-light);
+      }
+      .hbar .top span {
+        color: var(--muted-light);
+        font-family: "Space Mono";
+        font-size: 0.82rem;
+      }
+      .hbar .track {
+        height: 8px;
+        border-radius: 100px;
+        background: var(--line-dark);
+        overflow: hidden;
+      }
+      .hbar .fill {
+        height: 100%;
+        border-radius: 100px;
+        width: 0;
+        transition: width 1.2s var(--ease);
+      }
+      .hbar.b1 .fill {
+        background: linear-gradient(90deg, var(--coral), var(--coral-deep));
+      }
+      .hbar.b2 .fill {
+        background: linear-gradient(90deg, var(--teal), var(--teal-deep));
+      }
+      .hbar.b3 .fill {
+        background: linear-gradient(90deg, var(--navy), #1a6aa8);
+      }
 
-/* ============ INSTRUTORAS ============ */
-.teach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem}
-.teach{
-  background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);padding:2.2rem;
-  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
-}
-.teach:hover{transform:translateY(-6px);box-shadow:0 26px 54px -26px rgba(27,19,38,.3)}
-.teach-top{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.4rem}
-.teach .av{
-  width:74px;height:74px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
-  font-family:"Bricolage Grotesque";font-weight:800;font-size:1.7rem;color:#fff;
-}
-.teach.t1 .av{background:linear-gradient(135deg,var(--coral),var(--coral-deep))}
-.teach.t2 .av{background:linear-gradient(135deg,var(--navy),#1A6AA8)}
-.teach h3{font-size:1.3rem;color:var(--text-dark)}
-.teach .role{font-family:"Space Mono";font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-deep);margin-top:.25rem}
-.teach p{color:var(--muted-dark);font-size:.95rem}
+      /* ============ METODOLOGIA ============ */
+      .method {
+        background: var(--plum);
+        overflow: hidden;
+      }
+      .method .glow {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        filter: blur(110px);
+        opacity: 0.16;
+        background: var(--teal-deep);
+        bottom: -200px;
+        right: -100px;
+        pointer-events: none;
+      }
+      .method-inner {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 3.5rem;
+        align-items: center;
+      }
+      .method h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin: 1rem 0 1.4rem;
+      }
+      .method h2 .grad {
+        background: linear-gradient(100deg, var(--coral), var(--teal));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline;
+      }
+      .method p {
+        color: var(--muted-light);
+        font-size: 1.05rem;
+        margin-bottom: 1.1rem;
+      }
+      .method-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 1.8rem;
+      }
+      .mtag {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        border-radius: 100px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--line-dark);
+        color: var(--text-light);
+      }
+      .mtag b {
+        color: var(--coral);
+      }
+      .method-visual {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.35rem;
+        align-items: stretch;
+      }
+      .mv {
+        background: var(--ink);
+        border: 1px solid var(--line-dark);
+        border-radius: 16px;
+        padding: 1.65rem 1.7rem;
+        min-height: 178px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.35s;
+      }
+      .mv:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255, 106, 61, 0.4);
+      }
+      .mv .ic {
+        width: 44px;
+        height: 44px;
+        color: var(--coral);
+        margin-bottom: 0.9rem;
+      }
+      .mv .ic svg {
+        width: 44px;
+        height: 44px;
+      }
+      .mv h4 {
+        font-size: 1.05rem;
+        color: var(--text-light);
+        margin-bottom: 0.3rem;
+      }
+      .mv p {
+        font-size: 0.88rem;
+        color: var(--muted-light);
+        margin: 0;
+      }
 
-/* ============ FAQ ============ */
-.faq-item{border-bottom:1px solid var(--line-dark)}
-.faq-q{
-  width:100%;text-align:left;background:none;border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
-  padding:1.4rem 0;font-family:"Bricolage Grotesque";font-weight:600;font-size:1.12rem;color:var(--text-light);
-}
-.faq-q .pm{width:30px;height:30px;border-radius:9px;border:1px solid var(--line-dark);flex-shrink:0;display:grid;place-items:center;transition:.3s;position:relative}
-.faq-q .pm::before,.faq-q .pm::after{content:"";position:absolute;background:var(--coral);transition:.3s}
-.faq-q .pm::before{width:12px;height:2px}
-.faq-q .pm::after{width:2px;height:12px}
-.faq-item.open .faq-q .pm{background:var(--coral);border-color:var(--coral)}
-.faq-item.open .faq-q .pm::before,.faq-item.open .faq-q .pm::after{background:#fff}
-.faq-item.open .faq-q .pm::after{transform:scaleY(0)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
-.faq-a p{padding:0 0 1.5rem;color:var(--muted-light);font-size:1rem;max-width:760px}
-.faq-a p a{color:var(--coral);font-weight:600}
+      /* ============ INSTRUTORAS ============ */
+      .teach-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+      }
+      .teach {
+        background: #fff;
+        border: 1px solid var(--line-light);
+        border-radius: var(--radius);
+        padding: 2.2rem;
+        transition:
+          transform 0.4s var(--ease),
+          box-shadow 0.4s var(--ease);
+      }
+      .teach:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 26px 54px -26px rgba(27, 19, 38, 0.3);
+      }
+      .teach-top {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 1.4rem;
+      }
+      .teach .av {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        font-family: "Bricolage Grotesque";
+        font-weight: 800;
+        font-size: 1.7rem;
+        color: #fff;
+        overflow: hidden;
+      }
+      .teach .av img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .teach.t1 .av {
+        background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+      }
+      .teach.t2 .av {
+        background: linear-gradient(135deg, var(--navy), #1a6aa8);
+      }
+      .teach h3 {
+        font-size: 1.3rem;
+        color: var(--text-dark);
+      }
+      .teach .role {
+        font-family: "Space Mono";
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--coral-deep);
+        margin-top: 0.25rem;
+      }
+      .teach p {
+        color: var(--muted-dark);
+        font-size: 0.95rem;
+      }
 
-/* ============ CTA FINAL ============ */
-.final{padding:0 24px 100px}
-.final-card{
-  max-width:var(--maxw);margin:0 auto;border-radius:32px;overflow:hidden;position:relative;
-  background:linear-gradient(135deg,var(--coral) 0%,var(--coral-deep) 55%,#B83D12 100%);
-  padding:5rem 3rem;text-align:center;
-}
-.final-card .mesh{position:absolute;inset:0;opacity:.25;
-  background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.5),transparent 40%),radial-gradient(circle at 80% 70%,var(--navy),transparent 45%);
-}
-.final-card .inner{position:relative;z-index:2}
-.final-card h2{font-size:clamp(2.2rem,5vw,3.6rem);color:#fff;margin-bottom:1rem;font-weight:800}
-.final-card p{color:rgba(255,255,255,.92);font-size:1.15rem;max-width:560px;margin:0 auto 2.4rem}
-.final-card .btn{background:#fff;color:var(--coral-deep);font-size:1.08rem;padding:1.15rem 2.4rem}
-.final-card .btn:hover{transform:translateY(-3px);box-shadow:0 20px 50px -12px rgba(0,0,0,.4)}
-.final-card .micro{margin-top:1.4rem;font-size:.88rem;color:rgba(255,255,255,.8);font-family:"Space Mono"}
+      /* ============ FAQ ============ */
+      .faq-item {
+        border-bottom: 1px solid var(--line-dark);
+      }
+      .faq-q {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 1.4rem 0;
+        font-family: "Bricolage Grotesque";
+        font-weight: 600;
+        font-size: 1.12rem;
+        color: var(--text-light);
+      }
+      .faq-q .pm {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        border: 1px solid var(--line-dark);
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        transition: 0.3s;
+        position: relative;
+      }
+      .faq-q .pm::before,
+      .faq-q .pm::after {
+        content: "";
+        position: absolute;
+        background: var(--coral);
+        transition: 0.3s;
+      }
+      .faq-q .pm::before {
+        width: 12px;
+        height: 2px;
+      }
+      .faq-q .pm::after {
+        width: 2px;
+        height: 12px;
+      }
+      .faq-item.open .faq-q .pm {
+        background: var(--coral);
+        border-color: var(--coral);
+      }
+      .faq-item.open .faq-q .pm::before,
+      .faq-item.open .faq-q .pm::after {
+        background: #fff;
+      }
+      .faq-item.open .faq-q .pm::after {
+        transform: scaleY(0);
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s var(--ease);
+      }
+      .faq-a p {
+        padding: 0 0 1.5rem;
+        color: var(--muted-light);
+        font-size: 1rem;
+        max-width: 760px;
+      }
+      .faq-a p a {
+        color: var(--coral);
+        font-weight: 600;
+      }
 
-/* ============ FOOTER ============ */
-footer{padding:60px 0 40px;border-top:1px solid var(--line-dark)}
-.foot{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
-.foot .logo{margin-bottom:1rem}
-.foot p{color:var(--muted-light);font-size:.92rem;max-width:340px}
-.foot-meta{text-align:right}
-.foot-meta a{color:var(--muted-light);font-size:.92rem;display:block;margin-bottom:.5rem;transition:.25s}
-.foot-meta a:hover{color:var(--coral)}
-.copyright{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line-dark);font-size:.82rem;color:var(--muted-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+      /* ============ CTA FINAL ============ */
+      .final {
+        padding: 0 24px 100px;
+      }
+      .final-card {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        border-radius: 32px;
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          var(--coral) 0%,
+          var(--coral-deep) 55%,
+          #b83d12 100%
+        );
+        padding: 5rem 3rem;
+        text-align: center;
+      }
+      .final-card .mesh {
+        position: absolute;
+        inset: 0;
+        opacity: 0.25;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.5),
+            transparent 40%
+          ),
+          radial-gradient(circle at 80% 70%, var(--navy), transparent 45%);
+      }
+      .final-card .inner {
+        position: relative;
+        z-index: 2;
+      }
+      .final-card h2 {
+        font-size: clamp(2.2rem, 5vw, 3.6rem);
+        color: #fff;
+        margin-bottom: 1rem;
+        font-weight: 800;
+      }
+      .final-card p {
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 1.15rem;
+        max-width: 560px;
+        margin: 0 auto 2.4rem;
+      }
+      .final-card .btn {
+        background: #fff;
+        color: var(--coral-deep);
+        font-size: 1.08rem;
+        padding: 1.15rem 2.4rem;
+      }
+      .final-card .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.4);
+      }
+      .final-card .micro {
+        margin-top: 1.4rem;
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Space Mono";
+      }
 
-/* ============ REVEAL ANIM ============ */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.40s}
+      /* ============ FOOTER ============ */
+      footer {
+        padding: 60px 0 40px;
+        border-top: 1px solid var(--line-dark);
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .foot .logo {
+        margin-bottom: 1rem;
+      }
+      .foot p {
+        color: var(--muted-light);
+        font-size: 0.92rem;
+        max-width: 340px;
+      }
+      .foot-meta {
+        text-align: right;
+      }
+      .foot-meta a {
+        color: var(--muted-light);
+        font-size: 0.92rem;
+        display: block;
+        margin-bottom: 0.5rem;
+        transition: 0.25s;
+      }
+      .foot-meta a:hover {
+        color: var(--coral);
+      }
+      .copyright {
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line-dark);
+        font-size: 0.82rem;
+        color: var(--muted-light);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
 
-/* ============ RESPONSIVE ============ */
-@media(max-width:980px){
-  .agenda-wrap,.method-inner{grid-template-columns:1fr;gap:2.2rem}
-  .method-visual{max-width:480px}
-}
-@media(max-width:760px){
-  .nav-links{
-    position:fixed;top:62px;left:0;right:0;background:rgba(22,16,31,.97);backdrop-filter:blur(20px);
-    flex-direction:column;align-items:stretch;gap:0;padding:1rem 24px 2rem;border-bottom:1px solid var(--line-dark);
-    transform:translateY(-130%);transition:transform .4s var(--ease);
-  }
-  .nav-links.open{transform:translateY(0)}
-  .nav-links a.lnk{padding:.9rem 0;border-bottom:1px solid var(--line-dark)}
-  .nav-links .btn{margin-top:1rem;justify-content:center}
-  .menu-toggle{display:block}
-  .facts{grid-template-columns:repeat(2,1fr)}
-  .desire-grid,.skills-grid,.pillars,.teach-grid,.list-grid,.method-visual{grid-template-columns:1fr}
-  .litem.big{grid-column:span 1}
-  .step-body-inner{padding-left:1.5rem}
-  .hero{padding:130px 0 70px}
-  .sec{padding:70px 0}
-  .final-card{padding:3.5rem 1.6rem}
-  .foot-meta{text-align:left}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
-}
-:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px}
-</style>
-</head>
-<body>
+      /* ============ REVEAL ANIM ============ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s var(--ease),
+          transform 0.7s var(--ease);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal.d1 {
+        transition-delay: 0.08s;
+      }
+      .reveal.d2 {
+        transition-delay: 0.16s;
+      }
+      .reveal.d3 {
+        transition-delay: 0.24s;
+      }
+      .reveal.d4 {
+        transition-delay: 0.32s;
+      }
+      .reveal.d5 {
+        transition-delay: 0.4s;
+      }
 
-<!-- ============ NAV ============ -->
-<header id="header">
-  <div class="wrap nav">
-    <a href="#topo" class="brand-lockup" aria-label="TEC360 — Empreenda Já">
-      <span class="tec-chip"><span class="tec-logo" role="img" aria-label="TEC360"></span></span>
-      <span class="brand-div"></span>
-      <span class="brand-course"><span class="k">Curso</span><span class="v">Empreenda <b>Já</b></span></span>
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a class="lnk" href="#beneficios">Para você</a>
-      <a class="lnk" href="#modulos">Módulos</a>
-      <a class="lnk" href="#agenda">Agenda</a>
-      <a class="lnk" href="#instrutoras">Instrutoras</a>
-      <a class="lnk" href="#faq">Dúvidas</a>
-      <a class="btn btn-primary" href="#inscricao">Inscreva-se</a>
-    </nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="topo">
-  <div class="hero-bg">
-    <div class="grid"></div>
-    <div class="glow g1"></div>
-    <div class="glow g2"></div>
-    <div class="glow g3"></div>
-  </div>
-  <div class="wrap hero-inner">
-    <p class="presenter reveal in">Uma realização <b>TEC360</b> · Escola de tecnologia e negócios</p>
-    <span class="badge"><span class="dot"></span>Turmas 1 e 2 · Agosto · Colatina/ES</span>
-    <h1 class="reveal in">
-      Tire sua ideia do papel e abra o seu
-      <span class="grad">primeiro negócio</span>.
-    </h1>
-    <p class="lead reveal in d1">
-      Um curso de empreendedorismo <strong>prático, humano e tecnológico</strong> para transformar talentos em renda — com inteligência artificial, ferramentas ágeis, apoio emocional e o caminho completo até a sua formalização como <strong>MEI</strong>.
-    </p>
-    <div class="hero-cta reveal in d2">
-      <a href="#inscricao" class="btn btn-primary">
-        Quero me inscrever
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#modulos" class="btn btn-ghost">Ver os módulos</a>
-    </div>
-
-    <div class="facts reveal in d3">
-      <div class="fact"><div class="n">24<span class="u">h</span></div><div class="l">Carga horária total</div></div>
-      <div class="fact"><div class="n">05</div><div class="l">Encontros presenciais</div></div>
-      <div class="fact"><div class="n">3<span class="u">×</span></div><div class="l">Presencial · EAD · Online</div></div>
-      <div class="fact"><div class="n">MEI</div><div class="l">Formalização garantida</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PARA VOCÊ ============ -->
-<section class="sec sec-light" id="beneficios">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Este curso é para você</span>
-      <h2>Feito para quem quer <span class="grad">começar de verdade</span></h2>
-      <p>Sem enrolação e com o pé no chão. Se você se identifica com algum destes objetivos, este curso foi desenhado para você.</p>
-    </div>
-    <div class="desire-grid">
-      <div class="dcard reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Tirar a ideia do papel</h3>
-        <p>Explore um caminho envolvente, simples e pé no chão para transformar seus talentos em uma fonte de renda real.</p>
-      </div>
-      <div class="dcard reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 11.1A8.4 8.4 0 1 1 7.5 4.4M21 3l-9 9-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Empreender com confiança</h3>
-        <p>Aprenda a gerir o estresse, romper ciclos que te travam e fortalecer suas escolhas para seguir firme na jornada.</p>
-      </div>
-      <div class="dcard reveal d2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/></svg></div>
-        <h3>Dominar IA e ferramentas digitais</h3>
-        <p>Use ChatGPT, inteligência artificial e metodologias ágeis para criar e impulsionar as estratégias do seu negócio.</p>
-      </div>
-      <div class="dcard reveal d3">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-        <h3>Conquistar dignidade e independência</h3>
-        <p>Transforme uma atividade informal em um negócio legalizado e estruturado, com o passo a passo completo para virar MEI.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CAPAZ DE FAZER ============ -->
-<section class="sec" id="resultados">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow center">Resultados</span>
-      <h2>O que você será capaz de fazer</h2>
-      <p style="margin:0 auto">Ao final do curso, você sai com um negócio planejado, ferramentas dominadas e o caminho da formalização trilhado.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill reveal">
-        <div class="num">/ 01</div>
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><rect x="8" y="10" width="32" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 18h32M14 26h10M14 31h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <p>Planejar seu próprio negócio de forma simples, transformando ideias comuns em um empreendimento real e lucrativo.</p>
-      </div>
-      <div class="skill reveal d1">
-        <div class="num">/ 02</div>
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/><rect x="9" y="26" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="26" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/></svg></div>
-        <p>Usar ferramentas ágeis de mercado como Canvas, 5W2H e o Mini Design Sprint para validar suas ideias.</p>
-      </div>
-      <div class="skill reveal d2">
-        <div class="num">/ 03</div>
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 8a8 8 0 0 0-5 14.2c.8.7 1.3 1.7 1.3 2.8V28h7.4v-3c0-1.1.5-2.1 1.3-2.8A8 8 0 0 0 24 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 33h8M21 38h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <p>Aplicar inteligência artificial e ChatGPT para criar estratégias, conteúdos e soluções para o seu negócio.</p>
-      </div>
-      <div class="skill reveal">
-        <div class="num">/ 04</div>
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 8v32M16 14h12a4 4 0 0 1 0 8H20a4 4 0 0 0 0 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p>Gerenciar com clareza suas finanças pessoais e empresariais, com precificação simples e justa.</p>
-      </div>
-      <div class="skill reveal d1">
-        <div class="num">/ 05</div>
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M14 22l8-12 8 12M12 22h24v14a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V22Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 38v-7h8v7" stroke="currentColor" stroke-width="2"/></svg></div>
-        <p>Formalizar o negócio passo a passo como MEI, garantindo direitos sociais, dignidade e acesso a crédito.</p>
-      </div>
-      <div class="skill reveal d2">
-        <div class="num">/ 06</div>
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 42s14-8 14-19a8 8 0 0 0-14-5 8 8 0 0 0-14 5c0 11 14 19 14 19Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <p>Desenvolver autoconfiança, inteligência emocional e resiliência para superar os desafios do dia a dia.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TRILHA / 3 PILARES ============ -->
-<section class="sec sec-light" id="trilha">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Trilha de aprendizagem</span>
-      <h2>Três frentes que <span class="grad">trabalham juntas</span></h2>
-      <p>Uma metodologia híbrida que combina teoria e prática desde a primeira aula, com apoio emocional ao longo de toda a jornada.</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar reveal">
-        <span class="tag">Presencial · EAD · Online</span>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M2 6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Z" stroke="currentColor" stroke-width="1.8"/><path d="m17 9 4-2v8l-4-2M7 20h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Aulas práticas</h3>
-        <p>Encontros presenciais, videoaulas EAD e sessões online se combinam numa abordagem dinâmica baseada em projetos (PBL).</p>
-      </div>
-      <div class="pillar reveal d1">
-        <span class="tag">Material de apoio</span>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H4V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H20V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-        <h3>Materiais completos</h3>
-        <p>Livro impresso, materiais de apoio visuais e um projeto prático que aprofunda cada tópico discutido em aula.</p>
-      </div>
-      <div class="pillar reveal d2">
-        <span class="tag">Suporte emocional</span>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.7-7 10-7 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 11.5h2l1-2 1.5 3 1-1.5h1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Sessões terapêuticas online</h3>
-        <p>Fortalecem e empoderam emocionalmente cada participante para desenvolver o negócio com confiança e evitar a desistência.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ MÓDULOS (signature) ============ -->
-<section class="sec" id="modulos">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Conteúdo programático</span>
-      <h2>Conheça os módulos da formação</h2>
-      <p>Da descoberta do seu potencial até a formalização. Explore cada frente do curso.</p>
-    </div>
-
-    <div class="mod-tabs reveal d1">
-      <button class="mod-tab active" data-panel="presencial">
-        <svg class="mt-ic" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-        Presencial
-      </button>
-      <button class="mod-tab" data-panel="ead">
-        <svg class="mt-ic" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        EAD
-      </button>
-      <button class="mod-tab" data-panel="terapeutico">
-        <svg class="mt-ic" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.7-7 10-7 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-        Terapêutico
-      </button>
-    </div>
-
-    <!-- PRESENCIAL: roadmap -->
-    <div class="mod-panel active" id="panel-presencial">
-      <div class="roadmap">
-        <div class="step open">
-          <div class="step-head">
-            <div class="step-no">I</div>
-            <div class="step-title"><div class="et">Módulo I</div><h4>Descobrindo Meu Potencial Empreendedor</h4></div>
-            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="step-body"><div class="step-body-inner"><ul>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Dinâmica "Do que sou capaz"</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mapa de Talentos</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Discussão sobre tipos de empreendedorismo</li>
-          </ul></div></div>
-        </div>
-
-        <div class="step">
-          <div class="step-head">
-            <div class="step-no">II</div>
-            <div class="step-title"><div class="et">Módulo II</div><h4>Começando com o que eu tenho</h4></div>
-            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="step-body"><div class="step-body-inner"><ul>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Ideia de Negócio em 1 folha</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Criando com IA — Introdução ao ChatGPT</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Matriz: O que sei fazer × O que posso vender</li>
-          </ul></div></div>
-        </div>
-
-        <div class="step">
-          <div class="step-head">
-            <div class="step-no">III</div>
-            <div class="step-title"><div class="et">Módulo III</div><h4>Planejamento Simples e Pé no Chão</h4></div>
-            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="step-body"><div class="step-body-inner"><ul>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Ferramentas 5W2H e Canvas</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Dinâmica "Meu primeiro passo"</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mini Design Sprint: testando ideias de negócios</li>
-          </ul></div></div>
-        </div>
-
-        <div class="step">
-          <div class="step-head">
-            <div class="step-no">IV</div>
-            <div class="step-title"><div class="et">Módulo IV</div><h4>Vendendo do Meu Jeito</h4></div>
-            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="step-body"><div class="step-body-inner"><ul>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Simulação de vendas</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Criação de pitch simples</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Exercícios práticos com WhatsApp e redes sociais</li>
-          </ul></div></div>
-        </div>
-
-        <div class="step">
-          <div class="step-head">
-            <div class="step-no">V</div>
-            <div class="step-title"><div class="et">Módulo V</div><h4>Formalizando e Crescendo</h4></div>
-            <svg class="step-chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="step-body"><div class="step-body-inner"><ul>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Passo a passo para ser MEI</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Planejamento de crescimento</li>
-            <li><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gravação do pitch final</li>
-          </ul></div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- EAD -->
-    <div class="mod-panel" id="panel-ead">
-      <p class="panel-note">Videoaulas complementares para assistir no seu ritmo — 5 horas de conteúdo flexível.</p>
-      <div class="list-grid">
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Autoconfiança e mentalidade empreendedora</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Transformando talentos em ideias de negócio</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Finanças para empreendedores iniciantes — Parte 1</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Precificação simples e justa — Parte 2</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Organização pessoal para empreender</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Transformando plano em ação</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Ferramentas digitais e produtividade</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Marketing pessoal e comunicação com o cliente</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Oportunidades: editais e programas de apoio</span></div>
-        <div class="litem"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Construindo rede de apoio e crescimento</span></div>
-      </div>
-    </div>
-
-    <!-- TERAPÊUTICO -->
-    <div class="mod-panel" id="panel-terapeutico">
-      <p class="panel-note">Encontros online de fortalecimento emocional — 4 horas de cuidado com você.</p>
-      <div class="list-grid">
-        <div class="litem big"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Conhecendo a si:</b> identidade, história e crenças</span></div>
-        <div class="litem big"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Você e seus relacionamentos:</b> comunicação e posicionamento</span></div>
-        <div class="litem big"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Você e seu trabalho:</b> coragem e responsabilidade</span></div>
-        <div class="litem big"><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Integração e clareza:</b> rompendo ciclos e fortalecendo escolhas</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ AGENDA / TURMAS ============ -->
-<section class="sec sec-light" id="agenda">
-  <div class="wrap">
-    <div class="agenda-wrap">
-      <div class="agenda reveal">
-        <span class="eyebrow">Carga horária e periodicidade</span>
-        <div class="turma-switch" role="tablist" style="margin-top:1.2rem">
-          <button class="active" data-turma="1">Turma 1 · Tarde</button>
-          <button data-turma="2">Turma 2 · Noite</button>
-        </div>
-        <h2>5 segundas-feiras de agosto</h2>
-        <div class="hours" id="turmaHours">15h presencial · 5h EAD · 4h online — das <b class="time">13h às 16h</b></div>
-
-        <div class="info-rows">
-          <div class="irow">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <div><div class="k">Datas presenciais</div><div class="v">03, 10, 17, 24 e 31 de agosto</div></div>
-          </div>
-          <div class="irow">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><div class="k">Horário</div><div class="v"><span class="time" id="turmaTime">13h às 16h</span></div></div>
-          </div>
-          <div class="irow">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
-            <div><div class="k">Local</div><div class="v">Centro de Ciências de Colatina<br><span style="font-weight:400;color:var(--muted-dark);font-size:.92rem">Praça do Sol Poente</span></div></div>
-          </div>
-        </div>
-        <a href="#inscricao" class="btn btn-primary" style="margin-top:2rem">Garantir minha vaga
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      /* ============ RESPONSIVE ============ */
+      @media (max-width: 980px) {
+        .agenda-wrap,
+        .method-inner {
+          grid-template-columns: 1fr;
+          gap: 2.2rem;
+        }
+        .method-visual {
+          max-width: 480px;
+        }
+      }
+      @media (max-width: 760px) {
+        .nav-links {
+          position: fixed;
+          top: 62px;
+          left: 0;
+          right: 0;
+          background: rgba(22, 16, 31, 0.97);
+          backdrop-filter: blur(20px);
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          padding: 1rem 24px 2rem;
+          border-bottom: 1px solid var(--line-dark);
+          transform: translateY(-130%);
+          transition: transform 0.4s var(--ease);
+        }
+        .nav-links.open {
+          transform: translateY(0);
+        }
+        .nav-links a.lnk {
+          padding: 0.9rem 0;
+          border-bottom: 1px solid var(--line-dark);
+        }
+        .nav-links .btn {
+          margin-top: 1rem;
+          justify-content: center;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .facts {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .desire-grid,
+        .skills-grid,
+        .pillars,
+        .teach-grid,
+        .list-grid,
+        .method-visual {
+          grid-template-columns: 1fr;
+        }
+        .litem.big {
+          grid-column: span 1;
+        }
+        .step-body-inner {
+          padding-left: 1.5rem;
+        }
+        .hero {
+          padding: 130px 0 70px;
+        }
+        .sec {
+          padding: 70px 0;
+        }
+        .final-card {
+          padding: 3.5rem 1.6rem;
+        }
+        .foot-meta {
+          text-align: left;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      :focus-visible {
+        outline: 2px solid var(--coral);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ NAV ============ -->
+    <header id="header">
+      <div class="wrap nav">
+        <a href="#topo" class="brand-lockup" aria-label="TEC360 — Empreenda Já">
+          <span class="tec-chip"
+            ><span class="tec-logo" role="img" aria-label="TEC360"></span
+          ></span>
+          <span class="brand-div"></span>
+          <span class="brand-course"
+            ><span class="k">Curso</span
+            ><span class="v">Empreenda <b>Já</b></span></span
+          >
         </a>
+        <nav class="nav-links" id="navLinks">
+          <a class="lnk" href="#beneficios">Para você</a>
+          <a class="lnk" href="#modulos">Módulos</a>
+          <a class="lnk" href="#agenda">Agenda</a>
+          <a class="lnk" href="#instrutoras">Instrutoras</a>
+          <a class="lnk" href="#faq">Dúvidas</a>
+          <a class="btn btn-primary" href="#inscricao">Inscreva-se</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </header>
 
-      <div class="hours-card reveal d2">
-        <div class="big">24<span>h</span></div>
-        <div class="sub">de formação completa, distribuídas em três frentes</div>
-        <div class="hbreak">
-          <div class="hbar b1">
-            <div class="top"><b>Presencial</b><span>15h</span></div>
-            <div class="track"><div class="fill" data-w="62%"></div></div>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="topo">
+      <div class="hero-bg">
+        <div class="grid"></div>
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+        <div class="glow g3"></div>
+      </div>
+      <div class="wrap hero-inner">
+        <p class="presenter reveal in">
+          Uma realização <b>TEC360</b> · Escola de tecnologia e negócios
+        </p>
+        <span class="badge"
+          ><span class="dot"></span>Turmas 1 e 2 · Agosto · Colatina/ES</span
+        >
+        <h1 class="reveal in">
+          Tire sua ideia do papel e abra o seu
+          <span class="grad">primeiro negócio</span>.
+        </h1>
+        <p class="lead reveal in d1">
+          Um curso de empreendedorismo
+          <strong>prático, humano e tecnológico</strong> para transformar
+          talentos em renda — com inteligência artificial, ferramentas ágeis,
+          apoio emocional e o caminho completo até a sua formalização como
+          <strong>MEI</strong>.
+        </p>
+        <div class="hero-cta reveal in d2">
+          <a href="#inscricao" class="btn btn-primary">
+            Quero me inscrever
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 12h14M13 6l6 6-6 6"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a href="#modulos" class="btn btn-ghost">Ver os módulos</a>
+        </div>
+
+        <div class="facts reveal in d3">
+          <div class="fact">
+            <div class="n">24<span class="u">h</span></div>
+            <div class="l">Carga horária total</div>
           </div>
-          <div class="hbar b2">
-            <div class="top"><b>EAD · videoaulas</b><span>5h</span></div>
-            <div class="track"><div class="fill" data-w="21%"></div></div>
+          <div class="fact">
+            <div class="n">05</div>
+            <div class="l">Encontros presenciais</div>
           </div>
-          <div class="hbar b3">
-            <div class="top"><b>Terapêutico online</b><span>4h</span></div>
-            <div class="track"><div class="fill" data-w="17%"></div></div>
+          <div class="fact">
+            <div class="n">3<span class="u">×</span></div>
+            <div class="l">Presencial · EAD · Online</div>
+          </div>
+          <div class="fact">
+            <div class="n">MEI</div>
+            <div class="l">Formalização garantida</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============ METODOLOGIA ============ -->
-<section class="sec method" id="metodologia">
-  <div class="glow"></div>
-  <div class="wrap method-inner">
-    <div class="reveal">
-      <span class="eyebrow">Metodologia de ensino</span>
-      <h2>Holística, híbrida e <span class="grad">totalmente prática</span></h2>
-      <p>Pela abordagem <strong style="color:var(--text-light)">Project Based Learning</strong>, você participa de encontros presenciais para mentoria e networking, complementados por videoaulas flexíveis e ferramentas ágeis de mercado.</p>
-      <p>O grande diferencial é o suporte terapêutico online integrado, que trabalha inteligência emocional, autoestima e resiliência — preparando você para superar barreiras comportamentais e consolidar seu negócio com segurança.</p>
-      <div class="method-tags">
-        <span class="mtag"><b>PBL</b> · Aprendizado por projetos</span>
-        <span class="mtag"><b>IA</b> · ChatGPT na prática</span>
-        <span class="mtag"><b>Canvas</b> · 5W2H · Design Sprint</span>
-        <span class="mtag"><b>MEI</b> · Formalização guiada</span>
-      </div>
-    </div>
-    <div class="method-visual reveal d2">
-      <div class="mv">
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 6 8 14v12c0 9 7 14 16 16 9-2 16-7 16-16V14L24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m18 24 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4>Presencial</h4><p>Mentoria, dinâmicas e networking no Centro de Ciências.</p>
-      </div>
-      <div class="mv">
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><rect x="6" y="8" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 42h16M24 34v8M20 18l8 3-8 3v-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h4>EAD</h4><p>Videoaulas no seu ritmo, para aprofundar cada tema.</p>
-      </div>
-      <div class="mv">
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><path d="M24 40s-13-8-13-19a7.5 7.5 0 0 1 13-5 7.5 7.5 0 0 1 13 5c0 11-13 19-13 19Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h4>Terapêutico</h4><p>Apoio emocional para você seguir firme até o fim.</p>
-      </div>
-      <div class="mv">
-        <div class="ic"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="2"/><path d="M12 40c0-7 5.4-12 12-12s12 5 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h4>Mentoria</h4><p>Acompanhamento de quem entende de negócios e pessoas.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INSTRUTORAS ============ -->
-<section class="sec sec-light" id="instrutoras">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow center">Com quem você vai aprender</span>
-      <h2>Quem conduz a sua jornada</h2>
-    </div>
-    <div class="teach-grid">
-      <div class="teach t1 reveal">
-        <div class="teach-top">
-          <div class="av">RG</div>
-          <div><h3>Rosilane Gripa Bustamante</h3><div class="role">Especialista em MEI e Gestão Pública</div></div>
+    <!-- ============ VÍDEO DE APRESENTAÇÃO ============ -->
+    <section class="video-sec">
+      <div class="wrap">
+        <div class="video-frame reveal">
+          <div class="video-ratio">
+            <iframe
+              src="https://player.vimeo.com/video/1206775435?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="video_institucional_plataforma"
+            ></iframe>
+          </div>
         </div>
-        <p>Servidora pública e Diretora do CIAMPE Serra desde 2022, com ampla experiência em atendimento ao público, planejamento estratégico, liderança e captação de recursos. À frente do CIAMPE, conquistou os Troféus Ouro (2023) e Diamante (2025) da Rede Capixaba de Salas do Empreendedor por iniciativas de desburocratização e modernização. Gestora do premiado projeto Ciampe Serra Virtual e Coordenadora de Planejamento Estratégico da SEDEC.</p>
       </div>
-      <div class="teach t2 reveal d1">
-        <div class="teach-top">
-          <div class="av">JR</div>
-          <div><h3>Josivania dos Reis Ferreira</h3><div class="role">Terapeuta Integrativa</div></div>
+      <div class="wave-divider">
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,42.7C840,32,960,32,1080,37.3C1200,43,1320,53,1380,58.7L1440,64L1440,120L0,120Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+    <!-- ============ PARA VOCÊ ============ -->
+    <section class="sec sec-light" id="beneficios">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Este curso é para você</span>
+          <h2>
+            Feito para quem quer <span class="grad">começar de verdade</span>
+          </h2>
+          <p>
+            Sem enrolação e com o pé no chão. Se você se identifica com algum
+            destes objetivos, este curso foi desenhado para você.
+          </p>
         </div>
-        <p>Há 5 anos como Terapeuta Integrativa, com mais de 500 atendimentos focados na integração de mente, corpo e emoções. Desenvolve protocolos personalizados de autoconhecimento usando Análise Corporal e Comportamental, PNL e Hipnose Clínica, e é graduanda em Psicanálise Clínica. Tem sólida base em Administração de Empresas e mais de 12 anos como analista de licitações, trazendo organização e visão estratégica.</p>
+        <div class="desire-grid">
+          <div class="dcard reveal">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Tirar a ideia do papel</h3>
+            <p>
+              Explore um caminho envolvente, simples e pé no chão para
+              transformar seus talentos em uma fonte de renda real.
+            </p>
+          </div>
+          <div class="dcard reveal d1">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M20.8 11.1A8.4 8.4 0 1 1 7.5 4.4M21 3l-9 9-3-3"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Empreender com confiança</h3>
+            <p>
+              Aprenda a gerir o estresse, romper ciclos que te travam e
+              fortalecer suas escolhas para seguir firme na jornada.
+            </p>
+          </div>
+          <div class="dcard reveal d2">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+              </svg>
+            </div>
+            <h3>Dominar IA e ferramentas digitais</h3>
+            <p>
+              Use ChatGPT, inteligência artificial e metodologias ágeis para
+              criar e impulsionar as estratégias do seu negócio.
+            </p>
+          </div>
+          <div class="dcard reveal d3">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6L12 2Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Conquistar dignidade e independência</h3>
+            <p>
+              Transforme uma atividade informal em um negócio legalizado e
+              estruturado, com o passo a passo completo para virar MEI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAPAZ DE FAZER ============ -->
+    <section class="sec" id="resultados">
+      <div class="wrap">
+        <div class="sec-head center reveal">
+          <span class="eyebrow center">Resultados</span>
+          <h2>O que você será capaz de fazer</h2>
+          <p style="margin: 0 auto">
+            Ao final do curso, você sai com um negócio planejado, ferramentas
+            dominadas e o caminho da formalização trilhado.
+          </p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill reveal">
+            <div class="num">/ 01</div>
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect
+                  x="8"
+                  y="10"
+                  width="32"
+                  height="28"
+                  rx="3"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M8 18h32M14 26h10M14 31h16"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <p>
+              Planejar seu próprio negócio de forma simples, transformando
+              ideias comuns em um empreendimento real e lucrativo.
+            </p>
+          </div>
+          <div class="skill reveal d1">
+            <div class="num">/ 02</div>
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect
+                  x="9"
+                  y="9"
+                  width="13"
+                  height="13"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <rect
+                  x="26"
+                  y="9"
+                  width="13"
+                  height="13"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <rect
+                  x="9"
+                  y="26"
+                  width="13"
+                  height="13"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <rect
+                  x="26"
+                  y="26"
+                  width="13"
+                  height="13"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <p>
+              Usar ferramentas ágeis de mercado como Canvas, 5W2H e o Mini
+              Design Sprint para validar suas ideias.
+            </p>
+          </div>
+          <div class="skill reveal d2">
+            <div class="num">/ 03</div>
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M24 8a8 8 0 0 0-5 14.2c.8.7 1.3 1.7 1.3 2.8V28h7.4v-3c0-1.1.5-2.1 1.3-2.8A8 8 0 0 0 24 8Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 33h8M21 38h6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <p>
+              Aplicar inteligência artificial e ChatGPT para criar estratégias,
+              conteúdos e soluções para o seu negócio.
+            </p>
+          </div>
+          <div class="skill reveal">
+            <div class="num">/ 04</div>
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M24 8v32M16 14h12a4 4 0 0 1 0 8H20a4 4 0 0 0 0 8h12"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <p>
+              Gerenciar com clareza suas finanças pessoais e empresariais, com
+              precificação simples e justa.
+            </p>
+          </div>
+          <div class="skill reveal d1">
+            <div class="num">/ 05</div>
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M14 22l8-12 8 12M12 22h24v14a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V22Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 38v-7h8v7"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <p>
+              Formalizar o negócio passo a passo como MEI, garantindo direitos
+              sociais, dignidade e acesso a crédito.
+            </p>
+          </div>
+          <div class="skill reveal d2">
+            <div class="num">/ 06</div>
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M24 42s14-8 14-19a8 8 0 0 0-14-5 8 8 0 0 0-14 5c0 11 14 19 14 19Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <p>
+              Desenvolver autoconfiança, inteligência emocional e resiliência
+              para superar os desafios do dia a dia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRILHA / 3 PILARES ============ -->
+    <section class="sec sec-light" id="trilha">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Trilha de aprendizagem</span>
+          <h2>Três frentes que <span class="grad">trabalham juntas</span></h2>
+          <p>
+            Uma metodologia híbrida que combina teoria e prática desde a
+            primeira aula, com apoio emocional ao longo de toda a jornada.
+          </p>
+        </div>
+        <div class="pillars">
+          <div class="pillar reveal">
+            <span class="tag">Presencial · EAD · Online</span>
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M2 6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="m17 9 4-2v8l-4-2M7 20h6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Aulas práticas</h3>
+            <p>
+              Encontros presenciais, videoaulas EAD e sessões online se combinam
+              numa abordagem dinâmica baseada em projetos (PBL).
+            </p>
+          </div>
+          <div class="pillar reveal d1">
+            <span class="tag">Material de apoio</span>
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H4V4Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H20V4Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Materiais completos</h3>
+            <p>
+              Livro impresso, materiais de apoio visuais e um projeto prático
+              que aprofunda cada tópico discutido em aula.
+            </p>
+          </div>
+          <div class="pillar reveal d2">
+            <span class="tag">Suporte emocional</span>
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 21s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.7-7 10-7 10Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.5 11.5h2l1-2 1.5 3 1-1.5h1.5"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Sessões terapêuticas online</h3>
+            <p>
+              Fortalecem e empoderam emocionalmente cada participante para
+              desenvolver o negócio com confiança e evitar a desistência.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MÓDULOS (signature) ============ -->
+    <section class="sec" id="modulos">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Conteúdo programático</span>
+          <h2>Conheça os módulos da formação</h2>
+          <p>
+            Da descoberta do seu potencial até a formalização. Explore cada
+            frente do curso.
+          </p>
+        </div>
+
+        <div class="mod-tabs reveal d1">
+          <button class="mod-tab active" data-panel="presencial">
+            <svg class="mt-ic" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Presencial
+          </button>
+          <button class="mod-tab" data-panel="ead">
+            <svg class="mt-ic" viewBox="0 0 24 24" fill="none">
+              <rect
+                x="3"
+                y="4"
+                width="18"
+                height="13"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+              <path
+                d="M8 21h8M12 17v4"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+            EAD
+          </button>
+          <button class="mod-tab" data-panel="terapeutico">
+            <svg class="mt-ic" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 21s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.7-7 10-7 10Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Terapêutico
+          </button>
+        </div>
+
+        <!-- PRESENCIAL: roadmap -->
+        <div class="mod-panel active" id="panel-presencial">
+          <div class="roadmap">
+            <div class="step open">
+              <div class="step-head">
+                <div class="step-no">I</div>
+                <div class="step-title">
+                  <div class="et">Módulo I</div>
+                  <h4>Descobrindo Meu Potencial Empreendedor</h4>
+                </div>
+                <svg class="step-chev" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="step-body">
+                <div class="step-body-inner">
+                  <ul>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Dinâmica "Do que sou capaz"
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Mapa de Talentos
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Discussão sobre tipos de empreendedorismo
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-head">
+                <div class="step-no">II</div>
+                <div class="step-title">
+                  <div class="et">Módulo II</div>
+                  <h4>Começando com o que eu tenho</h4>
+                </div>
+                <svg class="step-chev" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="step-body">
+                <div class="step-body-inner">
+                  <ul>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Ideia de Negócio em 1 folha
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Criando com IA — Introdução ao ChatGPT
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Matriz: O que sei fazer × O que posso vender
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-head">
+                <div class="step-no">III</div>
+                <div class="step-title">
+                  <div class="et">Módulo III</div>
+                  <h4>Planejamento Simples e Pé no Chão</h4>
+                </div>
+                <svg class="step-chev" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="step-body">
+                <div class="step-body-inner">
+                  <ul>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Ferramentas 5W2H e Canvas
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Dinâmica "Meu primeiro passo"
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Mini Design Sprint: testando ideias de negócios
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-head">
+                <div class="step-no">IV</div>
+                <div class="step-title">
+                  <div class="et">Módulo IV</div>
+                  <h4>Vendendo do Meu Jeito</h4>
+                </div>
+                <svg class="step-chev" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="step-body">
+                <div class="step-body-inner">
+                  <ul>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Simulação de vendas
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Criação de pitch simples
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Exercícios práticos com WhatsApp e redes sociais
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-head">
+                <div class="step-no">V</div>
+                <div class="step-title">
+                  <div class="et">Módulo V</div>
+                  <h4>Formalizando e Crescendo</h4>
+                </div>
+                <svg class="step-chev" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="step-body">
+                <div class="step-body-inner">
+                  <ul>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Passo a passo para ser MEI
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Planejamento de crescimento
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="m5 13 4 4L19 7"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                      >Gravação do pitch final
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EAD -->
+        <div class="mod-panel" id="panel-ead">
+          <p class="panel-note">
+            Videoaulas complementares para assistir no seu ritmo — 5 horas de
+            conteúdo flexível.
+          </p>
+          <div class="list-grid">
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Autoconfiança e mentalidade empreendedora</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Transformando talentos em ideias de negócio</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Finanças para empreendedores iniciantes — Parte 1</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Precificação simples e justa — Parte 2</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Organização pessoal para empreender</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Transformando plano em ação</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Ferramentas digitais e produtividade</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Marketing pessoal e comunicação com o cliente</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Oportunidades: editais e programas de apoio</span>
+            </div>
+            <div class="litem">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span>Construindo rede de apoio e crescimento</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TERAPÊUTICO -->
+        <div class="mod-panel" id="panel-terapeutico">
+          <p class="panel-note">
+            Encontros online de fortalecimento emocional — 4 horas de cuidado
+            com você.
+          </p>
+          <div class="list-grid">
+            <div class="litem big">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span
+                ><b>Conhecendo a si:</b> identidade, história e crenças</span
+              >
+            </div>
+            <div class="litem big">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span
+                ><b>Você e seus relacionamentos:</b> comunicação e
+                posicionamento</span
+              >
+            </div>
+            <div class="litem big">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span
+                ><b>Você e seu trabalho:</b> coragem e responsabilidade</span
+              >
+            </div>
+            <div class="litem big">
+              <span class="chk"
+                ><svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m5 13 4 4L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg></span
+              ><span
+                ><b>Integração e clareza:</b> rompendo ciclos e fortalecendo
+                escolhas</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AGENDA / TURMAS ============ -->
+    <section class="sec sec-light" id="agenda">
+      <div class="wrap">
+        <div class="agenda-wrap">
+          <div class="agenda reveal">
+            <span class="eyebrow">Carga horária e periodicidade</span>
+            <div class="turma-switch" role="tablist" style="margin-top: 1.2rem">
+              <button class="active" data-turma="1">Turma 1 · Tarde</button>
+              <button data-turma="2">Turma 2 · Noite</button>
+            </div>
+            <h2>5 segundas-feiras de agosto</h2>
+            <div class="hours" id="turmaHours">
+              15h presencial · 5h EAD · 4h online — das
+              <b class="time">13h às 16h</b>
+            </div>
+
+            <div class="info-rows">
+              <div class="irow">
+                <div class="ic">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="3"
+                      y="5"
+                      width="18"
+                      height="16"
+                      rx="2"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M3 9h18M8 3v4M16 3v4"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="k">Datas presenciais</div>
+                  <div class="v">03, 10, 17, 24 e 31 de agosto</div>
+                </div>
+              </div>
+              <div class="irow">
+                <div class="ic">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M12 7v5l3 2"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="k">Horário</div>
+                  <div class="v">
+                    <span class="time" id="turmaTime">13h às 16h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="irow">
+                <div class="ic">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                    <circle
+                      cx="12"
+                      cy="10"
+                      r="2.5"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="k">Local</div>
+                  <div class="v">
+                    Centro de Ciências de Colatina<br /><span
+                      style="
+                        font-weight: 400;
+                        color: var(--muted-dark);
+                        font-size: 0.92rem;
+                      "
+                      >Praça do Sol Poente</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              href="#inscricao"
+              class="btn btn-primary"
+              style="margin-top: 2rem"
+              >Garantir minha vaga
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="hours-card reveal d2">
+            <div class="big">24<span>h</span></div>
+            <div class="sub">
+              de formação completa, distribuídas em três frentes
+            </div>
+            <div class="hbreak">
+              <div class="hbar b1">
+                <div class="top"><b>Presencial</b><span>15h</span></div>
+                <div class="track"><div class="fill" data-w="62%"></div></div>
+              </div>
+              <div class="hbar b2">
+                <div class="top"><b>EAD · videoaulas</b><span>5h</span></div>
+                <div class="track"><div class="fill" data-w="21%"></div></div>
+              </div>
+              <div class="hbar b3">
+                <div class="top"><b>Terapêutico online</b><span>4h</span></div>
+                <div class="track"><div class="fill" data-w="17%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ METODOLOGIA ============ -->
+    <section class="sec method" id="metodologia">
+      <div class="glow"></div>
+      <div class="wrap method-inner">
+        <div class="reveal">
+          <span class="eyebrow">Metodologia de ensino</span>
+          <h2>
+            Holística, híbrida e <span class="grad">totalmente prática</span>
+          </h2>
+          <p>
+            Pela abordagem
+            <strong style="color: var(--text-light)"
+              >Project Based Learning</strong
+            >, você participa de encontros presenciais para mentoria e
+            networking, complementados por videoaulas flexíveis e ferramentas
+            ágeis de mercado.
+          </p>
+          <p>
+            O grande diferencial é o suporte terapêutico online integrado, que
+            trabalha inteligência emocional, autoestima e resiliência —
+            preparando você para superar barreiras comportamentais e consolidar
+            seu negócio com segurança.
+          </p>
+          <div class="method-tags">
+            <span class="mtag"><b>PBL</b> · Aprendizado por projetos</span>
+            <span class="mtag"><b>IA</b> · ChatGPT na prática</span>
+            <span class="mtag"><b>Canvas</b> · 5W2H · Design Sprint</span>
+            <span class="mtag"><b>MEI</b> · Formalização guiada</span>
+          </div>
+        </div>
+        <div class="method-visual reveal d2">
+          <div class="mv">
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M24 6 8 14v12c0 9 7 14 16 16 9-2 16-7 16-16V14L24 6Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="m18 24 4 4 8-8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h4>Presencial</h4>
+            <p>Mentoria, dinâmicas e networking no Centro de Ciências.</p>
+          </div>
+          <div class="mv">
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect
+                  x="6"
+                  y="8"
+                  width="36"
+                  height="26"
+                  rx="3"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M16 42h16M24 34v8M20 18l8 3-8 3v-6Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h4>EAD</h4>
+            <p>Videoaulas no seu ritmo, para aprofundar cada tema.</p>
+          </div>
+          <div class="mv">
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M24 40s-13-8-13-19a7.5 7.5 0 0 1 13-5 7.5 7.5 0 0 1 13 5c0 11-13 19-13 19Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h4>Terapêutico</h4>
+            <p>Apoio emocional para você seguir firme até o fim.</p>
+          </div>
+          <div class="mv">
+            <div class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle
+                  cx="24"
+                  cy="16"
+                  r="6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M12 40c0-7 5.4-12 12-12s12 5 12 12"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h4>Mentoria</h4>
+            <p>Acompanhamento de quem entende de negócios e pessoas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSTRUTORAS ============ -->
+    <section class="sec sec-light" id="instrutoras">
+      <div class="wrap">
+        <div class="sec-head center reveal">
+          <span class="eyebrow center">Com quem você vai aprender</span>
+          <h2>Quem conduz a sua jornada</h2>
+        </div>
+        <div class="teach-grid">
+          <div class="teach t1 reveal">
+            <div class="teach-top">
+              <div class="av">
+                <img
+                  src="https://i.postimg.cc/XNt35GS4/Imagem1.jpg"
+                  alt="Rosilane Gripa Bustamante"
+                />
+              </div>
+              <div>
+                <h3>Rosilane Gripa Bustamante</h3>
+                <div class="role">Especialista em MEI e Gestão Pública</div>
+              </div>
+            </div>
+            <p>
+              Servidora pública e Diretora do CIAMPE Serra desde 2022, com ampla
+              experiência em atendimento ao público, planejamento estratégico,
+              liderança e captação de recursos. À frente do CIAMPE, conquistou
+              os Troféus Ouro (2023) e Diamante (2025) da Rede Capixaba de Salas
+              do Empreendedor por iniciativas de desburocratização e
+              modernização. Gestora do premiado projeto Ciampe Serra Virtual e
+              Coordenadora de Planejamento Estratégico da SEDEC.
+            </p>
+          </div>
+          <div class="teach t2 reveal d1">
+            <div class="teach-top">
+              <div class="av">
+                <img
+                  src="https://i.postimg.cc/c1PZ3gys/Imagem2.jpg"
+                  alt="Josivania dos Reis Ferreira"
+                />
+              </div>
+              <div>
+                <h3>Josivania dos Reis Ferreira</h3>
+                <div class="role">Terapeuta Integrativa</div>
+              </div>
+            </div>
+            <p>
+              Há 5 anos como Terapeuta Integrativa, com mais de 500 atendimentos
+              focados na integração de mente, corpo e emoções. Desenvolve
+              protocolos personalizados de autoconhecimento usando Análise
+              Corporal e Comportamental, PNL e Hipnose Clínica, e é graduanda em
+              Psicanálise Clínica. Tem sólida base em Administração de Empresas
+              e mais de 12 anos como analista de licitações, trazendo
+              organização e visão estratégica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="sec" id="faq">
+      <div class="wrap" style="max-width: 900px">
+        <div class="sec-head center reveal">
+          <span class="eyebrow center">Dúvidas mais comuns</span>
+          <h2>Ainda com perguntas?</h2>
+        </div>
+        <div class="faq" id="faq">
+          <div class="faq-item">
+            <button class="faq-q">
+              Para quem é este curso?<span class="pm"></span>
+            </button>
+            <div class="faq-a">
+              <p>
+                Para estudantes, empreendedores e cidadãos de comunidades em
+                situação de vulnerabilidade social na região de Colatina/ES que
+                querem criar e gerenciar o próprio negócio — mesmo começando do
+                zero.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              Preciso já ter um negócio ou experiência?<span class="pm"></span>
+            </button>
+            <div class="faq-a">
+              <p>
+                Não. O curso foi pensado justamente para o seu primeiro negócio.
+                Começamos descobrindo seus talentos e seguimos, passo a passo,
+                até a formalização como MEI.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              Qual a diferença entre a Turma 1 e a Turma 2?<span
+                class="pm"
+              ></span>
+            </button>
+            <div class="faq-a">
+              <p>
+                O conteúdo é o mesmo nas duas turmas. A diferença é só o horário
+                dos encontros presenciais: a Turma 1 acontece das 13h às 16h e a
+                Turma 2 das 19h às 22h. Escolha a que melhor encaixa na sua
+                rotina.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              Como funcionam as aulas presenciais, EAD e online?<span
+                class="pm"
+              ></span>
+            </button>
+            <div class="faq-a">
+              <p>
+                São 15h presenciais no Centro de Ciências de Colatina, 5h de
+                videoaulas EAD para assistir no seu ritmo e 4h de sessões
+                terapêuticas online de apoio emocional. Tudo integrado numa
+                única jornada de 24 horas.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              O que são as sessões terapêuticas?<span class="pm"></span>
+            </button>
+            <div class="faq-a">
+              <p>
+                Encontros online que fortalecem você emocionalmente —
+                trabalhando autoestima, resiliência e clareza — para que
+                desenvolva o negócio com mais confiança e não desista no meio do
+                caminho.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              Vou sair do curso com meu negócio formalizado?<span
+                class="pm"
+              ></span>
+            </button>
+            <div class="faq-a">
+              <p>
+                Sim. O Módulo V traz o passo a passo completo para você se
+                tornar MEI, garantindo direitos sociais, dignidade e acesso a
+                crédito para crescer.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              Como faço a minha inscrição?<span class="pm"></span>
+            </button>
+            <div class="faq-a">
+              <p>
+                Clique em qualquer botão
+                <a href="#inscricao">"Inscreva-se"</a> nesta página. As vagas
+                são limitadas e a inscrição é por ordem de chegada.
+                <em style="color: var(--muted-light)"
+                  >[Substitua o link/WhatsApp de inscrição no código.]</em
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <div class="final" id="inscricao">
+      <div class="final-card reveal">
+        <div class="mesh"></div>
+        <div class="inner">
+          <h2>Sua ideia merece sair do papel.</h2>
+          <p>
+            Vagas limitadas para as turmas de agosto. Dê o primeiro passo rumo
+            ao seu próprio negócio.
+          </p>
+          <!-- TROQUE o href abaixo pelo seu link de inscrição ou WhatsApp -->
+          <a
+            href="https://tec360.eadplataforma.app/curso/empreenda-ja-6a479b0a43ce8"
+            class="btn"
+            >Quero garantir minha vaga
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 12h14M13 6l6 6-6 6"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <div class="micro">Turmas 1 e 2 · Colatina/ES · Agosto</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ FAQ ============ -->
-<section class="sec" id="faq">
-  <div class="wrap" style="max-width:900px">
-    <div class="sec-head center reveal">
-      <span class="eyebrow center">Dúvidas mais comuns</span>
-      <h2>Ainda com perguntas?</h2>
-    </div>
-    <div class="faq" id="faq">
-      <div class="faq-item">
-        <button class="faq-q">Para quem é este curso?<span class="pm"></span></button>
-        <div class="faq-a"><p>Para estudantes, empreendedores e cidadãos de comunidades em situação de vulnerabilidade social na região de Colatina/ES que querem criar e gerenciar o próprio negócio — mesmo começando do zero.</p></div>
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="wrap foot">
+        <div>
+          <span class="tec-chip" style="margin-bottom: 1.1rem"
+            ><span
+              class="tec-logo"
+              role="img"
+              aria-label="TEC360"
+              style="height: 30px; width: 156px"
+            ></span
+          ></span>
+          <p>
+            <b style="color: var(--text-light)"
+              >Empreenda Já — Meu Primeiro Negócio</b
+            >
+            é um curso realizado pela TEC360, Escola de Tecnologia e Negócios.
+            Capacitação em empreendedorismo para transformação social: do
+            talento à formalização como MEI.
+          </p>
+        </div>
+        <div class="foot-meta">
+          <a href="#beneficios">Para você</a>
+          <a href="#modulos">Módulos</a>
+          <a href="#agenda">Agenda</a>
+          <a href="#instrutoras">Instrutoras</a>
+          <a href="#inscricao">Inscreva-se</a>
+        </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q">Preciso já ter um negócio ou experiência?<span class="pm"></span></button>
-        <div class="faq-a"><p>Não. O curso foi pensado justamente para o seu primeiro negócio. Começamos descobrindo seus talentos e seguimos, passo a passo, até a formalização como MEI.</p></div>
+      <div class="wrap copyright">
+        <span
+          >© 2025 TEC360 · Escola de Tecnologia e Negócios. Todos os direitos
+          reservados.</span
+        >
+        <span>Centro de Ciências de Colatina · Praça do Sol Poente</span>
       </div>
-      <div class="faq-item">
-        <button class="faq-q">Qual a diferença entre a Turma 1 e a Turma 2?<span class="pm"></span></button>
-        <div class="faq-a"><p>O conteúdo é o mesmo nas duas turmas. A diferença é só o horário dos encontros presenciais: a Turma 1 acontece das 13h às 16h e a Turma 2 das 19h às 22h. Escolha a que melhor encaixa na sua rotina.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Como funcionam as aulas presenciais, EAD e online?<span class="pm"></span></button>
-        <div class="faq-a"><p>São 15h presenciais no Centro de Ciências de Colatina, 5h de videoaulas EAD para assistir no seu ritmo e 4h de sessões terapêuticas online de apoio emocional. Tudo integrado numa única jornada de 24 horas.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">O que são as sessões terapêuticas?<span class="pm"></span></button>
-        <div class="faq-a"><p>Encontros online que fortalecem você emocionalmente — trabalhando autoestima, resiliência e clareza — para que desenvolva o negócio com mais confiança e não desista no meio do caminho.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Vou sair do curso com meu negócio formalizado?<span class="pm"></span></button>
-        <div class="faq-a"><p>Sim. O Módulo V traz o passo a passo completo para você se tornar MEI, garantindo direitos sociais, dignidade e acesso a crédito para crescer.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Como faço a minha inscrição?<span class="pm"></span></button>
-        <div class="faq-a"><p>Clique em qualquer botão <a href="#inscricao">"Inscreva-se"</a> nesta página. As vagas são limitadas e a inscrição é por ordem de chegada. <em style="color:var(--muted-light)">[Substitua o link/WhatsApp de inscrição no código.]</em></p></div>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
-<!-- ============ CTA FINAL ============ -->
-<div class="final" id="inscricao">
-  <div class="final-card reveal">
-    <div class="mesh"></div>
-    <div class="inner">
-      <h2>Sua ideia merece sair do papel.</h2>
-      <p>Vagas limitadas para as turmas de agosto. Dê o primeiro passo rumo ao seu próprio negócio.</p>
-      <!-- TROQUE o href abaixo pelo seu link de inscrição ou WhatsApp -->
-      <a href="#" class="btn">Quero garantir minha vaga
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <div class="micro">Turmas 1 e 2 · Colatina/ES · Agosto</div>
-    </div>
-  </div>
-</div>
+    <script>
+      /* ===== nav scroll ===== */
+      const header = document.getElementById("header");
+      addEventListener("scroll", () =>
+        header.classList.toggle("scrolled", scrollY > 30),
+      );
 
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap foot">
-    <div>
-      <span class="tec-chip" style="margin-bottom:1.1rem"><span class="tec-logo" role="img" aria-label="TEC360" style="height:30px;width:156px"></span></span>
-      <p><b style="color:var(--text-light)">Empreenda Já — Meu Primeiro Negócio</b> é um curso realizado pela TEC360, Escola de Tecnologia e Negócios. Capacitação em empreendedorismo para transformação social: do talento à formalização como MEI.</p>
-    </div>
-    <div class="foot-meta">
-      <a href="#beneficios">Para você</a>
-      <a href="#modulos">Módulos</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#instrutoras">Instrutoras</a>
-      <a href="#inscricao">Inscreva-se</a>
-    </div>
-  </div>
-  <div class="wrap copyright">
-    <span>© 2025 TEC360 · Escola de Tecnologia e Negócios. Todos os direitos reservados.</span>
-    <span>Centro de Ciências de Colatina · Praça do Sol Poente</span>
-  </div>
-</footer>
+      /* ===== mobile menu ===== */
+      const tgl = document.getElementById("menuToggle"),
+        links = document.getElementById("navLinks");
+      tgl.addEventListener("click", () => links.classList.toggle("open"));
+      links
+        .querySelectorAll("a")
+        .forEach((a) =>
+          a.addEventListener("click", () => links.classList.remove("open")),
+        );
 
-<script>
-/* ===== nav scroll ===== */
-const header=document.getElementById('header');
-addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
+      /* ===== reveal on scroll ===== */
+      const io = new IntersectionObserver(
+        (es) => {
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-/* ===== mobile menu ===== */
-const tgl=document.getElementById('menuToggle'),links=document.getElementById('navLinks');
-tgl.addEventListener('click',()=>links.classList.toggle('open'));
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+      /* ===== module tabs ===== */
+      document.querySelectorAll(".mod-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document
+            .querySelectorAll(".mod-tab")
+            .forEach((t) => t.classList.remove("active"));
+          document
+            .querySelectorAll(".mod-panel")
+            .forEach((p) => p.classList.remove("active"));
+          tab.classList.add("active");
+          document
+            .getElementById("panel-" + tab.dataset.panel)
+            .classList.add("active");
+        });
+      });
 
-/* ===== reveal on scroll ===== */
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+      /* ===== roadmap accordion ===== */
+      document.querySelectorAll(".step-head").forEach((h) => {
+        h.addEventListener("click", () => {
+          const step = h.parentElement,
+            body = step.querySelector(".step-body");
+          const isOpen = step.classList.contains("open");
+          document.querySelectorAll(".step").forEach((s) => {
+            s.classList.remove("open");
+            s.querySelector(".step-body").style.maxHeight = null;
+          });
+          if (!isOpen) {
+            step.classList.add("open");
+            body.style.maxHeight = body.scrollHeight + "px";
+          }
+        });
+      });
+      /* open first step height */
+      addEventListener("load", () => {
+        const o = document.querySelector(".step.open .step-body");
+        if (o) o.style.maxHeight = o.scrollHeight + "px";
+      });
 
-/* ===== module tabs ===== */
-document.querySelectorAll('.mod-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.mod-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.mod-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
-  });
-});
+      /* ===== FAQ accordion ===== */
+      document.querySelectorAll(".faq-q").forEach((q) => {
+        q.addEventListener("click", () => {
+          const item = q.parentElement,
+            a = item.querySelector(".faq-a");
+          const open = item.classList.contains("open");
+          document.querySelectorAll(".faq-item").forEach((i) => {
+            i.classList.remove("open");
+            i.querySelector(".faq-a").style.maxHeight = null;
+          });
+          if (!open) {
+            item.classList.add("open");
+            a.style.maxHeight = a.scrollHeight + "px";
+          }
+        });
+      });
 
-/* ===== roadmap accordion ===== */
-document.querySelectorAll('.step-head').forEach(h=>{
-  h.addEventListener('click',()=>{
-    const step=h.parentElement,body=step.querySelector('.step-body');
-    const isOpen=step.classList.contains('open');
-    document.querySelectorAll('.step').forEach(s=>{s.classList.remove('open');s.querySelector('.step-body').style.maxHeight=null});
-    if(!isOpen){step.classList.add('open');body.style.maxHeight=body.scrollHeight+'px'}
-  });
-});
-/* open first step height */
-addEventListener('load',()=>{const o=document.querySelector('.step.open .step-body');if(o)o.style.maxHeight=o.scrollHeight+'px'});
+      /* ===== turma switch ===== */
+      const turmaData = {
+        1: {
+          time: "13h às 16h",
+          hours:
+            '15h presencial · 5h EAD · 4h online — das <b class="time">13h às 16h</b>',
+        },
+        2: {
+          time: "19h às 22h",
+          hours:
+            '15h presencial · 5h EAD · 4h online — das <b class="time">19h às 22h</b>',
+        },
+      };
+      document.querySelectorAll(".turma-switch button").forEach((b) => {
+        b.addEventListener("click", () => {
+          document
+            .querySelectorAll(".turma-switch button")
+            .forEach((x) => x.classList.remove("active"));
+          b.classList.add("active");
+          const d = turmaData[b.dataset.turma];
+          document.getElementById("turmaTime").textContent = d.time;
+          document.getElementById("turmaHours").innerHTML = d.hours;
+        });
+      });
 
-/* ===== FAQ accordion ===== */
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const item=q.parentElement,a=item.querySelector('.faq-a');
-    const open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
-    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
-  });
-});
-
-/* ===== turma switch ===== */
-const turmaData={
-  '1':{time:'13h às 16h',hours:'15h presencial · 5h EAD · 4h online — das <b class="time">13h às 16h</b>'},
-  '2':{time:'19h às 22h',hours:'15h presencial · 5h EAD · 4h online — das <b class="time">19h às 22h</b>'}
-};
-document.querySelectorAll('.turma-switch button').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.turma-switch button').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    const d=turmaData[b.dataset.turma];
-    document.getElementById('turmaTime').textContent=d.time;
-    document.getElementById('turmaHours').innerHTML=d.hours;
-  });
-});
-
-/* ===== animate hour bars when visible ===== */
-const barIO=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w);barIO.unobserve(e.target)}})},{threshold:.3});
-const hc=document.querySelector('.hours-card');if(hc)barIO.observe(hc);
-</script>
-</body>
+      /* ===== animate hour bars when visible ===== */
+      const barIO = new IntersectionObserver(
+        (es) => {
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target
+                .querySelectorAll(".fill")
+                .forEach((f) => (f.style.width = f.dataset.w));
+              barIO.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+      const hc = document.querySelector(".hours-card");
+      if (hc) barIO.observe(hc);
+    </script>
+  </body>
 </html>
