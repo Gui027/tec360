@@ -600,6 +600,7 @@
       .video-frame .video-ratio {
         position: relative;
         padding: 56.25% 0 0 0;
+        background: #071627;
       }
       .video-frame .video-ratio iframe {
         position: absolute;
@@ -607,6 +608,128 @@
         left: 0;
         width: 100%;
         height: 100%;
+        border: 0;
+        z-index: 3;
+      }
+      .video-poster {
+        all: unset;
+        position: absolute;
+        inset: 0;
+        display: block;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .video-poster img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01);
+        transition:
+          transform 0.6s var(--ease),
+          filter 0.6s var(--ease);
+      }
+      .video-poster::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(5, 16, 30, 0.95) 0%, rgba(5, 16, 30, 0.76) 34%, rgba(5, 16, 30, 0.08) 70%),
+          linear-gradient(0deg, rgba(5, 16, 30, 0.36), rgba(5, 16, 30, 0));
+      }
+      .video-poster:hover img {
+        transform: scale(1.045);
+        filter: saturate(1.08) contrast(1.04);
+      }
+      .video-copy {
+        position: absolute;
+        z-index: 2;
+        left: clamp(22px, 5vw, 58px);
+        top: 50%;
+        transform: translateY(-50%);
+        width: min(44%, 370px);
+        color: #fff;
+      }
+      .video-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-bottom: 0.75rem;
+        font-family: "Space Mono", monospace;
+        font-size: clamp(0.62rem, 1.3vw, 0.78rem);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #8bf1e8;
+      }
+      .video-kicker::before {
+        content: "";
+        width: 22px;
+        height: 2px;
+        border-radius: 99px;
+        background: var(--coral);
+      }
+      .video-copy h3 {
+        margin: 0 0 0.85rem;
+        font-size: clamp(1.55rem, 3.7vw, 3.35rem);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+      .video-copy h3 span {
+        color: var(--coral);
+      }
+      .video-copy p {
+        margin: 0;
+        max-width: 30ch;
+        color: rgba(234, 242, 244, 0.86);
+        font-size: clamp(0.88rem, 1.6vw, 1.05rem);
+        line-height: 1.45;
+      }
+      .video-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin-top: 1.1rem;
+      }
+      .video-badges span {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.09);
+        border-radius: 999px;
+        padding: 0.42rem 0.68rem;
+        font-size: clamp(0.68rem, 1.3vw, 0.78rem);
+        line-height: 1;
+        backdrop-filter: blur(8px);
+      }
+      .poster-play {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        display: grid;
+        place-items: center;
+        width: clamp(66px, 8.6vw, 92px);
+        height: clamp(66px, 8.6vw, 92px);
+        border-radius: 50%;
+        color: #fff;
+        background:
+          linear-gradient(135deg, var(--coral), var(--coral-deep));
+        box-shadow: 0 18px 46px rgba(232, 80, 31, 0.42);
+        transform: translate(-50%, -50%);
+        transition:
+          transform 0.35s var(--ease),
+          box-shadow 0.35s var(--ease);
+      }
+      .video-poster:hover .poster-play {
+        transform: translate(-50%, -50%) scale(1.08);
+        box-shadow: 0 20px 58px rgba(232, 80, 31, 0.58);
+      }
+      .poster-play svg {
+        width: 38%;
+        height: 38%;
+        margin-left: 5%;
+      }
+      .video-frame.is-playing .video-poster {
+        display: none;
       }
       @media (max-width: 720px) {
         .video-sec {
@@ -618,6 +741,38 @@
         .video-frame {
           max-width: 400px;
           border-radius: 24px;
+        }
+        .video-poster::after {
+          background:
+            linear-gradient(0deg, rgba(5, 16, 30, 0.98) 0%, rgba(5, 16, 30, 0.72) 46%, rgba(5, 16, 30, 0.05) 100%);
+        }
+        .video-copy {
+          left: 20px;
+          right: 20px;
+          bottom: 20px;
+          top: auto;
+          transform: none;
+          width: auto;
+        }
+        .video-copy h3 {
+          max-width: 9ch;
+          margin-bottom: 0.55rem;
+        }
+        .video-copy p {
+          max-width: 24ch;
+        }
+        .video-badges {
+          gap: 0.4rem;
+          margin-top: 0.75rem;
+        }
+        .poster-play {
+          left: auto;
+          right: 20px;
+          top: 22px;
+          transform: none;
+        }
+        .video-poster:hover .poster-play {
+          transform: scale(1.06);
         }
       }
 
@@ -1713,21 +1868,37 @@
       <div class="wrap">
         <div class="video-frame reveal">
           <div class="video-ratio">
-            <iframe
-              src="https://player.vimeo.com/video/1206775435?h=0b1bc8502f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-              frameborder="0"
-              allow="
-                autoplay;
-                fullscreen;
-                picture-in-picture;
-                clipboard-write;
-                encrypted-media;
-                web-share;
-              "
-              allowfullscreen
-              referrerpolicy="strict-origin-when-cross-origin"
-              title="video_institucional_plataforma"
-            ></iframe>
+            <button
+              class="video-poster"
+              type="button"
+              aria-label="Assistir vídeo de apresentação do Empreenda Já"
+              data-video-poster
+              data-vimeo-src="https://player.vimeo.com/video/1206775435?h=0b1bc8502f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            >
+              <img
+                src="assets/empreenda-video-thumb.png"
+                alt="Participantes do curso Empreenda Já planejando o primeiro negócio"
+                loading="lazy"
+              />
+              <span class="video-copy">
+                <span class="video-kicker">Aperte o play</span>
+                <h3>Empreenda <span>Já</span></h3>
+                <p>
+                  Do talento à primeira venda: IA, planejamento, finanças e MEI
+                  na prática.
+                </p>
+                <span class="video-badges" aria-hidden="true">
+                  <span>IA</span>
+                  <span>MEI</span>
+                  <span>Pitch</span>
+                </span>
+              </span>
+              <span class="poster-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -3268,6 +3439,30 @@
       );
       const hc = document.querySelector(".hours-card");
       if (hc) barIO.observe(hc);
+
+      /* ===== video poster ===== */
+      const videoPoster = document.querySelector("[data-video-poster]");
+      if (videoPoster) {
+        videoPoster.addEventListener("click", () => {
+          const videoFrame = videoPoster.closest(".video-frame");
+          const videoRatio = videoPoster.closest(".video-ratio");
+          if (!videoFrame || !videoRatio || videoRatio.querySelector("iframe")) {
+            return;
+          }
+
+          const iframe = document.createElement("iframe");
+          const separator = videoPoster.dataset.vimeoSrc.includes("?") ? "&" : "?";
+          iframe.src = `${videoPoster.dataset.vimeoSrc}${separator}autoplay=1`;
+          iframe.allow =
+            "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share";
+          iframe.allowFullscreen = true;
+          iframe.referrerPolicy = "strict-origin-when-cross-origin";
+          iframe.title = "Vídeo de apresentação do Empreenda Já";
+
+          videoFrame.classList.add("is-playing");
+          videoRatio.appendChild(iframe);
+        });
+      }
     </script>
   </body>
 </html>
