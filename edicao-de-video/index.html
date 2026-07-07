@@ -1,0 +1,2181 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edicao de Video | TEC 360</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://i.postimg.cc/vmy36gn2/favicon-V2.png"
+    />
+    <meta
+      name="description"
+      content="Curso de Edicao de Video da TEC 360: fundamentos, storytelling, correcao de cor e exportacao para criar videos de alta qualidade do corte ao acabamento."
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TEC 360" />
+    <meta property="og:title" content="Edicao de Video | TEC 360" />
+    <meta
+      property="og:description"
+      content="Do corte ao acabamento profissional: fundamentos, storytelling, correcao de cor e exportacao."
+    />
+    <meta property="og:image" content="assets/hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      if (window.location.pathname.endsWith("/index.html")) {
+        window.history.replaceState(
+          null,
+          "",
+          window.location.pathname.replace(/\/index\.html$/i, "/") +
+            window.location.search +
+            window.location.hash,
+        );
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --paper: #f5f2ec;
+        --paper-2: #eae5db;
+        --ink: #0e1013;
+        --ink-2: #1d2226;
+        --muted: #6b7078;
+        --white: #ffffff;
+        --charcoal: #14171b;
+        --charcoal-2: #1f2429;
+        --teal: #17c2ac;
+        --teal-deep: #0d9384;
+        --orange: #ff7a3d;
+        --orange-deep: #e35f22;
+        --line: rgba(14, 16, 19, 0.14);
+        --line-dark: rgba(255, 255, 255, 0.14);
+        --maxw: 1180px;
+        --radius: 20px;
+        --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Instrument Sans", system-ui, sans-serif;
+        line-height: 1.55;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Bricolage Grotesque", system-ui, sans-serif;
+        font-weight: 800;
+        letter-spacing: 0;
+        line-height: 1.05;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      ::selection {
+        background: var(--orange);
+        color: #fff;
+      }
+
+      .wrap {
+        width: min(100% - 40px, var(--maxw));
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        align-items: center;
+        color: var(--orange);
+        display: inline-flex;
+        font-family: "Space Mono", monospace;
+        font-size: 0.74rem;
+        font-weight: 700;
+        gap: 0.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        background: currentColor;
+        content: "";
+        height: 2px;
+        width: 30px;
+      }
+
+      .btn {
+        align-items: center;
+        border: 0;
+        border-radius: 999px;
+        cursor: pointer;
+        display: inline-flex;
+        font: 700 0.98rem "Instrument Sans", system-ui, sans-serif;
+        gap: 0.62rem;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0.9rem 1.35rem;
+        transition:
+          transform 0.25s var(--ease),
+          box-shadow 0.25s var(--ease),
+          background 0.25s var(--ease);
+        white-space: nowrap;
+      }
+
+      .btn svg {
+        height: 18px;
+        width: 18px;
+      }
+
+      .btn-primary {
+        background: var(--orange);
+        box-shadow: 0 16px 36px rgba(255, 122, 61, 0.32);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--orange-deep);
+        box-shadow: 0 20px 42px rgba(255, 122, 61, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--line-dark);
+        color: var(--white);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      header {
+        border-bottom: 1px solid transparent;
+        left: 0;
+        padding: 16px 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transition:
+          background 0.25s,
+          padding 0.25s,
+          border-color 0.25s,
+          backdrop-filter 0.25s;
+        z-index: 100;
+      }
+
+      header.scrolled,
+      body.menu-open header {
+        backdrop-filter: blur(18px);
+        background: rgba(14, 16, 19, 0.82);
+        border-bottom-color: var(--line-dark);
+        padding: 10px 0;
+      }
+
+      .nav {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .brand-lockup {
+        align-items: center;
+        color: var(--white);
+        display: inline-flex;
+        gap: 0.8rem;
+        min-width: 0;
+      }
+
+      .tec-logo {
+        background: url("https://i.postimg.cc/DzRK1c2W/logo-tec360-v2.png")
+          center/contain no-repeat;
+        display: block;
+        height: 32px;
+        width: 168px;
+      }
+
+      .brand-div {
+        background: rgba(255, 255, 255, 0.28);
+        height: 28px;
+        width: 1px;
+      }
+
+      .brand-course {
+        display: grid;
+        line-height: 1;
+      }
+
+      .brand-course .k {
+        color: rgba(255, 255, 255, 0.58);
+        font-family: "Space Mono", monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .brand-course .v {
+        font-family: "Bricolage Grotesque", system-ui, sans-serif;
+        font-size: 1.1rem;
+        font-weight: 800;
+      }
+
+      .nav-links {
+        align-items: center;
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        gap: 1.2rem;
+      }
+
+      .nav-links .lnk {
+        font-size: 0.94rem;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+
+      .nav-links .lnk:hover {
+        color: var(--orange);
+      }
+
+      .menu-toggle {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid var(--line-dark);
+        border-radius: 50%;
+        color: var(--white);
+        cursor: pointer;
+        display: none;
+        height: 44px;
+        justify-content: center;
+        position: relative;
+        width: 44px;
+      }
+
+      .menu-toggle span {
+        background: currentColor;
+        border-radius: 99px;
+        height: 2px;
+        position: absolute;
+        transition: transform 0.25s, opacity 0.25s;
+        width: 18px;
+      }
+
+      .menu-toggle span:nth-child(1) {
+        transform: translateY(-6px);
+      }
+
+      .menu-toggle span:nth-child(3) {
+        transform: translateY(6px);
+      }
+
+      .menu-open .menu-toggle span:nth-child(1) {
+        transform: rotate(45deg);
+      }
+
+      .menu-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-open .menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      .hero {
+        background: var(--charcoal);
+        color: var(--white);
+        min-height: 100svh;
+        overflow: hidden;
+        padding: 116px 0 60px;
+        position: relative;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 76px 76px;
+        content: "";
+        inset: 0;
+        mask-image: linear-gradient(to bottom, #000, transparent 82%);
+        opacity: 0.55;
+        position: absolute;
+      }
+
+      .hero::after {
+        background:
+          radial-gradient(circle at 68% 20%, rgba(23, 194, 172, 0.24), transparent 30%),
+          radial-gradient(circle at 18% 38%, rgba(255, 122, 61, 0.22), transparent 28%),
+          linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.62));
+        content: "";
+        inset: 0;
+        position: absolute;
+      }
+
+      .hero-inner {
+        align-items: center;
+        display: grid;
+        gap: clamp(2rem, 4vw, 5rem);
+        grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.78fr);
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-copy {
+        max-width: 740px;
+      }
+
+      .badge {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid var(--line-dark);
+        border-radius: 999px;
+        color: rgba(255, 255, 255, 0.86);
+        display: inline-flex;
+        font-size: 0.88rem;
+        font-weight: 700;
+        gap: 0.5rem;
+        margin: 1.15rem 0 1.4rem;
+        padding: 0.55rem 0.86rem;
+      }
+
+      .badge::before {
+        background: var(--orange);
+        border-radius: 50%;
+        box-shadow: 0 0 0 8px rgba(255, 122, 61, 0.14);
+        content: "";
+        height: 9px;
+        width: 9px;
+      }
+
+      h1 {
+        font-size: clamp(2.9rem, 6.6vw, 6.2rem);
+        max-width: 820px;
+      }
+
+      .focus-word {
+        color: var(--orange);
+      }
+
+      .lead {
+        color: rgba(255, 255, 255, 0.76);
+        font-size: clamp(1.06rem, 1.45vw, 1.24rem);
+        margin-top: 1.35rem;
+        max-width: 660px;
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      .media-panel {
+        align-self: stretch;
+        display: grid;
+        min-height: 540px;
+        position: relative;
+      }
+
+      .frame-shot {
+        align-self: center;
+        background: #050607;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 26px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+        justify-self: center;
+        max-width: 420px;
+        overflow: hidden;
+        position: relative;
+        transform: rotate(-1.5deg);
+        width: 100%;
+      }
+
+      .frame-shot img {
+        aspect-ratio: 3 / 2;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .shot-label {
+        background: rgba(14, 16, 19, 0.82);
+        border: 1px solid var(--line-dark);
+        border-radius: 16px;
+        bottom: 18px;
+        left: 18px;
+        padding: 0.85rem;
+        position: absolute;
+        right: 18px;
+      }
+
+      .shot-label span {
+        color: var(--orange);
+        display: block;
+        font-family: "Space Mono", monospace;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .shot-label strong {
+        display: block;
+        font-size: 1.12rem;
+        line-height: 1.15;
+        margin-top: 0.2rem;
+      }
+
+      .float-stat {
+        background: var(--white);
+        border: 1px solid rgba(14, 16, 19, 0.1);
+        border-radius: 18px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+        color: var(--ink);
+        display: grid;
+        gap: 0.15rem;
+        padding: 1rem 1.1rem;
+        position: absolute;
+      }
+
+      .float-stat b {
+        font-family: "Bricolage Grotesque", system-ui, sans-serif;
+        font-size: 1.65rem;
+        line-height: 1;
+      }
+
+      .float-stat span {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .float-stat.one {
+        left: 0;
+        top: 16%;
+      }
+
+      .float-stat.two {
+        bottom: 12%;
+        right: 0;
+      }
+
+      .facts-band {
+        background: var(--orange);
+        color: #1a0c04;
+        overflow: hidden;
+        padding: 1.1rem 0;
+      }
+
+      .facts-track {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .facts-track span {
+        font-family: "Space Mono", monospace;
+        font-size: clamp(0.78rem, 1vw, 0.9rem);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .facts-track i {
+        background: #1a0c04;
+        border-radius: 50%;
+        display: block;
+        height: 7px;
+        width: 7px;
+      }
+
+      section {
+        position: relative;
+      }
+
+      .sec {
+        padding: clamp(62px, 7vw, 104px) 0;
+      }
+
+      .sec-dark {
+        background: var(--charcoal);
+        color: var(--white);
+      }
+
+      .sec-head {
+        margin-bottom: clamp(2rem, 4vw, 3.8rem);
+        max-width: 760px;
+      }
+
+      .sec-head.center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .sec-head.center .eyebrow {
+        justify-content: center;
+      }
+
+      .sec-head h2 {
+        font-size: clamp(2rem, 4vw, 3.8rem);
+        margin-top: 0.9rem;
+      }
+
+      .sec-head p {
+        color: var(--muted);
+        font-size: 1.08rem;
+        margin-top: 1rem;
+      }
+
+      .sec-dark .sec-head p {
+        color: rgba(255, 255, 255, 0.68);
+      }
+
+      .split {
+        align-items: center;
+        display: grid;
+        gap: clamp(2rem, 5vw, 5rem);
+        grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.08fr);
+      }
+
+      .editorial-photo {
+        aspect-ratio: 16 / 9;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        justify-self: center;
+        max-width: 420px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+
+      .editorial-photo img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .editorial-photo::after {
+        border: 2px solid var(--orange);
+        border-radius: 20px;
+        content: "";
+        inset: 14px;
+        pointer-events: none;
+        position: absolute;
+      }
+
+      .copy-stack {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .copy-stack h2 {
+        font-size: clamp(1.95rem, 3.5vw, 3.45rem);
+      }
+
+      .copy-stack p {
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .goal-list {
+        display: grid;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .goal-item {
+        align-items: flex-start;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        display: grid;
+        gap: 0.85rem;
+        grid-template-columns: auto 1fr;
+        padding: 1rem;
+      }
+
+      .goal-item .mark {
+        align-items: center;
+        background: var(--charcoal);
+        border-radius: 50%;
+        color: var(--orange);
+        display: grid;
+        flex: 0 0 auto;
+        height: 30px;
+        justify-content: center;
+        margin-top: 0.1rem;
+        width: 30px;
+      }
+
+      .goal-item h3 {
+        font-size: 1.14rem;
+        line-height: 1.15;
+      }
+
+      .goal-item p {
+        font-size: 0.96rem;
+        margin-top: 0.3rem;
+      }
+
+      .audience-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .audience-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        min-height: 220px;
+        overflow: hidden;
+        padding: 1.35rem;
+        position: relative;
+      }
+
+      .audience-card::before {
+        background:
+          linear-gradient(90deg, rgba(14, 16, 19, 0.08) 1px, transparent 1px),
+          linear-gradient(rgba(14, 16, 19, 0.08) 1px, transparent 1px);
+        background-size: 24px 24px;
+        content: "";
+        inset: 0;
+        opacity: 0.55;
+        position: absolute;
+      }
+
+      .audience-card > * {
+        position: relative;
+      }
+
+      .audience-card .num {
+        color: var(--orange-deep);
+        font-family: "Space Mono", monospace;
+        font-weight: 700;
+      }
+
+      .audience-card h3 {
+        font-size: 1.38rem;
+        margin-top: 3rem;
+      }
+
+      .audience-card p {
+        color: var(--muted);
+        margin-top: 0.65rem;
+      }
+
+      .audience-card:nth-child(2) {
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      .audience-card:nth-child(2) p {
+        color: rgba(255, 255, 255, 0.68);
+      }
+
+      .audience-card:nth-child(3) {
+        background: var(--teal);
+      }
+
+      .outcomes {
+        display: grid;
+        gap: 0.9rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .outcome {
+        border-top: 1px solid var(--line-dark);
+        padding: 1.25rem 0 0;
+      }
+
+      .outcome svg {
+        color: var(--orange);
+        height: 32px;
+        margin-bottom: 1rem;
+        width: 32px;
+      }
+
+      .outcome h3 {
+        font-size: 1.28rem;
+      }
+
+      .outcome p {
+        color: rgba(255, 255, 255, 0.68);
+        margin-top: 0.55rem;
+      }
+
+      /* ============ VIDEO DE APRESENTACAO ============ */
+      .video-shell {
+        background: #050607;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 28px;
+        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+        margin-inline: auto;
+        max-width: 920px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .video-ratio {
+        background: #050607;
+        padding-top: 56.25%;
+        position: relative;
+      }
+
+      .video-ratio video {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      .video-poster {
+        all: unset;
+        cursor: pointer;
+        display: block;
+        inset: 0;
+        overflow: hidden;
+        position: absolute;
+      }
+
+      .video-poster img {
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+        position: absolute;
+        transform: scale(1.01);
+        transition:
+          transform 0.6s var(--ease),
+          filter 0.6s var(--ease);
+        width: 100%;
+      }
+
+      .video-poster::after {
+        background:
+          linear-gradient(0deg, rgba(5, 6, 7, 0.92) 0%, rgba(5, 6, 7, 0.5) 48%, rgba(5, 6, 7, 0.05) 100%);
+        content: "";
+        inset: 0;
+        position: absolute;
+      }
+
+      .video-poster:hover img {
+        filter: saturate(1.1) contrast(1.05);
+        transform: scale(1.045);
+      }
+
+      .video-copy {
+        bottom: clamp(20px, 4vw, 42px);
+        color: var(--white);
+        left: clamp(20px, 4vw, 44px);
+        max-width: 420px;
+        position: absolute;
+        right: clamp(20px, 10vw, 120px);
+        z-index: 2;
+      }
+
+      .video-kicker {
+        align-items: center;
+        color: var(--orange);
+        display: inline-flex;
+        font-family: "Space Mono", monospace;
+        font-size: 0.72rem;
+        gap: 0.5rem;
+        letter-spacing: 0.16em;
+        margin-bottom: 0.6rem;
+        text-transform: uppercase;
+      }
+
+      .video-copy h3 {
+        font-size: clamp(1.4rem, 3vw, 2.2rem);
+        margin-bottom: 0.45rem;
+      }
+
+      .video-copy h3 span {
+        color: var(--teal);
+      }
+
+      .video-copy p {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.95rem;
+        margin: 0;
+      }
+
+      .poster-play {
+        background: var(--orange);
+        border-radius: 50%;
+        box-shadow: 0 18px 46px rgba(255, 122, 61, 0.4);
+        color: #fff;
+        display: grid;
+        height: clamp(64px, 8vw, 86px);
+        left: 50%;
+        place-items: center;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition:
+          transform 0.35s var(--ease),
+          box-shadow 0.35s var(--ease);
+        width: clamp(64px, 8vw, 86px);
+        z-index: 2;
+      }
+
+      .video-poster:hover .poster-play {
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+
+      .poster-play svg {
+        height: 38%;
+        margin-left: 5%;
+        width: 38%;
+      }
+
+      .video-shell.is-playing .video-poster {
+        display: none;
+      }
+
+      @media (max-width: 620px) {
+        .video-copy {
+          right: clamp(20px, 4vw, 44px);
+        }
+      }
+
+      .testimonials {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        max-width: 920px;
+      }
+
+      .quote {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+
+      .quote-head {
+        align-items: center;
+        display: flex;
+        gap: 0.9rem;
+        margin-bottom: 1.15rem;
+      }
+
+      .quote img {
+        border: 3px solid var(--paper);
+        border-radius: 50%;
+        box-shadow: 0 10px 26px rgba(14, 16, 19, 0.16);
+        flex: none;
+        height: 60px;
+        object-fit: cover;
+        width: 60px;
+      }
+
+      .quote blockquote {
+        color: var(--ink-2);
+        flex: 1;
+        font-size: 0.97rem;
+      }
+
+      .quote cite {
+        color: var(--ink);
+        display: block;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .quote cite span {
+        color: var(--muted);
+        display: block;
+        font-size: 0.83rem;
+        font-weight: 500;
+        margin-top: 0.15rem;
+      }
+
+      .learning {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .learning-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--line-dark);
+        border-radius: 22px;
+        padding: 1.4rem;
+      }
+
+      .learning-card span {
+        color: var(--orange);
+        font-family: "Space Mono", monospace;
+        font-weight: 700;
+      }
+
+      .learning-card h3 {
+        font-size: 1.5rem;
+        margin-top: 2.6rem;
+      }
+
+      .learning-card p {
+        color: rgba(255, 255, 255, 0.68);
+        margin-top: 0.65rem;
+      }
+
+      .module-shell {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 0.38fr 0.62fr;
+        padding: clamp(1.2rem, 3vw, 2rem);
+      }
+
+      .module-aside {
+        background: var(--ink);
+        border-radius: 20px;
+        color: var(--white);
+        display: grid;
+        min-height: 100%;
+        padding: 1.4rem;
+      }
+
+      .module-aside .big {
+        align-self: end;
+        color: var(--orange);
+        font-family: "Bricolage Grotesque", system-ui, sans-serif;
+        font-size: clamp(5rem, 14vw, 10rem);
+        font-weight: 800;
+        line-height: 0.82;
+      }
+
+      .module-drawers {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .m-drawer {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .m-drawer summary {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        list-style: none;
+        padding: 1.1rem 3rem 1.1rem 1.2rem;
+        position: relative;
+      }
+
+      .m-drawer summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .m-drawer summary .m-name {
+        flex: 1;
+        font-weight: 700;
+      }
+
+      .m-drawer summary .m-count {
+        color: var(--muted);
+        flex: none;
+        font-family: "Space Mono", monospace;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .m-drawer summary::after {
+        color: var(--orange-deep);
+        content: "+";
+        font-family: "Space Mono", monospace;
+        font-size: 1.3rem;
+        position: absolute;
+        right: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .m-drawer[open] summary::after {
+        content: "\2212";
+      }
+
+      .m-drawer ul {
+        display: grid;
+        gap: 0.6rem;
+        list-style: none;
+        padding: 0 1.2rem 1.2rem;
+      }
+
+      .m-drawer li {
+        border-top: 1px solid var(--line);
+        color: var(--ink-2);
+        font-size: 0.95rem;
+        padding-top: 0.6rem;
+      }
+
+      .m-drawer li:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .schedule-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr 1.2fr;
+      }
+
+      .schedule-card {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 1.25rem;
+      }
+
+      .schedule-card b {
+        display: block;
+        font-family: "Bricolage Grotesque", system-ui, sans-serif;
+        font-size: 1.75rem;
+        line-height: 1;
+      }
+
+      .schedule-card span {
+        color: var(--muted);
+        display: block;
+        margin-top: 0.45rem;
+      }
+
+      .instructor {
+        align-items: center;
+        display: grid;
+        gap: clamp(1.5rem, 3vw, 3rem);
+        grid-template-columns: 190px 1fr;
+        max-width: 900px;
+      }
+
+      .instructor-photo {
+        aspect-ratio: 1;
+        background: var(--white);
+        border: 8px solid var(--white);
+        border-radius: 50%;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+      }
+
+      .instructor-photo img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .instructor-copy h2 {
+        font-size: clamp(1.95rem, 3.6vw, 3.7rem);
+      }
+
+      .instructor-copy p {
+        color: var(--muted);
+        font-size: 1.08rem;
+        margin-top: 1rem;
+      }
+
+      .faq {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      details {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--line-dark);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+        list-style: none;
+        padding: 1.1rem 3rem 1.1rem 1.2rem;
+        position: relative;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary::after {
+        color: var(--orange);
+        content: "+";
+        font-family: "Space Mono", monospace;
+        font-size: 1.45rem;
+        position: absolute;
+        right: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      details[open] summary::after {
+        content: "-";
+      }
+
+      details p {
+        color: rgba(255, 255, 255, 0.68);
+        padding: 0 1.2rem 1.1rem;
+      }
+
+      .cta {
+        background:
+          linear-gradient(135deg, rgba(23, 194, 172, 0.2), transparent 42%),
+          linear-gradient(315deg, rgba(255, 122, 61, 0.18), transparent 42%),
+          var(--ink);
+        color: var(--white);
+        overflow: hidden;
+        padding: clamp(66px, 7vw, 104px) 0;
+      }
+
+      .cta-box {
+        align-items: end;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr auto;
+      }
+
+      .cta h2 {
+        font-size: clamp(2.2rem, 4.8vw, 4.8rem);
+        max-width: 760px;
+      }
+
+      .cta p {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 1.12rem;
+        margin-top: 1rem;
+        max-width: 680px;
+      }
+
+      footer {
+        background: #08090b;
+        color: rgba(255, 255, 255, 0.72);
+        padding: 32px 0;
+      }
+
+      .foot {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+      }
+
+      .foot a {
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      .zap {
+        align-items: center;
+        background: #25d366;
+        border-radius: 50%;
+        bottom: 22px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
+        color: white;
+        display: grid;
+        height: 58px;
+        justify-content: center;
+        position: fixed;
+        right: 22px;
+        width: 58px;
+        z-index: 90;
+      }
+
+      .zap svg {
+        height: 28px;
+        width: 28px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.7s var(--ease),
+          transform 0.7s var(--ease);
+      }
+
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      .d1 {
+        transition-delay: 0.08s;
+      }
+
+      .d2 {
+        transition-delay: 0.16s;
+      }
+
+      .d3 {
+        transition-delay: 0.24s;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--orange);
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 1040px) {
+        .hero-inner,
+        .split,
+        .module-shell,
+        .cta-box {
+          grid-template-columns: 1fr;
+        }
+
+        .media-panel {
+          min-height: 480px;
+        }
+
+        .float-stat.one {
+          left: 7%;
+        }
+
+        .float-stat.two {
+          right: 7%;
+        }
+
+        .audience-grid,
+        .outcomes,
+        .learning {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .schedule-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 820px) {
+        .wrap {
+          width: min(100% - 28px, var(--maxw));
+        }
+
+        .brand-div,
+        .brand-course {
+          display: none;
+        }
+
+        .tec-logo {
+          width: 142px;
+        }
+
+        .menu-toggle {
+          display: grid;
+        }
+
+        .nav-links {
+          align-content: start;
+          background: rgba(14, 16, 19, 0.98);
+          display: grid;
+          gap: 0;
+          inset: 66px 14px auto;
+          max-height: calc(100svh - 82px);
+          opacity: 0;
+          padding: 0.7rem;
+          pointer-events: none;
+          position: fixed;
+          transform: translateY(-10px);
+          transition:
+            opacity 0.25s,
+            transform 0.25s;
+        }
+
+        .menu-open .nav-links {
+          opacity: 1;
+          pointer-events: auto;
+          transform: none;
+        }
+
+        .nav-links .lnk,
+        .nav-links .btn {
+          border-radius: 14px;
+          justify-content: flex-start;
+          padding: 1rem;
+        }
+
+        .nav-links .lnk {
+          border-bottom: 1px solid var(--line-dark);
+        }
+
+        .hero {
+          padding-top: 102px;
+        }
+
+        h1 {
+          font-size: clamp(2.55rem, 13vw, 4.2rem);
+        }
+
+        .media-panel {
+          min-height: auto;
+          padding: 1rem 0 5.5rem;
+        }
+
+        .frame-shot {
+          max-width: 340px;
+        }
+
+        .float-stat {
+          padding: 0.82rem 0.9rem;
+        }
+
+        .float-stat.one {
+          left: 0;
+          top: 10%;
+        }
+
+        .float-stat.two {
+          bottom: 0;
+          right: 0;
+        }
+
+        .audience-grid,
+        .outcomes,
+        .learning,
+        .instructor,
+        .testimonials {
+          grid-template-columns: 1fr;
+        }
+
+        .instructor-photo {
+          width: min(190px, 66vw);
+        }
+
+        .facts-track {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .facts-track i {
+          display: none;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .btn {
+          width: 100%;
+        }
+
+        .audience-card {
+          min-height: 205px;
+        }
+
+        .shot-label {
+          left: 14px;
+          right: 14px;
+        }
+
+        .sec {
+          padding: 64px 0;
+        }
+
+        .zap {
+          bottom: 16px;
+          height: 52px;
+          right: 16px;
+          width: 52px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="wrap nav">
+        <a href="#topo" class="brand-lockup" aria-label="TEC360 Edicao de Video">
+          <span class="tec-logo" role="img" aria-label="TEC360"></span>
+          <span class="brand-div"></span>
+          <span class="brand-course">
+            <span class="k">Curso</span>
+            <span class="v">Edicao de Video</span>
+          </span>
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Navegacao principal">
+          <a class="lnk" href="#objetivo">Objetivo</a>
+          <a class="lnk" href="#resultados">Resultados</a>
+          <a class="lnk" href="#modulo">Modulo</a>
+          <a class="lnk" href="#agenda">Agenda</a>
+          <a class="lnk" href="#faq">Duvidas</a>
+          <a
+            class="btn btn-primary"
+            href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+            >Inscreva-se</a
+          >
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="topo">
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow reveal in">TEC 360 apresenta</span>
+            <span class="badge reveal in d1">Do corte ao acabamento profissional</span>
+            <h1 class="reveal in d1">
+              Edicao de Video para contar historias que
+              <span class="focus-word">prendem</span> a atencao.
+            </h1>
+            <p class="lead reveal in d2">
+              Fundamentos de edicao, storytelling, correcao de cor e
+              exportacao — teoria curta e muita pratica para voce sair
+              editando com tecnica de mercado.
+            </p>
+            <div class="hero-cta reveal in d3">
+              <a
+                class="btn btn-primary"
+                href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+              >
+                Inscreva-se agora
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.2"
+                  />
+                </svg>
+              </a>
+              <a class="btn btn-ghost" href="#video">Assistir chamada</a>
+            </div>
+          </div>
+
+          <div class="media-panel reveal in d2" aria-hidden="true">
+            <div class="float-stat one">
+              <b>12h</b>
+              <span>presenciais</span>
+            </div>
+            <div class="frame-shot">
+              <img
+                src="assets/hero.jpg"
+                alt=""
+                width="1024"
+                height="682"
+              />
+              <span class="shot-label">
+                <span>Timeline</span>
+                <strong>corte, cor, audio e exportacao</strong>
+              </span>
+            </div>
+            <div class="float-stat two">
+              <b>3</b>
+              <span>encontros praticos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="facts-band" aria-label="Informacoes rapidas">
+        <div class="wrap facts-track">
+          <span>Total de 12 horas</span>
+          <i></i>
+          <span>Tres encontros presenciais</span>
+          <i></i>
+          <span>Do corte a cor</span>
+          <i></i>
+          <span>Projeto pratico final</span>
+        </div>
+      </div>
+
+      <section class="sec" id="objetivo">
+        <div class="wrap split">
+          <div class="editorial-photo reveal">
+            <img
+              src="assets/capcut.webp"
+              alt="Aplicativo de edicao de video no celular"
+              loading="lazy"
+              width="1280"
+              height="720"
+            />
+          </div>
+          <div class="copy-stack reveal d1">
+            <span class="eyebrow">Objetivo do curso</span>
+            <h2>Edite com tecnica, nao so no talento.</h2>
+            <p>
+              O foco do curso e ensinar tecnicas basicas de edicao unindo
+              teoria e pratica, para que voce domine a arte da edicao e crie
+              videos de alta qualidade — do primeiro corte ao acabamento
+              profissional.
+            </p>
+            <p>
+              Mais pratica e menos teoria: aulas com demonstracoes em tempo
+              real e material complementar para reforcar o aprendizado entre
+              um encontro e outro.
+            </p>
+            <div class="goal-list">
+              <div class="goal-item">
+                <span class="mark">1</span>
+                <div>
+                  <h3>Fundamentos da edicao na pratica</h3>
+                  <p>
+                    Conceitos, timeline, organizacao de projeto, cortes,
+                    transicoes, efeitos basicos e nocoes de audio.
+                  </p>
+                </div>
+              </div>
+              <div class="goal-item">
+                <span class="mark">2</span>
+                <div>
+                  <h3>Tecnicas para uma edicao de nivel</h3>
+                  <p>
+                    Storytelling, efeitos avancados, correcao de cor e
+                    sincronizacao de audio e video.
+                  </p>
+                </div>
+              </div>
+              <div class="goal-item">
+                <span class="mark">3</span>
+                <div>
+                  <h3>Do rascunho a exportacao</h3>
+                  <p>
+                    Formatos de exportacao e otimizacao de desempenho e tempo
+                    de trabalho no seu fluxo de edicao.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="publico">
+        <div class="wrap">
+          <div class="sec-head center reveal">
+            <span class="eyebrow">Esse curso e para voce que</span>
+            <h2>Quer transformar gravacoes soltas em video pronto.</h2>
+            <p>
+              Um percurso pratico para quem quer sair do zero — ou destravar
+              o proximo nivel — na edicao de video.
+            </p>
+          </div>
+          <div class="audience-grid">
+            <article class="audience-card reveal">
+              <span class="num">01</span>
+              <h3>Iniciantes entusiasmados</h3>
+              <p>
+                Nunca editou um video, mas quer aprender do zero com pratica
+                guiada desde a primeira aula.
+              </p>
+            </article>
+            <article class="audience-card reveal d1">
+              <span class="num">02</span>
+              <h3>Criadores de conteudo</h3>
+              <p>
+                Ja grava para redes sociais e quer elevar o acabamento e a
+                narrativa dos proprios videos.
+              </p>
+            </article>
+            <article class="audience-card reveal d2">
+              <span class="num">03</span>
+              <h3>Estudantes de audiovisual</h3>
+              <p>
+                Busca tecnica de mercado para fortalecer portfolio, carreira
+                ou projetos autorais.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec sec-dark" id="resultados">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Depois do curso</span>
+            <h2>Voce sai editando com intencao.</h2>
+            <p>
+              A formacao combina teoria objetiva, demonstracoes e exercicios
+              para que cada tecnica vire pratica ainda durante as aulas.
+            </p>
+          </div>
+          <div class="outcomes">
+            <article class="outcome reveal">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="3"
+                  y="5"
+                  width="18"
+                  height="14"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="m9 13 3-3 2 2 4-4"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Compreender os fundamentos</h3>
+              <p>
+                Conceitos, historico e logica por tras da edicao audiovisual
+                profissional.
+              </p>
+            </article>
+            <article class="outcome reveal d1">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="4"
+                  y="6"
+                  width="16"
+                  height="12"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path d="M9 9v6l5-3-5-3Z" fill="currentColor" />
+              </svg>
+              <h3>Editar no celular com o CapCut</h3>
+              <p>
+                Domine um dos aplicativos mais usados para editar videos
+                direto do smartphone.
+              </p>
+            </article>
+            <article class="outcome reveal d2">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 18 10 8l4 6 2-3 4 7H4Z"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+                <path
+                  d="M5 5h14M5 21h14"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Manipular videos com eficiencia</h3>
+              <p>
+                Corte, transicione e finalize com fluidez, sem travar no
+                processo tecnico.
+              </p>
+            </article>
+            <article class="outcome reveal">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 3v18M5 8h14M7 16h10"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+                <circle cx="9" cy="8" r="2" fill="currentColor" />
+                <circle cx="15" cy="16" r="2" fill="currentColor" />
+              </svg>
+              <h3>Aplicar storytelling na edicao</h3>
+              <p>
+                Construa uma narrativa visual que segura a atencao do comeco
+                ao fim.
+              </p>
+            </article>
+            <article class="outcome reveal d1">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 7h16v12H4zM8 7l2-3h4l2 3"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Criar videos para diferentes nichos</h3>
+              <p>
+                Adapte tom, ritmo e formato para redes sociais, negocios ou
+                projetos autorais.
+              </p>
+            </article>
+            <article class="outcome reveal d2">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M12 7v5l3 2"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Otimizar desempenho e tempo</h3>
+              <p>
+                Organize seu fluxo de trabalho para editar mais rapido, sem
+                perder qualidade.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="video">
+        <div class="wrap">
+          <div class="sec-head center reveal">
+            <span class="eyebrow">Aperte o play</span>
+            <h2>Conheca a chamada do curso.</h2>
+          </div>
+          <div class="video-shell reveal d1" id="videoShell">
+            <div class="video-ratio">
+              <button
+                class="video-poster"
+                type="button"
+                aria-label="Assistir video de apresentacao do curso Edicao de Video"
+                data-video-poster
+                data-video-src="https://wp.tec360.com.br/wp-content/uploads/2024/02/HORIZONTAL-01_legendado_.mp4"
+              >
+                <img
+                  src="assets/hero.jpg"
+                  alt=""
+                  loading="lazy"
+                  width="1024"
+                  height="682"
+                />
+                <span class="video-copy">
+                  <span class="video-kicker">Aperte o play</span>
+                  <h3>Edicao de <span>Video</span></h3>
+                  <p>
+                    Do corte ao acabamento: veja um pouco do que voce vai
+                    praticar em sala.
+                  </p>
+                </span>
+                <span class="poster-play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="depoimentos">
+        <div class="wrap">
+          <div class="sec-head center reveal">
+            <span class="eyebrow">O que os alunos dizem</span>
+            <h2>De curiosos a editando os proprios videos.</h2>
+          </div>
+          <div class="testimonials">
+            <article class="quote reveal">
+              <div class="quote-head">
+                <img
+                  src="assets/patricia.jpg"
+                  alt="Patricia Pereira"
+                  loading="lazy"
+                  width="480"
+                  height="518"
+                />
+                <cite>
+                  Patricia Pereira
+                  <span>Dentista</span>
+                </cite>
+              </div>
+              <blockquote>
+                Achei o curso bem didatico e proveitoso. De forma clara e
+                simples, consegui comecar a editar meus primeiros videos com
+                muito mais confianca.
+              </blockquote>
+            </article>
+            <article class="quote reveal d1">
+              <div class="quote-head">
+                <img
+                  src="assets/shaira.jpg"
+                  alt="Shaira Morandi"
+                  loading="lazy"
+                  width="480"
+                  height="640"
+                />
+                <cite>
+                  Shaira Morandi
+                  <span>Proprietaria e Coordenadora da Cultura Inglesa Colatina</span>
+                </cite>
+              </div>
+              <blockquote>
+                Tive uma experiencia maravilhosa. Pude aprender tecnicas e
+                dominar um aplicativo essencial para produzir videos de alta
+                qualidade.
+              </blockquote>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec sec-dark" id="trilha">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Metodologia de ensino</span>
+            <h2>Mais pratica e menos teoria.</h2>
+          </div>
+          <div class="learning">
+            <article class="learning-card reveal">
+              <span>01</span>
+              <h3>Aulas praticas</h3>
+              <p>
+                Demonstracoes em tempo real e mao na massa desde o primeiro
+                corte, combinando teoria curta com muita pratica.
+              </p>
+            </article>
+            <article class="learning-card reveal d1">
+              <span>02</span>
+              <h3>Material complementar</h3>
+              <p>
+                E-books, quiz e slides liberados na plataforma online para
+                reforcar o aprendizado entre as aulas.
+              </p>
+            </article>
+            <article class="learning-card reveal d2">
+              <span>03</span>
+              <h3>Avaliacao</h3>
+              <p>
+                Participacao em aula, entrega de projetos praticos e
+                exercicios ao longo da formacao.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="modulo">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Conteudo programatico</span>
+            <h2>Um modulo completo, do corte a exportacao.</h2>
+          </div>
+          <div class="module-shell reveal d1">
+            <aside class="module-aside">
+              <span class="eyebrow">Modulo</span>
+              <span class="big">01</span>
+            </aside>
+            <div class="module-drawers">
+              <details class="m-drawer" open>
+                <summary>
+                  <span class="m-name">Fundamentos da Edicao de Video</span>
+                  <span class="m-count">5 topicos</span>
+                </summary>
+                <ul>
+                  <li>Introducao a edicao: conceitos basicos e historico.</li>
+                  <li>Principais softwares e funcionalidades.</li>
+                  <li>Timeline e organizacao do projeto.</li>
+                  <li>Cortes, transicoes e efeitos basicos.</li>
+                  <li>Nocoes de audio na edicao.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">Tecnicas Para Uma Excelente Edicao</span>
+                  <span class="m-count">5 topicos</span>
+                </summary>
+                <ul>
+                  <li>Storytelling na edicao de video.</li>
+                  <li>Efeitos avancados e tecnicas de transicao.</li>
+                  <li>Correcao de cor e filtros.</li>
+                  <li>Sincronizacao de audio e video.</li>
+                  <li>Exportacao e formatos de video.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="agenda">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Carga horaria e periodicidade</span>
+            <h2>Tres encontros seguidos para sair editando.</h2>
+          </div>
+          <div class="schedule-grid">
+            <article class="schedule-card reveal">
+              <b>12 horas</b>
+              <span>Carga horaria total, 100% presencial.</span>
+            </article>
+            <article class="schedule-card reveal d1">
+              <b>9 a 11/09</b>
+              <span>Tres dias seguidos de setembro, das 18h30 as 22h30.</span>
+            </article>
+            <article class="schedule-card reveal d2">
+              <b>TEC360</b>
+              <span>
+                Escola de Tecnologia e Negocios, em Sao Silvano,
+                Colatina/ES.
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="instrutor">
+        <div class="wrap instructor">
+          <div class="instructor-photo reveal">
+            <img
+              src="assets/instrutor.png"
+              alt="Luiz Phillipe Dondone Cometti"
+              loading="lazy"
+              width="622"
+              height="622"
+            />
+          </div>
+          <div class="instructor-copy reveal d1">
+            <span class="eyebrow">Com quem voce vai aprender</span>
+            <h2>Luiz Phillipe Dondone Cometti.</h2>
+            <p>
+              Iniciou a carreira aos 12 anos, com cursos de design grafico e
+              web design. Passou por empresas como PW Brasil, Riff Propaganda
+              e Target, ampliando o conhecimento em publicidade, design e
+              edicao. Fundador do "O Olho Gordo", atendendo grandes empresas
+              gastronomicas do Espirito Santo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec sec-dark" id="faq">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Duvidas mais comuns</span>
+            <h2>O essencial antes de se inscrever.</h2>
+          </div>
+          <div class="faq">
+            <details class="reveal">
+              <summary>A matricula nos cursos e feita somente pelo site?</summary>
+              <p>
+                Nao. A inscricao pode ser feita pelo site ou diretamente com a
+                central pelo telefone 27 3121-8360 ou WhatsApp 27 99201-4093.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Os cursos possuem certificado?</summary>
+              <p>
+                Sim, todos os cursos oferecidos contemplam certificado pela
+                instituicao, valido para horas extracurriculares, concursos
+                publicos e progressao funcional.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Para quem e esse curso?</summary>
+              <p>
+                Para iniciantes entusiasmados, criadores de conteudo e
+                estudantes de audiovisual interessados em dominar a edicao
+                de video, do zero ou para destravar o proximo nivel.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Quais sao os pre-requisitos?</summary>
+              <p>
+                Conhecimento basico de informatica e interesse em edicao de
+                video. Nao e necessaria experiencia previa na area.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Como a TEC360 avalia os alunos?</summary>
+              <p>
+                A avaliacao considera participacao em aula, entrega de
+                projetos praticos e exercicios ao longo da formacao.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Qual a frequencia necessaria para aprovacao?</summary>
+              <p>
+                Para ser aprovado e receber certificado, o aluno deve obter
+                media final igual ou superior a 6,0 e frequencia minima de 75%
+                do total de horas presenciais.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Vou receber material didatico?</summary>
+              <p>
+                Sim, e-books, quiz e slides complementares sao
+                disponibilizados na plataforma online para reforcar o
+                aprendizado.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary>Os cursos da TEC360 sao reconhecidos pelo MEC?</summary>
+              <p>
+                Sao cursos livres de curta duracao, sem regulamentacao
+                especifica do MEC, com conteudos teoricos associados a pratica
+                profissional.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="inscricao">
+        <div class="wrap cta-box">
+          <div class="reveal">
+            <span class="eyebrow">Edicao de Video</span>
+            <h2>Solte a criatividade. Edite como profissional.</h2>
+            <p>
+              Garanta sua vaga e saia sabendo cortar, narrar e finalizar
+              videos com qualidade profissional, do celular ou do computador.
+            </p>
+          </div>
+          <a
+            class="btn btn-primary reveal d1"
+            href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+          >
+            Fazer inscricao
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 12h14M13 6l6 6-6 6"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.2"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot">
+        <span>© 2026 TEC360 - Escola de Tecnologia e Negocios Inovadores.</span>
+        <a href="../">Voltar para a TEC360</a>
+      </div>
+    </footer>
+
+    <a
+      class="zap"
+      href="https://wa.me/5527992014093"
+      aria-label="Falar com a equipe pelo WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M20.52 3.48A11.85 11.85 0 0 0 12.08 0C5.5 0 .15 5.33.15 11.88c0 2.1.55 4.15 1.6 5.96L0 24l6.32-1.65a11.95 11.95 0 0 0 5.76 1.46h.01c6.57 0 11.92-5.33 11.92-11.88 0-3.18-1.24-6.16-3.49-8.45ZM12.09 21.8h-.01a9.94 9.94 0 0 1-5.06-1.38l-.36-.21-3.75.98 1-3.64-.24-.38a9.83 9.83 0 0 1-1.51-5.28C2.16 6.44 6.62 2 12.1 2a9.9 9.9 0 0 1 7.02 2.9 9.82 9.82 0 0 1 2.91 7.03c0 5.45-4.46 9.88-9.94 9.88Zm5.45-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.47a8.95 8.95 0 0 1-1.66-2.06c-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.48.71.3 1.26.49 1.7.62.71.22 1.36.19 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      const header = document.getElementById("header");
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      const setHeader = () => {
+        header.classList.toggle("scrolled", window.scrollY > 16);
+      };
+
+      setHeader();
+      window.addEventListener("scroll", setHeader, { passive: true });
+
+      menuToggle.addEventListener("click", () => {
+        const open = document.body.classList.toggle("menu-open");
+        menuToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.body.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-label", "Abrir menu");
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      const videoPoster = document.querySelector("[data-video-poster]");
+      if (videoPoster) {
+        videoPoster.addEventListener("click", () => {
+          const shell = videoPoster.closest(".video-shell");
+          const ratio = videoPoster.closest(".video-ratio");
+          if (!shell || !ratio || ratio.querySelector("video")) return;
+
+          const video = document.createElement("video");
+          video.src = videoPoster.dataset.videoSrc;
+          video.controls = true;
+          video.autoplay = true;
+          video.playsInline = true;
+
+          shell.classList.add("is-playing");
+          ratio.appendChild(video);
+        });
+      }
+    </script>
+  </body>
+</html>
