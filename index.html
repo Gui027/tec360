@@ -888,16 +888,19 @@
       .courses {
         background: var(--navy-950);
       }
-      .courses-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
+      .course-carousel {
+        position: relative;
+        overflow: hidden;
+        margin: 0 -8px;
       }
-      .courses-showcase {
-        display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
+      .course-track {
+        display: flex;
         gap: 22px;
-        align-items: stretch;
+        padding: 8px;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .course-track .course {
+        flex: 0 0 min(360px, 84vw);
       }
       .course {
         position: relative;
@@ -1012,126 +1015,6 @@
       }
       .course-link:hover h3 {
         color: var(--teal-bright);
-      }
-      .course.featured-course {
-        min-height: 360px;
-        background:
-          radial-gradient(
-            circle at 92% 8%,
-            rgba(45, 226, 200, 0.22),
-            transparent 34%
-          ),
-          linear-gradient(145deg, #0d235e, var(--navy-900) 62%);
-      }
-      .course.featured-course h3 {
-        font-size: clamp(1.7rem, 3vw, 2.45rem);
-        max-width: 13ch;
-      }
-      .course.featured-course p {
-        max-width: 62ch;
-      }
-      .course-panel {
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent),
-          rgba(255, 255, 255, 0.03);
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 360px;
-      }
-      .course-panel h3 {
-        font-size: 1.45rem;
-        margin: 0.8em 0 0.45em;
-      }
-      .course-panel p {
-        color: var(--slate-light);
-        font-size: 0.96rem;
-      }
-      .course-count {
-        width: 76px;
-        height: 76px;
-        border-radius: 20px;
-        display: grid;
-        place-items: center;
-        color: #03211d;
-        background: linear-gradient(135deg, var(--teal), var(--teal-bright));
-        font-family: var(--ff-display);
-        font-size: 2rem;
-        font-weight: 800;
-      }
-      .course-panel .btn {
-        margin-top: 28px;
-        justify-content: center;
-        width: 100%;
-      }
-      .course-modal {
-        width: min(1120px, calc(100vw - 32px));
-        max-height: min(820px, calc(100vh - 40px));
-        margin: auto;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: linear-gradient(180deg, var(--navy-900), var(--navy-950));
-        color: #fff;
-        padding: 0;
-        overflow: hidden;
-        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.62);
-      }
-      .course-modal::backdrop {
-        background: rgba(3, 6, 18, 0.78);
-        backdrop-filter: blur(12px);
-      }
-      .course-modal-panel {
-        max-height: inherit;
-        overflow: auto;
-        padding: clamp(22px, 4vw, 34px);
-      }
-      .course-modal-head {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 20px;
-        margin-bottom: 24px;
-      }
-      .course-modal-head h3 {
-        font-size: clamp(1.55rem, 3vw, 2rem);
-        margin-bottom: 0.25em;
-      }
-      .course-modal-head p {
-        color: var(--slate-light);
-        max-width: 58ch;
-      }
-      .modal-close {
-        width: 42px;
-        height: 42px;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.05);
-        color: #fff;
-        cursor: pointer;
-        display: grid;
-        place-items: center;
-        flex: 0 0 auto;
-        transition:
-          background 0.3s,
-          transform 0.3s;
-      }
-      .modal-close:hover {
-        background: rgba(45, 226, 200, 0.14);
-        transform: translateY(-2px);
-      }
-      .modal-close svg {
-        width: 20px;
-        height: 20px;
-      }
-      .course-modal-grid .course {
-        min-height: 300px;
-      }
-      .course-modal .reveal {
-        opacity: 1;
-        transform: none;
       }
 
       /* ===== TIME ===== */
@@ -1822,12 +1705,6 @@
         .diff-grid {
           grid-template-columns: 1fr;
         }
-        .courses-grid {
-          grid-template-columns: 1fr;
-        }
-        .courses-showcase {
-          grid-template-columns: 1fr;
-        }
         .foot-grid {
           grid-template-columns: 1fr 1fr;
           gap: 32px;
@@ -1903,17 +1780,6 @@
         .hero-actions .btn {
           flex: 1;
           justify-content: center;
-        }
-        .course-panel,
-        .course.featured-course {
-          min-height: auto;
-        }
-        .course-modal {
-          width: calc(100vw - 20px);
-          max-height: calc(100vh - 20px);
-        }
-        .course-modal-head {
-          align-items: stretch;
         }
         .partner span {
           font-size: 0.86rem;
@@ -2407,321 +2273,288 @@
           </p>
         </div>
 
-        <div class="courses-showcase">
-          <a
-            class="course course-link featured-course reveal"
-            href="empreenda/"
-          >
-            <div class="course-top">
-              <div class="course-ic">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 2v20" />
-                  <path
-                    d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"
-                  />
-                </svg>
+        <div class="course-carousel reveal">
+          <div class="course-track" id="coursesTrack">
+            <a class="course course-link" href="empreenda/">
+              <div class="course-top">
+                <div class="course-ic">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2v20" />
+                    <path
+                      d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"
+                    />
+                  </svg>
+                </div>
+                <span class="course-tag">Empreendedorismo</span>
               </div>
-              <span class="course-tag">Empreendedorismo</span>
-            </div>
-            <h3>Empreenda Já — Meu Primeiro Negócio</h3>
-            <div class="mentor">Curso TEC 360</div>
-            <p>
-              Um curso prático, humano e tecnológico para tirar sua ideia do
-              papel, usar inteligência artificial, fortalecer seu plano de
-              negócio e seguir o caminho até a formalização como MEI.
-            </p>
-            <div class="meta">
-              <span
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 2 2 7l10 5 10-5-10-5Z" /></svg
-                >Projeto prático</span
-              >
-              <span
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M3 21h18M5 21V7l7-4 7 4v14" /></svg
-                >MEI e negócios</span
-              >
-            </div>
-          </a>
-          <div class="course-panel reveal d1">
-            <div>
-              <span class="eyebrow">// Catálogo</span>
-              <h3>Outros cursos ficam guardados aqui</h3>
+              <h3>Empreenda Já — Meu Primeiro Negócio</h3>
+              <div class="mentor">Curso TEC 360</div>
               <p>
-                A vitrine principal mostra o curso mais atual. Quando quiser,
-                abra o catálogo completo em uma janela limpa, sem poluir a
-                página.
+                Um curso prático, humano e tecnológico para tirar sua ideia do
+                papel, usar inteligência artificial, fortalecer seu plano de
+                negócio e seguir o caminho até a formalização como MEI.
               </p>
-            </div>
-            <div>
-              <div class="course-count">4</div>
-              <button class="btn btn-primary" id="openCourses" type="button">
-                Ver outros cursos
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.2"
+              <div class="meta">
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2 2 7l10 5 10-5-10-5Z" /></svg
+                  >Projeto prático</span
                 >
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M3 21h18M5 21V7l7-4 7 4v14" /></svg
+                  >MEI e negócios</span
+                >
+              </div>
+            </a>
+
+            <a class="course course-link" href="photomobile/">
+              <div class="course-top">
+                <div class="course-ic">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="6" width="20" height="14" rx="2" />
+                    <circle cx="12" cy="13" r="4" />
+                    <path d="M8 6l1.5-2h5L16 6" />
+                  </svg>
+                </div>
+                <span class="course-tag">Fotografia</span>
+              </div>
+              <h3>Photomobile 03 — Fotografia na palma da mão</h3>
+              <div class="mentor">Mentor: Jovander da Silva (Pito)</div>
+              <p>
+                Capacita os participantes a usar técnicas especializadas de
+                fotografia com dispositivos móveis, explorando ao máximo o
+                potencial de qualquer aparelho para capturar imagens de alta
+                qualidade — resultados profissionais, independente do modelo
+                do celular.
+              </p>
+              <div class="meta">
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 8v4l3 2" /></svg
+                  >8 horas</span
+                >
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M3 21h18M5 21V7l7-4 7 4v14" /></svg
+                  >100% presencial</span
+                >
+              </div>
+            </a>
+
+            <article class="course">
+              <div class="course-top">
+                <div class="course-ic">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="5" width="14" height="14" rx="2" />
+                    <path d="m16 9 6-3v12l-6-3" />
+                  </svg>
+                </div>
+                <span class="course-tag">Audiovisual</span>
+              </div>
+              <h3>Edição de Vídeos — 3ª Turma</h3>
+              <div class="mentor">Mentor: Luiz Phillipe Dondone Cometti</div>
+              <p>
+                Capacita os participantes com conhecimentos teóricos e
+                práticos essenciais em edição de vídeo, com foco na criação de
+                conteúdo audiovisual de alta qualidade — do corte ao
+                acabamento profissional.
+              </p>
+              <div class="meta">
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 8v4l3 2" /></svg
+                  >Ao vivo + prática</span
+                >
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2 2 7l10 5 10-5-10-5Z" /></svg
+                  >Projeto real</span
+                >
+              </div>
+            </article>
+
+            <article class="course">
+              <div class="course-top">
+                <div class="course-ic">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="5" width="14" height="14" rx="2" />
+                    <path d="m16 9 6-3v12l-6-3" />
+                  </svg>
+                </div>
+                <span class="course-tag">Vitória / 2</span>
+              </div>
+              <h3>Edição de Vídeos — Vitória</h3>
+              <div class="mentor">Mentor: Luiz Phillipe Dondone Cometti</div>
+              <p>
+                A mesma trilha completa de edição de vídeo, agora em Vitória.
+                Conteúdo prático focado em resultado, para quem quer produzir
+                conteúdo audiovisual profissional e monetizar a habilidade
+                rapidamente.
+              </p>
+              <div class="meta">
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"
+                    />
+                    <circle cx="12" cy="10" r="3" /></svg
+                  >Vitória/ES</span
+                >
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 8v4l3 2" /></svg
+                  >Curta duração</span
+                >
+              </div>
+            </article>
+
+            <article class="course">
+              <div class="course-top">
+                <div class="course-ic">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M3 3v18h18" />
+                    <path d="m7 14 4-4 3 3 5-6" />
+                    <path d="M18 7h3v3" />
+                  </svg>
+                </div>
+                <span class="course-tag">Marketing</span>
+              </div>
+              <h3>Tráfego Pago</h3>
+              <div class="mentor">Mentor: Arthur Alexandre</div>
+              <p>
+                Aprenda a planejar, criar e otimizar campanhas de anúncios que
+                geram resultado. Segmentação, criativos, métricas e escala —
+                tudo o que você precisa para transformar investimento em
+                vendas.
+              </p>
+              <div class="meta">
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    /></svg
+                  >Prático</span
+                >
+                <span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 20v-6M6 20v-4M18 20v-8" /></svg
+                  >Foco em ROI</span
+                >
+              </div>
+            </article>
           </div>
         </div>
 
-        <dialog class="course-modal" id="coursesModal">
-          <div class="course-modal-panel">
-            <div class="course-modal-head">
-              <div>
-                <span class="eyebrow">// Todos os cursos</span>
-                <h3>Escolha sua próxima turma</h3>
-                <p>
-                  Consulte os cursos disponíveis e fale com a TEC 360 para
-                  confirmar calendário, vagas e formato.
-                </p>
-              </div>
-              <button
-                class="modal-close"
-                id="closeCourses"
-                type="button"
-                aria-label="Fechar catálogo de cursos"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                >
-                  <path
-                    d="M18 6 6 18M6 6l12 12"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div class="courses-grid course-modal-grid">
-              <a class="course course-link reveal" href="photomobile/">
-                <div class="course-top">
-                  <div class="course-ic">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <rect x="2" y="6" width="20" height="14" rx="2" />
-                      <circle cx="12" cy="13" r="4" />
-                      <path d="M8 6l1.5-2h5L16 6" />
-                    </svg>
-                  </div>
-                  <span class="course-tag">Fotografia</span>
-                </div>
-                <h3>Photomobile 03 — Fotografia na palma da mão</h3>
-                <div class="mentor">Mentor: Jovander da Silva (Pito)</div>
-                <p>
-                  Capacita os participantes a usar técnicas especializadas de
-                  fotografia com dispositivos móveis, explorando ao máximo o
-                  potencial de qualquer aparelho para capturar imagens de alta
-                  qualidade — resultados profissionais, independente do modelo
-                  do celular.
-                </p>
-                <div class="meta">
-                  <span
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <circle cx="12" cy="12" r="9" />
-                      <path d="M12 8v4l3 2" /></svg
-                    >8 horas</span
-                  >
-                  <span
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path d="M3 21h18M5 21V7l7-4 7 4v14" /></svg
-                    >100% presencial</span
-                  >
-                </div>
-              </a>
-
-              <article class="course reveal d1">
-                <div class="course-top">
-                  <div class="course-ic">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <rect x="2" y="5" width="14" height="14" rx="2" />
-                      <path d="m16 9 6-3v12l-6-3" />
-                    </svg>
-                  </div>
-                  <span class="course-tag">Audiovisual</span>
-                </div>
-                <h3>Edição de Vídeos — 3ª Turma</h3>
-                <div class="mentor">Mentor: Luiz Phillipe Dondone Cometti</div>
-                <p>
-                  Capacita os participantes com conhecimentos teóricos e
-                  práticos essenciais em edição de vídeo, com foco na criação de
-                  conteúdo audiovisual de alta qualidade — do corte ao
-                  acabamento profissional.
-                </p>
-                <div class="meta">
-                  <span
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <circle cx="12" cy="12" r="9" />
-                      <path d="M12 8v4l3 2" /></svg
-                    >Ao vivo + prática</span
-                  >
-                  <span
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path d="M12 2 2 7l10 5 10-5-10-5Z" /></svg
-                    >Projeto real</span
-                  >
-                </div>
-              </article>
-
-              <article class="course reveal d2">
-                <div class="course-top">
-                  <div class="course-ic">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <rect x="2" y="5" width="14" height="14" rx="2" />
-                      <path d="m16 9 6-3v12l-6-3" />
-                    </svg>
-                  </div>
-                  <span class="course-tag">Vitória / 2</span>
-                </div>
-                <h3>Edição de Vídeos — Vitória</h3>
-                <div class="mentor">Mentor: Luiz Phillipe Dondone Cometti</div>
-                <p>
-                  A mesma trilha completa de edição de vídeo, agora em Vitória.
-                  Conteúdo prático focado em resultado, para quem quer produzir
-                  conteúdo audiovisual profissional e monetizar a habilidade
-                  rapidamente.
-                </p>
-                <div class="meta">
-                  <span
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"
-                      />
-                      <circle cx="12" cy="10" r="3" /></svg
-                    >Vitória/ES</span
-                  >
-                  <span
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <circle cx="12" cy="12" r="9" />
-                      <path d="M12 8v4l3 2" /></svg
-                    >Curta duração</span
-                  >
-                </div>
-              </article>
-
-              <article class="course reveal d3">
-                <div class="course-top">
-                  <div class="course-ic">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path d="M3 3v18h18" />
-                      <path d="m7 14 4-4 3 3 5-6" />
-                      <path d="M18 7h3v3" />
-                    </svg>
-                  </div>
-                  <span class="course-tag">Marketing</span>
-                </div>
-                <h3>Tráfego Pago</h3>
-                <div class="mentor">Mentor: Arthur Alexandre</div>
-                <p>
-                  Aprenda a planejar, criar e otimizar campanhas de anúncios que
-                  geram resultado. Segmentação, criativos, métricas e escala —
-                  tudo o que você precisa para transformar investimento em
-                  vendas.
-                </p>
-                <div class="meta">
-                  <span
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
-                      /></svg
-                    >Prático</span
-                  >
-                  <span
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path d="M12 20v-6M6 20v-4M18 20v-8" /></svg
-                    >Foco em ROI</span
-                  >
-                </div>
-              </article>
-            </div>
-          </div>
-        </dialog>
+        <div class="carousel-nav reveal">
+          <button id="coursesPrev" aria-label="Curso anterior">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="m15 18-6-6 6-6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="dots" id="coursesDots"></div>
+          <button id="coursesNext" aria-label="Próximo curso">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="m9 18 6-6-6-6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -3520,32 +3353,79 @@
       );
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-      // courses modal
+      // courses carousel
       (function () {
-        const modal = document.getElementById("coursesModal");
-        const open = document.getElementById("openCourses");
-        const close = document.getElementById("closeCourses");
-        if (!modal || !open || !close) return;
-
-        open.addEventListener("click", () => {
-          if (typeof modal.showModal === "function") {
-            modal.showModal();
-            close.focus();
-          } else {
-            modal.setAttribute("open", "");
-          }
-        });
-        function closeModal() {
-          if (typeof modal.close === "function") {
-            modal.close();
-          } else {
-            modal.removeAttribute("open");
+        const track = document.getElementById("coursesTrack");
+        const prev = document.getElementById("coursesPrev"),
+          next = document.getElementById("coursesNext");
+        const dotsWrap = document.getElementById("coursesDots");
+        if (!track || !prev || !next || !dotsWrap) return;
+        const cards = [...track.children];
+        let index = 0;
+        function perView() {
+          return innerWidth < 680 ? 1 : innerWidth < 1060 ? 2 : 3;
+        }
+        function step() {
+          const first = cards[0];
+          const gap = parseFloat(getComputedStyle(track).gap) || 22;
+          return first.offsetWidth + gap;
+        }
+        function buildDots() {
+          dotsWrap.innerHTML = "";
+          const total = Math.ceil(cards.length / perView());
+          for (let i = 0; i < total; i++) {
+            const b = document.createElement("button");
+            b.setAttribute("aria-label", "Ir para grupo " + (i + 1));
+            b.addEventListener("click", () => {
+              index = Math.min(i * perView(), cards.length - perView());
+              update();
+            });
+            dotsWrap.appendChild(b);
           }
         }
-        close.addEventListener("click", closeModal);
-        modal.addEventListener("click", (event) => {
-          if (event.target === modal) closeModal();
+        function update() {
+          index = Math.max(0, Math.min(index, cards.length - perView()));
+          track.style.transform = `translateX(${-index * step()}px)`;
+          const grp = Math.round(index / perView());
+          [...dotsWrap.children].forEach((d, i) =>
+            d.classList.toggle("active", i === grp),
+          );
+        }
+        prev.addEventListener("click", () => {
+          index -= perView();
+          update();
         });
+        next.addEventListener("click", () => {
+          index += perView();
+          update();
+        });
+        let sx = 0;
+        track.addEventListener(
+          "touchstart",
+          (e) => (sx = e.touches[0].clientX),
+          { passive: true },
+        );
+        track.addEventListener("touchend", (e) => {
+          const dx = e.changedTouches[0].clientX - sx;
+          if (Math.abs(dx) > 50) {
+            dx < 0 ? (index += perView()) : (index -= perView());
+            update();
+          }
+        });
+        let auto = setInterval(() => {
+          index += perView();
+          if (index > cards.length - perView()) index = 0;
+          update();
+        }, 5500);
+        track.parentElement.addEventListener("mouseenter", () =>
+          clearInterval(auto),
+        );
+        addEventListener("resize", () => {
+          buildDots();
+          update();
+        });
+        buildDots();
+        update();
       })();
 
       // partners marquee
