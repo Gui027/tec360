@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edicao de Video | TEC 360</title>
+    <title>Canva | TEC 360</title>
     <link
       rel="icon"
       type="image/png"
@@ -11,15 +11,15 @@
     />
     <meta
       name="description"
-      content="Curso de Edicao de Video da TEC 360: fundamentos, storytelling, correcao de cor e exportacao para criar videos de alta qualidade do corte ao acabamento."
+      content="Curso de Canva da TEC 360: domine a interface, crie conteudos para redes sociais, materiais de marketing e edicao avancada com o Canva Pro."
     />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="TEC 360" />
-    <meta property="og:title" content="Edicao de Video | TEC 360" />
+    <meta property="og:title" content="Canva | TEC 360" />
     <meta
       property="og:description"
-      content="Do corte ao acabamento profissional: fundamentos, storytelling, correcao de cor e exportacao."
+      content="Domine o Canva e transforme suas ideias em designs incriveis, do primeiro post ao Canva Pro."
     />
     <meta property="og:image" content="assets/hero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,22 +44,20 @@
 
     <style>
       :root {
-        --paper: #f5f2ec;
-        --paper-2: #eae5db;
-        --ink: #0e1013;
-        --ink-2: #1d2226;
-        --muted: #6b7078;
+        --paper: #faf6fc;
+        --paper-2: #f0e6f5;
+        --ink: #190f2b;
+        --ink-2: #2b1c42;
+        --muted: #6c6478;
         --white: #ffffff;
-        --charcoal: #14171b;
-        --charcoal-2: #1f2429;
-        --teal: #17c2ac;
-        --teal-deep: #0d9384;
-        --orange: #ff7a3d;
-        --orange-deep: #e35f22;
-        --line: rgba(14, 16, 19, 0.14);
+        --charcoal: #1a0f2e;
+        --pink: #ff3d9a;
+        --pink-deep: #e0227d;
+        --cyan: #00c2cc;
+        --cyan-deep: #00979f;
+        --line: rgba(25, 15, 43, 0.13);
         --line-dark: rgba(255, 255, 255, 0.14);
         --maxw: 1180px;
-        --radius: 20px;
         --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       }
 
@@ -107,7 +105,7 @@
       }
 
       ::selection {
-        background: var(--orange);
+        background: var(--pink);
         color: #fff;
       }
 
@@ -118,7 +116,7 @@
 
       .eyebrow {
         align-items: center;
-        color: var(--orange);
+        color: var(--pink-deep);
         display: inline-flex;
         font-family: "Space Mono", monospace;
         font-size: 0.74rem;
@@ -133,6 +131,10 @@
         content: "";
         height: 2px;
         width: 30px;
+      }
+
+      .sec-dark .eyebrow {
+        color: var(--cyan);
       }
 
       .btn {
@@ -159,14 +161,14 @@
       }
 
       .btn-primary {
-        background: var(--orange);
-        box-shadow: 0 16px 36px rgba(255, 122, 61, 0.32);
+        background: var(--pink);
+        box-shadow: 0 16px 36px rgba(255, 61, 154, 0.34);
         color: #fff;
       }
 
       .btn-primary:hover {
-        background: var(--orange-deep);
-        box-shadow: 0 20px 42px rgba(255, 122, 61, 0.4);
+        background: var(--pink-deep);
+        box-shadow: 0 20px 42px rgba(255, 61, 154, 0.42);
         transform: translateY(-2px);
       }
 
@@ -198,7 +200,7 @@
       header.scrolled,
       body.menu-open header {
         backdrop-filter: blur(18px);
-        background: rgba(14, 16, 19, 0.82);
+        background: rgba(26, 15, 46, 0.84);
         border-bottom-color: var(--line-dark);
         padding: 10px 0;
       }
@@ -264,7 +266,7 @@
       }
 
       .nav-links .lnk:hover {
-        color: var(--orange);
+        color: var(--pink);
       }
 
       .menu-toggle {
@@ -333,8 +335,8 @@
 
       .hero::after {
         background:
-          radial-gradient(circle at 68% 20%, rgba(23, 194, 172, 0.24), transparent 30%),
-          radial-gradient(circle at 18% 38%, rgba(255, 122, 61, 0.22), transparent 28%),
+          radial-gradient(circle at 68% 20%, rgba(0, 194, 204, 0.28), transparent 30%),
+          radial-gradient(circle at 18% 38%, rgba(255, 61, 154, 0.26), transparent 28%),
           linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.62));
         content: "";
         inset: 0;
@@ -369,9 +371,9 @@
       }
 
       .badge::before {
-        background: var(--orange);
+        background: var(--cyan);
         border-radius: 50%;
-        box-shadow: 0 0 0 8px rgba(255, 122, 61, 0.14);
+        box-shadow: 0 0 0 8px rgba(0, 194, 204, 0.16);
         content: "";
         height: 9px;
         width: 9px;
@@ -383,7 +385,7 @@
       }
 
       .focus-word {
-        color: var(--orange);
+        color: var(--pink);
       }
 
       .lead {
@@ -400,6 +402,38 @@
         margin-top: 2rem;
       }
 
+      .canva-chip {
+        align-items: center;
+        background: rgba(26, 15, 46, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--line-dark);
+        border-radius: 16px;
+        display: inline-flex;
+        gap: 0.75rem;
+        margin-top: 1.8rem;
+        max-width: 320px;
+        padding: 0.55rem 1rem 0.55rem 0.55rem;
+      }
+
+      .canva-chip img {
+        border-radius: 9px;
+        height: 40px;
+        object-fit: cover;
+        width: 58px;
+      }
+
+      .canva-chip b {
+        color: var(--white);
+        display: block;
+        font-size: 0.88rem;
+      }
+
+      .canva-chip span {
+        color: rgba(255, 255, 255, 0.6);
+        display: block;
+        font-size: 0.76rem;
+      }
+
       .media-panel {
         align-self: stretch;
         display: grid;
@@ -409,7 +443,7 @@
 
       .frame-shot {
         align-self: center;
-        background: #050607;
+        background: #0e0620;
         border: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 26px;
         box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
@@ -429,7 +463,7 @@
       }
 
       .shot-label {
-        background: rgba(14, 16, 19, 0.82);
+        background: rgba(26, 15, 46, 0.82);
         border: 1px solid var(--line-dark);
         border-radius: 16px;
         bottom: 18px;
@@ -440,7 +474,7 @@
       }
 
       .shot-label span {
-        color: var(--orange);
+        color: var(--cyan);
         display: block;
         font-family: "Space Mono", monospace;
         font-size: 0.68rem;
@@ -458,7 +492,7 @@
 
       .float-stat {
         background: var(--white);
-        border: 1px solid rgba(14, 16, 19, 0.1);
+        border: 1px solid rgba(25, 15, 43, 0.1);
         border-radius: 18px;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
         color: var(--ink);
@@ -491,8 +525,8 @@
       }
 
       .facts-band {
-        background: var(--orange);
-        color: #1a0c04;
+        background: linear-gradient(90deg, var(--cyan), var(--pink));
+        color: #fff;
         overflow: hidden;
         padding: 1.1rem 0;
       }
@@ -513,7 +547,7 @@
       }
 
       .facts-track i {
-        background: #1a0c04;
+        background: #fff;
         border-radius: 50%;
         display: block;
         height: 7px;
@@ -588,7 +622,7 @@
       }
 
       .editorial-photo::after {
-        border: 2px solid var(--orange);
+        border: 2px solid var(--pink);
         border-radius: 20px;
         content: "";
         inset: 14px;
@@ -631,7 +665,7 @@
         align-items: center;
         background: var(--charcoal);
         border-radius: 50%;
-        color: var(--orange);
+        color: var(--cyan);
         display: grid;
         flex: 0 0 auto;
         height: 30px;
@@ -668,8 +702,8 @@
 
       .audience-card::before {
         background:
-          linear-gradient(90deg, rgba(14, 16, 19, 0.08) 1px, transparent 1px),
-          linear-gradient(rgba(14, 16, 19, 0.08) 1px, transparent 1px);
+          linear-gradient(90deg, rgba(25, 15, 43, 0.08) 1px, transparent 1px),
+          linear-gradient(rgba(25, 15, 43, 0.08) 1px, transparent 1px);
         background-size: 24px 24px;
         content: "";
         inset: 0;
@@ -682,7 +716,7 @@
       }
 
       .audience-card .num {
-        color: var(--orange-deep);
+        color: var(--pink-deep);
         font-family: "Space Mono", monospace;
         font-weight: 700;
       }
@@ -707,7 +741,7 @@
       }
 
       .audience-card:nth-child(3) {
-        background: var(--teal);
+        background: var(--cyan);
       }
 
       .outcomes {
@@ -722,7 +756,7 @@
       }
 
       .outcome svg {
-        color: var(--orange);
+        color: var(--pink);
         height: 32px;
         margin-bottom: 1rem;
         width: 32px;
@@ -739,7 +773,7 @@
 
       /* ============ VIDEO DE APRESENTACAO ============ */
       .video-shell {
-        background: #050607;
+        background: #0e0620;
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 28px;
         box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
@@ -750,7 +784,7 @@
       }
 
       .video-ratio {
-        background: #050607;
+        background: #0e0620;
         padding-top: 56.25%;
         position: relative;
       }
@@ -786,7 +820,7 @@
 
       .video-poster::after {
         background:
-          linear-gradient(0deg, rgba(5, 6, 7, 0.92) 0%, rgba(5, 6, 7, 0.5) 48%, rgba(5, 6, 7, 0.05) 100%);
+          linear-gradient(0deg, rgba(14, 6, 32, 0.92) 0%, rgba(14, 6, 32, 0.5) 48%, rgba(14, 6, 32, 0.05) 100%);
         content: "";
         inset: 0;
         position: absolute;
@@ -809,7 +843,7 @@
 
       .video-kicker {
         align-items: center;
-        color: var(--orange);
+        color: var(--cyan);
         display: inline-flex;
         font-family: "Space Mono", monospace;
         font-size: 0.72rem;
@@ -825,7 +859,7 @@
       }
 
       .video-copy h3 span {
-        color: var(--teal);
+        color: var(--pink);
       }
 
       .video-copy p {
@@ -835,9 +869,9 @@
       }
 
       .poster-play {
-        background: var(--orange);
+        background: var(--pink);
         border-radius: 50%;
-        box-shadow: 0 18px 46px rgba(255, 122, 61, 0.4);
+        box-shadow: 0 18px 46px rgba(255, 61, 154, 0.45);
         color: #fff;
         display: grid;
         height: clamp(64px, 8vw, 86px);
@@ -873,63 +907,6 @@
         }
       }
 
-      .testimonials {
-        display: grid;
-        gap: 1.2rem;
-        grid-template-columns: repeat(2, 1fr);
-        margin: 0 auto;
-        max-width: 920px;
-      }
-
-      .quote {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        display: flex;
-        flex-direction: column;
-        padding: 1.5rem;
-      }
-
-      .quote-head {
-        align-items: center;
-        display: flex;
-        gap: 0.9rem;
-        margin-bottom: 1.15rem;
-      }
-
-      .quote img {
-        border: 3px solid var(--paper);
-        border-radius: 50%;
-        box-shadow: 0 10px 26px rgba(14, 16, 19, 0.16);
-        flex: none;
-        height: 60px;
-        object-fit: cover;
-        width: 60px;
-      }
-
-      .quote blockquote {
-        color: var(--ink-2);
-        flex: 1;
-        font-size: 0.97rem;
-      }
-
-      .quote cite {
-        color: var(--ink);
-        display: block;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 1.2;
-      }
-
-      .quote cite span {
-        color: var(--muted);
-        display: block;
-        font-size: 0.83rem;
-        font-weight: 500;
-        margin-top: 0.15rem;
-      }
-
       .learning {
         display: grid;
         gap: 1rem;
@@ -944,7 +921,7 @@
       }
 
       .learning-card span {
-        color: var(--orange);
+        color: var(--cyan);
         font-family: "Space Mono", monospace;
         font-weight: 700;
       }
@@ -980,7 +957,7 @@
 
       .module-aside .big {
         align-self: end;
-        color: var(--orange);
+        color: var(--pink);
         font-family: "Bricolage Grotesque", system-ui, sans-serif;
         font-size: clamp(5rem, 14vw, 10rem);
         font-weight: 800;
@@ -1031,7 +1008,7 @@
       }
 
       .m-drawer summary::after {
-        color: var(--orange-deep);
+        color: var(--pink-deep);
         content: "+";
         font-family: "Space Mono", monospace;
         font-size: 1.3rem;
@@ -1148,7 +1125,7 @@
       }
 
       summary::after {
-        color: var(--orange);
+        color: var(--pink);
         content: "+";
         font-family: "Space Mono", monospace;
         font-size: 1.45rem;
@@ -1169,8 +1146,8 @@
 
       .cta {
         background:
-          linear-gradient(135deg, rgba(23, 194, 172, 0.2), transparent 42%),
-          linear-gradient(315deg, rgba(255, 122, 61, 0.18), transparent 42%),
+          linear-gradient(135deg, rgba(0, 194, 204, 0.24), transparent 42%),
+          linear-gradient(315deg, rgba(255, 61, 154, 0.22), transparent 42%),
           var(--ink);
         color: var(--white);
         overflow: hidden;
@@ -1197,7 +1174,7 @@
       }
 
       footer {
-        background: #08090b;
+        background: #0e0620;
         color: rgba(255, 255, 255, 0.72);
         padding: 32px 0;
       }
@@ -1262,7 +1239,7 @@
       }
 
       :focus-visible {
-        outline: 2px solid var(--orange);
+        outline: 2px solid var(--pink);
         outline-offset: 3px;
       }
 
@@ -1317,7 +1294,7 @@
 
         .nav-links {
           align-content: start;
-          background: rgba(14, 16, 19, 0.98);
+          background: rgba(26, 15, 46, 0.98);
           display: grid;
           gap: 0;
           inset: 66px 14px auto;
@@ -1357,6 +1334,10 @@
           font-size: clamp(2.55rem, 13vw, 4.2rem);
         }
 
+        .canva-chip {
+          display: none;
+        }
+
         .media-panel {
           min-height: auto;
           padding: 1rem 0 5.5rem;
@@ -1383,8 +1364,7 @@
         .audience-grid,
         .outcomes,
         .learning,
-        .instructor,
-        .testimonials {
+        .instructor {
           grid-template-columns: 1fr;
         }
 
@@ -1452,7 +1432,7 @@
           <span class="brand-div"></span>
           <span class="brand-course">
             <span class="k">Curso</span>
-            <span class="v">Edicao de Video</span>
+            <span class="v">Canva</span>
           </span>
         </a>
         <nav class="nav-links" id="navLinks" aria-label="Navegacao principal">
@@ -1463,7 +1443,7 @@
           <a class="lnk" href="#faq">Duvidas</a>
           <a
             class="btn btn-primary"
-            href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+            href="https://tec360.eadplataforma.app/checkout/offer/course/39/cem1dljty9bg"
             >Inscreva-se</a
           >
         </nav>
@@ -1478,20 +1458,20 @@
         <div class="wrap hero-inner">
           <div class="hero-copy">
             <span class="eyebrow reveal in">TEC 360 apresenta</span>
-            <span class="badge reveal in d1">Do corte ao acabamento profissional</span>
+            <span class="badge reveal in d1">Presencial e ao vivo</span>
             <h1 class="reveal in d1">
-              Edicao de Video para contar historias que
-              <span class="focus-word">prendem</span> a atencao.
+              Domine o Canva e crie
+              <span class="focus-word">designs incriveis</span>.
             </h1>
             <p class="lead reveal in d2">
-              Fundamentos de edicao, storytelling, correcao de cor e
-              exportacao — teoria curta e muita pratica para voce sair
-              editando com tecnica de mercado.
+              Transforme suas ideias em artes profissionais: posts, materiais
+              de marketing e edicao avancada com o Canva Pro — com metodo
+              pratico, sem depender de ninguem.
             </p>
             <div class="hero-cta reveal in d3">
               <a
                 class="btn btn-primary"
-                href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+                href="https://tec360.eadplataforma.app/checkout/offer/course/39/cem1dljty9bg"
               >
                 Inscreva-se agora
                 <svg viewBox="0 0 24 24" fill="none">
@@ -1506,6 +1486,13 @@
               </a>
               <a class="btn btn-ghost" href="#video">Assistir chamada</a>
             </div>
+            <div class="canva-chip reveal in d3">
+              <img src="assets/canva-chip.jpg" alt="" loading="lazy" />
+              <span>
+                <b>Direto no Canva</b>
+                <span>Interface, Pro e muita pratica</span>
+              </span>
+            </div>
           </div>
 
           <div class="media-panel reveal in d2" aria-hidden="true">
@@ -1518,16 +1505,16 @@
                 src="assets/hero.jpg"
                 alt=""
                 width="1024"
-                height="682"
+                height="683"
               />
               <span class="shot-label">
-                <span>Timeline</span>
-                <strong>corte, cor, audio e exportacao</strong>
+                <span>Estudio criativo</span>
+                <strong>cores, tipografia e identidade visual</strong>
               </span>
             </div>
             <div class="float-stat two">
-              <b>3</b>
-              <span>encontros praticos</span>
+              <b>4</b>
+              <span>modulos praticos</span>
             </div>
           </div>
         </div>
@@ -1537,248 +1524,13 @@
         <div class="wrap facts-track">
           <span>Total de 12 horas</span>
           <i></i>
-          <span>Tres encontros presenciais</span>
+          <span>4 modulos</span>
           <i></i>
-          <span>Do corte a cor</span>
+          <span>Canva Pro</span>
           <i></i>
-          <span>Projeto pratico final</span>
+          <span>Presencial e ao vivo</span>
         </div>
       </div>
-
-      <section class="sec" id="objetivo">
-        <div class="wrap split">
-          <div class="editorial-photo reveal">
-            <img
-              src="assets/capcut.webp"
-              alt="Aplicativo de edicao de video no celular"
-              loading="lazy"
-              width="1280"
-              height="720"
-            />
-          </div>
-          <div class="copy-stack reveal d1">
-            <span class="eyebrow">Objetivo do curso</span>
-            <h2>Edite com tecnica, nao so no talento.</h2>
-            <p>
-              O foco do curso e ensinar tecnicas basicas de edicao unindo
-              teoria e pratica, para que voce domine a arte da edicao e crie
-              videos de alta qualidade — do primeiro corte ao acabamento
-              profissional.
-            </p>
-            <p>
-              Mais pratica e menos teoria: aulas com demonstracoes em tempo
-              real e material complementar para reforcar o aprendizado entre
-              um encontro e outro.
-            </p>
-            <div class="goal-list">
-              <div class="goal-item">
-                <span class="mark">1</span>
-                <div>
-                  <h3>Fundamentos da edicao na pratica</h3>
-                  <p>
-                    Conceitos, timeline, organizacao de projeto, cortes,
-                    transicoes, efeitos basicos e nocoes de audio.
-                  </p>
-                </div>
-              </div>
-              <div class="goal-item">
-                <span class="mark">2</span>
-                <div>
-                  <h3>Tecnicas para uma edicao de nivel</h3>
-                  <p>
-                    Storytelling, efeitos avancados, correcao de cor e
-                    sincronizacao de audio e video.
-                  </p>
-                </div>
-              </div>
-              <div class="goal-item">
-                <span class="mark">3</span>
-                <div>
-                  <h3>Do rascunho a exportacao</h3>
-                  <p>
-                    Formatos de exportacao e otimizacao de desempenho e tempo
-                    de trabalho no seu fluxo de edicao.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="sec" id="publico">
-        <div class="wrap">
-          <div class="sec-head center reveal">
-            <span class="eyebrow">Esse curso e para voce que</span>
-            <h2>Quer transformar gravacoes soltas em video pronto.</h2>
-            <p>
-              Um percurso pratico para quem quer sair do zero — ou destravar
-              o proximo nivel — na edicao de video.
-            </p>
-          </div>
-          <div class="audience-grid">
-            <article class="audience-card reveal">
-              <span class="num">01</span>
-              <h3>Iniciantes entusiasmados</h3>
-              <p>
-                Nunca editou um video, mas quer aprender do zero com pratica
-                guiada desde a primeira aula.
-              </p>
-            </article>
-            <article class="audience-card reveal d1">
-              <span class="num">02</span>
-              <h3>Criadores de conteudo</h3>
-              <p>
-                Ja grava para redes sociais e quer elevar o acabamento e a
-                narrativa dos proprios videos.
-              </p>
-            </article>
-            <article class="audience-card reveal d2">
-              <span class="num">03</span>
-              <h3>Estudantes de audiovisual</h3>
-              <p>
-                Busca tecnica de mercado para fortalecer portfolio, carreira
-                ou projetos autorais.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="sec sec-dark" id="resultados">
-        <div class="wrap">
-          <div class="sec-head reveal">
-            <span class="eyebrow">Depois do curso</span>
-            <h2>Voce sai editando com intencao.</h2>
-            <p>
-              A formacao combina teoria objetiva, demonstracoes e exercicios
-              para que cada tecnica vire pratica ainda durante as aulas.
-            </p>
-          </div>
-          <div class="outcomes">
-            <article class="outcome reveal">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect
-                  x="3"
-                  y="5"
-                  width="18"
-                  height="14"
-                  rx="2"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <path
-                  d="m9 13 3-3 2 2 4-4"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                />
-              </svg>
-              <h3>Compreender os fundamentos</h3>
-              <p>
-                Conceitos, historico e logica por tras da edicao audiovisual
-                profissional.
-              </p>
-            </article>
-            <article class="outcome reveal d1">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect
-                  x="4"
-                  y="6"
-                  width="16"
-                  height="12"
-                  rx="2"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <path d="M9 9v6l5-3-5-3Z" fill="currentColor" />
-              </svg>
-              <h3>Editar no celular com o CapCut</h3>
-              <p>
-                Domine um dos aplicativos mais usados para editar videos
-                direto do smartphone.
-              </p>
-            </article>
-            <article class="outcome reveal d2">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M4 18 10 8l4 6 2-3 4 7H4Z"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                />
-                <path
-                  d="M5 5h14M5 21h14"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-width="2"
-                />
-              </svg>
-              <h3>Manipular videos com eficiencia</h3>
-              <p>
-                Corte, transicione e finalize com fluidez, sem travar no
-                processo tecnico.
-              </p>
-            </article>
-            <article class="outcome reveal">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 3v18M5 8h14M7 16h10"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-width="2"
-                />
-                <circle cx="9" cy="8" r="2" fill="currentColor" />
-                <circle cx="15" cy="16" r="2" fill="currentColor" />
-              </svg>
-              <h3>Aplicar storytelling na edicao</h3>
-              <p>
-                Construa uma narrativa visual que segura a atencao do comeco
-                ao fim.
-              </p>
-            </article>
-            <article class="outcome reveal d1">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M4 7h16v12H4zM8 7l2-3h4l2 3"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                />
-              </svg>
-              <h3>Criar videos para diferentes nichos</h3>
-              <p>
-                Adapte tom, ritmo e formato para redes sociais, negocios ou
-                projetos autorais.
-              </p>
-            </article>
-            <article class="outcome reveal d2">
-              <svg viewBox="0 0 24 24" fill="none">
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="9"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <path
-                  d="M12 7v5l3 2"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                />
-              </svg>
-              <h3>Otimizar desempenho e tempo</h3>
-              <p>
-                Organize seu fluxo de trabalho para editar mais rapido, sem
-                perder qualidade.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
 
       <section class="sec" id="video">
         <div class="wrap">
@@ -1791,23 +1543,23 @@
               <button
                 class="video-poster"
                 type="button"
-                aria-label="Assistir video de apresentacao do curso Edicao de Video"
+                aria-label="Assistir video de apresentacao do curso Canva"
                 data-video-poster
-                data-video-src="https://wp.tec360.com.br/wp-content/uploads/2024/02/HORIZONTAL-01_legendado_.mp4"
+                data-video-src="https://wp.tec360.com.br/wp-content/uploads/2025/04/UntitledL-leg2.mp4"
               >
                 <img
                   src="assets/hero.jpg"
                   alt=""
                   loading="lazy"
                   width="1024"
-                  height="682"
+                  height="683"
                 />
                 <span class="video-copy">
                   <span class="video-kicker">Aperte o play</span>
-                  <h3>Edicao de <span>Video</span></h3>
+                  <h3>Canva <span>na pratica</span></h3>
                   <p>
-                    Do corte ao acabamento: veja um pouco do que voce vai
-                    praticar em sala.
+                    Veja um pouco do que voce vai criar em sala, direto no
+                    Canva.
                   </p>
                 </span>
                 <span class="poster-play" aria-hidden="true">
@@ -1821,52 +1573,219 @@
         </div>
       </section>
 
-      <section class="sec" id="depoimentos">
+      <section class="sec" id="objetivo">
+        <div class="wrap split">
+          <div class="editorial-photo reveal">
+            <img
+              src="assets/editorial.jpg"
+              alt="Mesa de trabalho com paleta de cores e ferramentas de design"
+              loading="lazy"
+              width="1024"
+              height="576"
+            />
+          </div>
+          <div class="copy-stack reveal d1">
+            <span class="eyebrow">Objetivo do curso</span>
+            <h2>Transforme ideias em designs incriveis.</h2>
+            <p>
+              O curso capacita a criacao de artes visuais profissionais de
+              forma estrategica, desenvolvendo autonomia para produzir
+              conteudos com identidade visual e proposito — sem depender de
+              terceiros.
+            </p>
+            <p>
+              Combinacao equilibrada de teoria e pratica, com aulas dinamicas,
+              demonstracoes ao vivo e Project Based Learning.
+            </p>
+            <div class="goal-list">
+              <div class="goal-item">
+                <span class="mark">1</span>
+                <div>
+                  <h3>Conhecendo o Canva por dentro</h3>
+                  <p>
+                    Interface, ferramentas de design e navegacao eficiente
+                    pela plataforma.
+                  </p>
+                </div>
+              </div>
+              <div class="goal-item">
+                <span class="mark">2</span>
+                <div>
+                  <h3>Redes sociais e marketing</h3>
+                  <p>
+                    Posts, stories, banners, cartoes de visita, folhetos,
+                    apresentacoes e e-books.
+                  </p>
+                </div>
+              </div>
+              <div class="goal-item">
+                <span class="mark">3</span>
+                <div>
+                  <h3>Edicao avancada com o Canva Pro</h3>
+                  <p>
+                    Remocao de fundo, animacoes e efeitos, combinacao de
+                    cores e fontes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="publico">
         <div class="wrap">
           <div class="sec-head center reveal">
-            <span class="eyebrow">O que os alunos dizem</span>
-            <h2>De curiosos a editando os proprios videos.</h2>
+            <span class="eyebrow">Esse curso e para voce que</span>
+            <h2>Quer criar artes profissionais sem depender de ninguem.</h2>
+            <p>
+              Um percurso pratico para quem quer explorar a criatividade com
+              metodo e vender mais com design estrategico.
+            </p>
           </div>
-          <div class="testimonials">
-            <article class="quote reveal">
-              <div class="quote-head">
-                <img
-                  src="assets/patricia.jpg"
-                  alt="Patricia Pereira"
-                  loading="lazy"
-                  width="480"
-                  height="518"
-                />
-                <cite>
-                  Patricia Pereira
-                  <span>Dentista</span>
-                </cite>
-              </div>
-              <blockquote>
-                Achei o curso bem didatico e proveitoso. De forma clara e
-                simples, consegui comecar a editar meus primeiros videos com
-                muito mais confianca.
-              </blockquote>
+          <div class="audience-grid">
+            <article class="audience-card reveal">
+              <span class="num">01</span>
+              <h3>Empreendedores e donos de negocio</h3>
+              <p>
+                Querem criar artes profissionais para o proprio negocio, sem
+                depender de terceiros.
+              </p>
             </article>
-            <article class="quote reveal d1">
-              <div class="quote-head">
-                <img
-                  src="assets/shaira.jpg"
-                  alt="Shaira Morandi"
-                  loading="lazy"
-                  width="480"
-                  height="640"
+            <article class="audience-card reveal d1">
+              <span class="num">02</span>
+              <h3>Criadores de conteudo</h3>
+              <p>
+                Querem transformar o Instagram numa vitrine poderosa, com
+                identidade visual consistente.
+              </p>
+            </article>
+            <article class="audience-card reveal d2">
+              <span class="num">03</span>
+              <h3>Quem quer vender com design</h3>
+              <p>
+                Busca um metodo pratico para vender mais usando design
+                estrategico.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec sec-dark" id="resultados">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Depois do curso</span>
+            <h2>Voce sai criando com autonomia.</h2>
+            <p>
+              A formacao combina teoria objetiva, demonstracoes e projetos
+              praticos para que cada tecnica vire habito ainda durante as
+              aulas.
+            </p>
+          </div>
+          <div class="outcomes">
+            <article class="outcome reveal">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="2"
                 />
-                <cite>
-                  Shaira Morandi
-                  <span>Proprietaria e Coordenadora da Cultura Inglesa Colatina</span>
-                </cite>
-              </div>
-              <blockquote>
-                Tive uma experiencia maravilhosa. Pude aprender tecnicas e
-                dominar um aplicativo essencial para produzir videos de alta
-                qualidade.
-              </blockquote>
+                <path
+                  d="M13 6h7M13 10h7M4 16h16M4 20h10"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Design e comunicacao visual</h3>
+              <p>
+                Aplicar principios fundamentais de design para comunicar com
+                clareza e impacto.
+              </p>
+            </article>
+            <article class="outcome reveal d1">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 4h14M7 4v16M17 4v16M7 20h4M13 20h4"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Tipografia e arte visual</h3>
+              <p>
+                Combinar fontes, cores e composicao para pecas com identidade
+                propria.
+              </p>
+            </article>
+            <article class="outcome reveal d2">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="3"
+                  y="5"
+                  width="18"
+                  height="14"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path d="M9 9v6l5-3-5-3Z" fill="currentColor" />
+              </svg>
+              <h3>Videos e imagens no Canva</h3>
+              <p>
+                Usar as ferramentas do Canva para criar conteudos visuais e
+                audiovisuais.
+              </p>
+            </article>
+            <article class="outcome reveal">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 7h16v12H4zM8 7l2-3h4l2 3"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Design para diferentes midias</h3>
+              <p>
+                Criar pecas coerentes para redes sociais, impressos e
+                materiais digitais.
+              </p>
+            </article>
+            <article class="outcome reveal d1">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 3v18M5 8h14M7 16h10"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+                <circle cx="9" cy="8" r="2" fill="currentColor" />
+                <circle cx="15" cy="16" r="2" fill="currentColor" />
+              </svg>
+              <h3>Prestar servicos e lucrar com design</h3>
+              <p>
+                Transforme a habilidade em fonte de renda, atendendo clientes
+                ou o proprio negocio.
+              </p>
+            </article>
+            <article class="outcome reveal d2">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 21s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.7-7 10-7 10Z"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Identidade visual e autoridade digital</h3>
+              <p>
+                Construa uma presenca visual consistente e reconhecivel para
+                sua marca.
+              </p>
             </article>
           </div>
         </div>
@@ -1876,31 +1795,31 @@
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="eyebrow">Metodologia de ensino</span>
-            <h2>Mais pratica e menos teoria.</h2>
+            <h2>Teoria curta, mao na massa desde a primeira aula.</h2>
           </div>
           <div class="learning">
             <article class="learning-card reveal">
               <span>01</span>
-              <h3>Aulas praticas</h3>
+              <h3>Aulas dinamicas</h3>
               <p>
-                Demonstracoes em tempo real e mao na massa desde o primeiro
-                corte, combinando teoria curta com muita pratica.
+                Demonstracoes ao vivo e atividades guiadas, com exercicios
+                individuais e em grupo.
               </p>
             </article>
             <article class="learning-card reveal d1">
               <span>02</span>
-              <h3>Material complementar</h3>
+              <h3>Materiais de apoio</h3>
               <p>
-                E-books, quiz e slides liberados na plataforma online para
-                reforcar o aprendizado entre as aulas.
+                Slides explicativos e e-book detalhado para reforcar o
+                aprendizado.
               </p>
             </article>
             <article class="learning-card reveal d2">
               <span>03</span>
-              <h3>Avaliacao</h3>
+              <h3>Projetos (PBL)</h3>
               <p>
-                Participacao em aula, entrega de projetos praticos e
-                exercicios ao longo da formacao.
+                Projetos graficos individuais e coletivos, com feedback
+                continuo do professor.
               </p>
             </article>
           </div>
@@ -1911,7 +1830,7 @@
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="eyebrow">Conteudo programatico</span>
-            <h2>Um modulo completo, do corte a exportacao.</h2>
+            <h2>Quatro modulos, da interface ao Canva Pro.</h2>
           </div>
           <div class="module-shell reveal d1">
             <aside class="module-aside">
@@ -1921,28 +1840,55 @@
             <div class="module-drawers">
               <details class="m-drawer" open>
                 <summary>
-                  <span class="m-name">Fundamentos da Edicao de Video</span>
-                  <span class="m-count">5 topicos</span>
+                  <span class="m-name"
+                    >Conhecendo o Canva: Interface e Aplicacoes</span
+                  >
+                  <span class="m-count">3 topicos</span>
                 </summary>
                 <ul>
-                  <li>Introducao a edicao: conceitos basicos e historico.</li>
-                  <li>Principais softwares e funcionalidades.</li>
-                  <li>Timeline e organizacao do projeto.</li>
-                  <li>Cortes, transicoes e efeitos basicos.</li>
-                  <li>Nocoes de audio na edicao.</li>
+                  <li>Familiarizacao com a interface do usuario.</li>
+                  <li>Exploracao das ferramentas de design disponiveis.</li>
+                  <li>Navegacao eficiente pela plataforma.</li>
                 </ul>
               </details>
               <details class="m-drawer">
                 <summary>
-                  <span class="m-name">Tecnicas Para Uma Excelente Edicao</span>
-                  <span class="m-count">5 topicos</span>
+                  <span class="m-name"
+                    >Criacao de Conteudos para Redes Sociais</span
+                  >
+                  <span class="m-count">3 topicos</span>
                 </summary>
                 <ul>
-                  <li>Storytelling na edicao de video.</li>
-                  <li>Efeitos avancados e tecnicas de transicao.</li>
-                  <li>Correcao de cor e filtros.</li>
-                  <li>Sincronizacao de audio e video.</li>
-                  <li>Exportacao e formatos de video.</li>
+                  <li>
+                    Design de posts para Instagram, Facebook e LinkedIn.
+                  </li>
+                  <li>Criacao de stories e capas de destaque.</li>
+                  <li>
+                    Elaboracao de anuncios e banners para campanhas online.
+                  </li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">Design de Materiais de Marketing</span>
+                  <span class="m-count">4 topicos</span>
+                </summary>
+                <ul>
+                  <li>Cartoes de visita, folhetos e posteres.</li>
+                  <li>Design de apresentacoes profissionais.</li>
+                  <li>E-books e materiais digitais.</li>
+                  <li>Edicao de videos e fotos.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">Edicao Avancada (Canva Pro)</span>
+                  <span class="m-count">3 topicos</span>
+                </summary>
+                <ul>
+                  <li>Remocao de fundo de imagens.</li>
+                  <li>Animacoes e efeitos avancados.</li>
+                  <li>Combinacao de cores e fontes.</li>
                 </ul>
               </details>
             </div>
@@ -1954,16 +1900,16 @@
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="eyebrow">Carga horaria e periodicidade</span>
-            <h2>Tres encontros seguidos para sair editando.</h2>
+            <h2>Tres encontros para sair criando.</h2>
           </div>
           <div class="schedule-grid">
             <article class="schedule-card reveal">
               <b>12 horas</b>
-              <span>Carga horaria total, 100% presencial.</span>
+              <span>Carga horaria total, presencial e ao vivo.</span>
             </article>
             <article class="schedule-card reveal d1">
-              <b>9 a 11/09</b>
-              <span>Tres dias seguidos de setembro, das 18h30 as 22h30.</span>
+              <b>21, 22 e 23/10</b>
+              <span>Terca, quarta e quinta-feira, das 18h as 22h.</span>
             </article>
             <article class="schedule-card reveal d2">
               <b>TEC360</b>
@@ -1980,22 +1926,24 @@
         <div class="wrap instructor">
           <div class="instructor-photo reveal">
             <img
-              src="assets/instrutor.png"
-              alt="Luiz Phillipe Dondone Cometti"
+              src="assets/instrutor.jpg"
+              alt="Gesselia da Costa Silva de Ataydes"
               loading="lazy"
-              width="622"
-              height="622"
+              width="150"
+              height="150"
             />
           </div>
           <div class="instructor-copy reveal d1">
             <span class="eyebrow">Com quem voce vai aprender</span>
-            <h2>Luiz Phillipe Dondone Cometti.</h2>
+            <h2>Gesselia da Costa Silva de Ataydes.</h2>
             <p>
-              Iniciou a carreira aos 12 anos, com cursos de design grafico e
-              web design. Passou por empresas como PW Brasil, Riff Propaganda
-              e Target, ampliando o conhecimento em publicidade, design e
-              edicao. Fundador do "O Olho Gordo", atendendo grandes empresas
-              gastronomicas do Espirito Santo.
+              Bacharel em Administracao de Empresas, especialista em
+              Auditoria e Financas e MBA em Marketing e Inteligencia para
+              Negocios Digitais. Sao 10 anos de experiencia como docente em
+              educacao profissional e 4 anos como conteudista e criadora de
+              videoaulas usando Canva, alem de atuacao na equipe tecnica do
+              Programa Genesis e coordenacao de workshops de administracao,
+              inovacao e empreendedorismo.
             </p>
           </div>
         </div>
@@ -2026,23 +1974,25 @@
             <details class="reveal">
               <summary>Para quem e esse curso?</summary>
               <p>
-                Para iniciantes entusiasmados, criadores de conteudo e
-                estudantes de audiovisual interessados em dominar a edicao
-                de video, do zero ou para destravar o proximo nivel.
+                Para quem deseja criar artes profissionais sem depender de
+                terceiros, transformar redes sociais em vitrine e vender mais
+                com design estrategico.
               </p>
             </details>
             <details class="reveal">
               <summary>Quais sao os pre-requisitos?</summary>
               <p>
-                Conhecimento basico de informatica e interesse em edicao de
-                video. Nao e necessaria experiencia previa na area.
+                Nao e necessario conhecimento previo em Canva ou design. E
+                recomendada apenas familiaridade basica com computadores e
+                internet.
               </p>
             </details>
             <details class="reveal">
               <summary>Como a TEC360 avalia os alunos?</summary>
               <p>
-                A avaliacao considera participacao em aula, entrega de
-                projetos praticos e exercicios ao longo da formacao.
+                A avaliacao considera participacao ativa em aula, trabalhos
+                praticos e desenvolvimento de projetos graficos individuais e
+                coletivos, com feedback continuo do professor.
               </p>
             </details>
             <details class="reveal">
@@ -2056,9 +2006,8 @@
             <details class="reveal">
               <summary>Vou receber material didatico?</summary>
               <p>
-                Sim, e-books, quiz e slides complementares sao
-                disponibilizados na plataforma online para reforcar o
-                aprendizado.
+                Sim, slides explicativos e um e-book detalhado sao
+                disponibilizados como material de apoio.
               </p>
             </details>
             <details class="reveal">
@@ -2076,16 +2025,16 @@
       <section class="cta" id="inscricao">
         <div class="wrap cta-box">
           <div class="reveal">
-            <span class="eyebrow">Edicao de Video</span>
-            <h2>Solte a criatividade. Edite como profissional.</h2>
+            <span class="eyebrow">Canva</span>
+            <h2>Transforme suas ideias em designs incriveis.</h2>
             <p>
-              Garanta sua vaga e saia sabendo cortar, narrar e finalizar
-              videos com qualidade profissional, do celular ou do computador.
+              Garanta sua vaga e aprenda a criar artes profissionais para
+              redes sociais, marketing e muito mais — direto no Canva.
             </p>
           </div>
           <a
             class="btn btn-primary reveal d1"
-            href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+            href="https://tec360.eadplataforma.app/checkout/offer/course/39/cem1dljty9bg"
           >
             Fazer inscricao
             <svg viewBox="0 0 24 24" fill="none">

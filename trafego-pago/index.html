@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edicao de Video | TEC 360</title>
+    <title>Trafego Pago | TEC 360</title>
     <link
       rel="icon"
       type="image/png"
@@ -11,15 +11,15 @@
     />
     <meta
       name="description"
-      content="Curso de Edicao de Video da TEC 360: fundamentos, storytelling, correcao de cor e exportacao para criar videos de alta qualidade do corte ao acabamento."
+      content="Curso de Trafego Pago da TEC 360: domine Google Ads e Meta Ads, do leilao a escala de campanhas, para conquistar clientes e aumentar vendas."
     />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="TEC 360" />
-    <meta property="og:title" content="Edicao de Video | TEC 360" />
+    <meta property="og:title" content="Trafego Pago | TEC 360" />
     <meta
       property="og:description"
-      content="Do corte ao acabamento profissional: fundamentos, storytelling, correcao de cor e exportacao."
+      content="Liberte o potencial do seu negocio: Google Ads e Meta Ads na pratica, do primeiro anuncio a escala com ROI."
     />
     <meta property="og:image" content="assets/hero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,22 +44,20 @@
 
     <style>
       :root {
-        --paper: #f5f2ec;
-        --paper-2: #eae5db;
-        --ink: #0e1013;
-        --ink-2: #1d2226;
-        --muted: #6b7078;
+        --paper: #f4f5fb;
+        --paper-2: #e7e9f6;
+        --ink: #0c0e1a;
+        --ink-2: #1a1d2e;
+        --muted: #666b7c;
         --white: #ffffff;
-        --charcoal: #14171b;
-        --charcoal-2: #1f2429;
-        --teal: #17c2ac;
-        --teal-deep: #0d9384;
-        --orange: #ff7a3d;
-        --orange-deep: #e35f22;
-        --line: rgba(14, 16, 19, 0.14);
+        --charcoal: #11142a;
+        --violet: #7c5cff;
+        --violet-deep: #6142e0;
+        --mint: #1fe6a8;
+        --mint-deep: #13b384;
+        --line: rgba(12, 14, 26, 0.13);
         --line-dark: rgba(255, 255, 255, 0.14);
         --maxw: 1180px;
-        --radius: 20px;
         --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       }
 
@@ -107,7 +105,7 @@
       }
 
       ::selection {
-        background: var(--orange);
+        background: var(--violet);
         color: #fff;
       }
 
@@ -118,7 +116,7 @@
 
       .eyebrow {
         align-items: center;
-        color: var(--orange);
+        color: var(--mint-deep);
         display: inline-flex;
         font-family: "Space Mono", monospace;
         font-size: 0.74rem;
@@ -133,6 +131,10 @@
         content: "";
         height: 2px;
         width: 30px;
+      }
+
+      .sec-dark .eyebrow {
+        color: var(--mint);
       }
 
       .btn {
@@ -159,14 +161,14 @@
       }
 
       .btn-primary {
-        background: var(--orange);
-        box-shadow: 0 16px 36px rgba(255, 122, 61, 0.32);
+        background: var(--violet);
+        box-shadow: 0 16px 36px rgba(124, 92, 255, 0.36);
         color: #fff;
       }
 
       .btn-primary:hover {
-        background: var(--orange-deep);
-        box-shadow: 0 20px 42px rgba(255, 122, 61, 0.4);
+        background: var(--violet-deep);
+        box-shadow: 0 20px 42px rgba(124, 92, 255, 0.44);
         transform: translateY(-2px);
       }
 
@@ -198,7 +200,7 @@
       header.scrolled,
       body.menu-open header {
         backdrop-filter: blur(18px);
-        background: rgba(14, 16, 19, 0.82);
+        background: rgba(12, 14, 26, 0.82);
         border-bottom-color: var(--line-dark);
         padding: 10px 0;
       }
@@ -264,7 +266,7 @@
       }
 
       .nav-links .lnk:hover {
-        color: var(--orange);
+        color: var(--mint);
       }
 
       .menu-toggle {
@@ -333,8 +335,8 @@
 
       .hero::after {
         background:
-          radial-gradient(circle at 68% 20%, rgba(23, 194, 172, 0.24), transparent 30%),
-          radial-gradient(circle at 18% 38%, rgba(255, 122, 61, 0.22), transparent 28%),
+          radial-gradient(circle at 68% 20%, rgba(124, 92, 255, 0.32), transparent 30%),
+          radial-gradient(circle at 18% 38%, rgba(31, 230, 168, 0.2), transparent 28%),
           linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.62));
         content: "";
         inset: 0;
@@ -369,9 +371,9 @@
       }
 
       .badge::before {
-        background: var(--orange);
+        background: var(--mint);
         border-radius: 50%;
-        box-shadow: 0 0 0 8px rgba(255, 122, 61, 0.14);
+        box-shadow: 0 0 0 8px rgba(31, 230, 168, 0.16);
         content: "";
         height: 9px;
         width: 9px;
@@ -383,7 +385,7 @@
       }
 
       .focus-word {
-        color: var(--orange);
+        color: var(--mint);
       }
 
       .lead {
@@ -409,7 +411,7 @@
 
       .frame-shot {
         align-self: center;
-        background: #050607;
+        background: #050710;
         border: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 26px;
         box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
@@ -429,7 +431,7 @@
       }
 
       .shot-label {
-        background: rgba(14, 16, 19, 0.82);
+        background: rgba(12, 14, 26, 0.82);
         border: 1px solid var(--line-dark);
         border-radius: 16px;
         bottom: 18px;
@@ -440,7 +442,7 @@
       }
 
       .shot-label span {
-        color: var(--orange);
+        color: var(--mint);
         display: block;
         font-family: "Space Mono", monospace;
         font-size: 0.68rem;
@@ -458,7 +460,7 @@
 
       .float-stat {
         background: var(--white);
-        border: 1px solid rgba(14, 16, 19, 0.1);
+        border: 1px solid rgba(12, 14, 26, 0.1);
         border-radius: 18px;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
         color: var(--ink);
@@ -491,8 +493,8 @@
       }
 
       .facts-band {
-        background: var(--orange);
-        color: #1a0c04;
+        background: var(--violet);
+        color: #fff;
         overflow: hidden;
         padding: 1.1rem 0;
       }
@@ -513,7 +515,7 @@
       }
 
       .facts-track i {
-        background: #1a0c04;
+        background: #fff;
         border-radius: 50%;
         display: block;
         height: 7px;
@@ -588,7 +590,7 @@
       }
 
       .editorial-photo::after {
-        border: 2px solid var(--orange);
+        border: 2px solid var(--violet);
         border-radius: 20px;
         content: "";
         inset: 14px;
@@ -631,7 +633,7 @@
         align-items: center;
         background: var(--charcoal);
         border-radius: 50%;
-        color: var(--orange);
+        color: var(--mint);
         display: grid;
         flex: 0 0 auto;
         height: 30px;
@@ -668,8 +670,8 @@
 
       .audience-card::before {
         background:
-          linear-gradient(90deg, rgba(14, 16, 19, 0.08) 1px, transparent 1px),
-          linear-gradient(rgba(14, 16, 19, 0.08) 1px, transparent 1px);
+          linear-gradient(90deg, rgba(12, 14, 26, 0.08) 1px, transparent 1px),
+          linear-gradient(rgba(12, 14, 26, 0.08) 1px, transparent 1px);
         background-size: 24px 24px;
         content: "";
         inset: 0;
@@ -682,7 +684,7 @@
       }
 
       .audience-card .num {
-        color: var(--orange-deep);
+        color: var(--violet-deep);
         font-family: "Space Mono", monospace;
         font-weight: 700;
       }
@@ -707,7 +709,7 @@
       }
 
       .audience-card:nth-child(3) {
-        background: var(--teal);
+        background: var(--mint);
       }
 
       .outcomes {
@@ -722,7 +724,7 @@
       }
 
       .outcome svg {
-        color: var(--orange);
+        color: var(--mint);
         height: 32px;
         margin-bottom: 1rem;
         width: 32px;
@@ -739,7 +741,7 @@
 
       /* ============ VIDEO DE APRESENTACAO ============ */
       .video-shell {
-        background: #050607;
+        background: #050710;
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 28px;
         box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
@@ -750,7 +752,7 @@
       }
 
       .video-ratio {
-        background: #050607;
+        background: #050710;
         padding-top: 56.25%;
         position: relative;
       }
@@ -786,7 +788,7 @@
 
       .video-poster::after {
         background:
-          linear-gradient(0deg, rgba(5, 6, 7, 0.92) 0%, rgba(5, 6, 7, 0.5) 48%, rgba(5, 6, 7, 0.05) 100%);
+          linear-gradient(0deg, rgba(5, 7, 16, 0.92) 0%, rgba(5, 7, 16, 0.5) 48%, rgba(5, 7, 16, 0.05) 100%);
         content: "";
         inset: 0;
         position: absolute;
@@ -809,7 +811,7 @@
 
       .video-kicker {
         align-items: center;
-        color: var(--orange);
+        color: var(--mint);
         display: inline-flex;
         font-family: "Space Mono", monospace;
         font-size: 0.72rem;
@@ -825,7 +827,7 @@
       }
 
       .video-copy h3 span {
-        color: var(--teal);
+        color: var(--violet);
       }
 
       .video-copy p {
@@ -835,9 +837,9 @@
       }
 
       .poster-play {
-        background: var(--orange);
+        background: var(--violet);
         border-radius: 50%;
-        box-shadow: 0 18px 46px rgba(255, 122, 61, 0.4);
+        box-shadow: 0 18px 46px rgba(124, 92, 255, 0.45);
         color: #fff;
         display: grid;
         height: clamp(64px, 8vw, 86px);
@@ -873,12 +875,9 @@
         }
       }
 
-      .testimonials {
-        display: grid;
-        gap: 1.2rem;
-        grid-template-columns: repeat(2, 1fr);
+      .testimonial-wrap {
         margin: 0 auto;
-        max-width: 920px;
+        max-width: 620px;
       }
 
       .quote {
@@ -887,7 +886,7 @@
         border-radius: 22px;
         display: flex;
         flex-direction: column;
-        padding: 1.5rem;
+        padding: 1.8rem;
       }
 
       .quote-head {
@@ -900,7 +899,7 @@
       .quote img {
         border: 3px solid var(--paper);
         border-radius: 50%;
-        box-shadow: 0 10px 26px rgba(14, 16, 19, 0.16);
+        box-shadow: 0 10px 26px rgba(12, 14, 26, 0.16);
         flex: none;
         height: 60px;
         object-fit: cover;
@@ -910,7 +909,7 @@
       .quote blockquote {
         color: var(--ink-2);
         flex: 1;
-        font-size: 0.97rem;
+        font-size: 1.02rem;
       }
 
       .quote cite {
@@ -944,7 +943,7 @@
       }
 
       .learning-card span {
-        color: var(--orange);
+        color: var(--mint);
         font-family: "Space Mono", monospace;
         font-weight: 700;
       }
@@ -959,13 +958,59 @@
         margin-top: 0.65rem;
       }
 
+      .track-head {
+        align-items: center;
+        display: flex;
+        gap: 0.9rem;
+        margin: 0 0 1.4rem;
+      }
+
+      .track-head:not(:first-child) {
+        margin-top: 3rem;
+      }
+
+      .track-logo {
+        align-items: center;
+        border-radius: 12px;
+        display: grid;
+        flex: none;
+        font-family: "Space Mono", monospace;
+        font-size: 0.72rem;
+        font-weight: 700;
+        height: 40px;
+        justify-content: center;
+        letter-spacing: 0.04em;
+        width: 40px;
+      }
+
+      .track-logo.meta {
+        background: linear-gradient(135deg, #7c5cff, #4c8bff);
+        color: #fff;
+      }
+
+      .track-logo.google {
+        background: linear-gradient(135deg, #ffb020, #ff5b5b, #1fe6a8, #4c8bff);
+        color: #fff;
+      }
+
+      .track-head h3 {
+        font-size: 1.3rem;
+      }
+
+      .track-head span {
+        color: var(--muted);
+        display: block;
+        font-size: 0.86rem;
+        margin-top: 0.15rem;
+      }
+
       .module-shell {
         background: var(--white);
         border: 1px solid var(--line);
         border-radius: 28px;
         display: grid;
         gap: 2rem;
-        grid-template-columns: 0.38fr 0.62fr;
+        grid-template-columns: 0.32fr 0.68fr;
         padding: clamp(1.2rem, 3vw, 2rem);
       }
 
@@ -980,17 +1025,17 @@
 
       .module-aside .big {
         align-self: end;
-        color: var(--orange);
+        color: var(--mint);
         font-family: "Bricolage Grotesque", system-ui, sans-serif;
-        font-size: clamp(5rem, 14vw, 10rem);
+        font-size: clamp(3.4rem, 8vw, 6rem);
         font-weight: 800;
-        line-height: 0.82;
+        line-height: 0.86;
       }
 
       .module-drawers {
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 0.6rem;
       }
 
       .m-drawer {
@@ -1007,7 +1052,7 @@
         gap: 1rem;
         justify-content: space-between;
         list-style: none;
-        padding: 1.1rem 3rem 1.1rem 1.2rem;
+        padding: 1rem 3rem 1rem 1.2rem;
         position: relative;
       }
 
@@ -1031,7 +1076,7 @@
       }
 
       .m-drawer summary::after {
-        color: var(--orange-deep);
+        color: var(--violet-deep);
         content: "+";
         font-family: "Space Mono", monospace;
         font-size: 1.3rem;
@@ -1148,7 +1193,7 @@
       }
 
       summary::after {
-        color: var(--orange);
+        color: var(--mint);
         content: "+";
         font-family: "Space Mono", monospace;
         font-size: 1.45rem;
@@ -1169,8 +1214,8 @@
 
       .cta {
         background:
-          linear-gradient(135deg, rgba(23, 194, 172, 0.2), transparent 42%),
-          linear-gradient(315deg, rgba(255, 122, 61, 0.18), transparent 42%),
+          linear-gradient(135deg, rgba(124, 92, 255, 0.24), transparent 42%),
+          linear-gradient(315deg, rgba(31, 230, 168, 0.2), transparent 42%),
           var(--ink);
         color: var(--white);
         overflow: hidden;
@@ -1197,7 +1242,7 @@
       }
 
       footer {
-        background: #08090b;
+        background: #07080f;
         color: rgba(255, 255, 255, 0.72);
         padding: 32px 0;
       }
@@ -1262,7 +1307,7 @@
       }
 
       :focus-visible {
-        outline: 2px solid var(--orange);
+        outline: 2px solid var(--violet);
         outline-offset: 3px;
       }
 
@@ -1317,7 +1362,7 @@
 
         .nav-links {
           align-content: start;
-          background: rgba(14, 16, 19, 0.98);
+          background: rgba(12, 14, 26, 0.98);
           display: grid;
           gap: 0;
           inset: 66px 14px auto;
@@ -1383,8 +1428,7 @@
         .audience-grid,
         .outcomes,
         .learning,
-        .instructor,
-        .testimonials {
+        .instructor {
           grid-template-columns: 1fr;
         }
 
@@ -1452,7 +1496,7 @@
           <span class="brand-div"></span>
           <span class="brand-course">
             <span class="k">Curso</span>
-            <span class="v">Edicao de Video</span>
+            <span class="v">Trafego Pago</span>
           </span>
         </a>
         <nav class="nav-links" id="navLinks" aria-label="Navegacao principal">
@@ -1463,7 +1507,7 @@
           <a class="lnk" href="#faq">Duvidas</a>
           <a
             class="btn btn-primary"
-            href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+            href="https://tec360.eadplataforma.app/checkout/offer/course/33/jkpd3lu1q42z"
             >Inscreva-se</a
           >
         </nav>
@@ -1478,20 +1522,20 @@
         <div class="wrap hero-inner">
           <div class="hero-copy">
             <span class="eyebrow reveal in">TEC 360 apresenta</span>
-            <span class="badge reveal in d1">Do corte ao acabamento profissional</span>
+            <span class="badge reveal in d1">Google Ads + Meta Ads na pratica</span>
             <h1 class="reveal in d1">
-              Edicao de Video para contar historias que
-              <span class="focus-word">prendem</span> a atencao.
+              Trafego Pago para vender mais com
+              <span class="focus-word">anuncios que convertem</span>.
             </h1>
             <p class="lead reveal in d2">
-              Fundamentos de edicao, storytelling, correcao de cor e
-              exportacao — teoria curta e muita pratica para voce sair
-              editando com tecnica de mercado.
+              Liberte o potencial do seu negocio: domine as plataformas de
+              anuncios online, atraia clientes qualificados e escale
+              resultados mantendo o ROI sob controle.
             </p>
             <div class="hero-cta reveal in d3">
               <a
                 class="btn btn-primary"
-                href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+                href="https://tec360.eadplataforma.app/checkout/offer/course/33/jkpd3lu1q42z"
               >
                 Inscreva-se agora
                 <svg viewBox="0 0 24 24" fill="none">
@@ -1510,7 +1554,7 @@
 
           <div class="media-panel reveal in d2" aria-hidden="true">
             <div class="float-stat one">
-              <b>12h</b>
+              <b>20h</b>
               <span>presenciais</span>
             </div>
             <div class="frame-shot">
@@ -1518,16 +1562,16 @@
                 src="assets/hero.jpg"
                 alt=""
                 width="1024"
-                height="682"
+                height="683"
               />
               <span class="shot-label">
-                <span>Timeline</span>
-                <strong>corte, cor, audio e exportacao</strong>
+                <span>Dashboard</span>
+                <strong>trafego, cliques e conversoes em tempo real</strong>
               </span>
             </div>
             <div class="float-stat two">
-              <b>3</b>
-              <span>encontros praticos</span>
+              <b>2</b>
+              <span>plataformas de anuncio</span>
             </div>
           </div>
         </div>
@@ -1535,13 +1579,13 @@
 
       <div class="facts-band" aria-label="Informacoes rapidas">
         <div class="wrap facts-track">
-          <span>Total de 12 horas</span>
+          <span>Total de 20 horas</span>
           <i></i>
-          <span>Tres encontros presenciais</span>
+          <span>Google Ads e Meta Ads</span>
           <i></i>
-          <span>Do corte a cor</span>
+          <span>5 encontros presenciais</span>
           <i></i>
-          <span>Projeto pratico final</span>
+          <span>Foco em ROI</span>
         </div>
       </div>
 
@@ -1549,55 +1593,54 @@
         <div class="wrap split">
           <div class="editorial-photo reveal">
             <img
-              src="assets/capcut.webp"
-              alt="Aplicativo de edicao de video no celular"
+              src="assets/editorial.jpg"
+              alt="Analise de metricas e campanhas de trafego pago"
               loading="lazy"
-              width="1280"
-              height="720"
+              width="1024"
+              height="576"
             />
           </div>
           <div class="copy-stack reveal d1">
             <span class="eyebrow">Objetivo do curso</span>
-            <h2>Edite com tecnica, nao so no talento.</h2>
+            <h2>Liberte o potencial do seu negocio.</h2>
             <p>
-              O foco do curso e ensinar tecnicas basicas de edicao unindo
-              teoria e pratica, para que voce domine a arte da edicao e crie
-              videos de alta qualidade — do primeiro corte ao acabamento
-              profissional.
+              O curso oferece ferramentas e conhecimento para conquistar
+              clientes, aumentar vendas e expandir sua atuacao atraves do
+              dominio de Google Ads e Facebook/Instagram Ads.
             </p>
             <p>
-              Mais pratica e menos teoria: aulas com demonstracoes em tempo
-              real e material complementar para reforcar o aprendizado entre
-              um encontro e outro.
+              Abordagem pratica e orientada a resultados: voce aprende
+              aplicando, com estudos de caso, simulacoes e Project Based
+              Learning.
             </p>
             <div class="goal-list">
               <div class="goal-item">
                 <span class="mark">1</span>
                 <div>
-                  <h3>Fundamentos da edicao na pratica</h3>
+                  <h3>Fundamentos do trafego pago</h3>
                   <p>
-                    Conceitos, timeline, organizacao de projeto, cortes,
-                    transicoes, efeitos basicos e nocoes de audio.
+                    Leilao de anuncios, pixel e API de conversoes, tipos de
+                    campanha e psicologia do consumidor.
                   </p>
                 </div>
               </div>
               <div class="goal-item">
                 <span class="mark">2</span>
                 <div>
-                  <h3>Tecnicas para uma edicao de nivel</h3>
+                  <h3>Campanhas de alto impacto</h3>
                   <p>
-                    Storytelling, efeitos avancados, correcao de cor e
-                    sincronizacao de audio e video.
+                    Segmentacao, publicos personalizados, criativos, testes
+                    A/B e uso do ChatGPT para anuncios.
                   </p>
                 </div>
               </div>
               <div class="goal-item">
                 <span class="mark">3</span>
                 <div>
-                  <h3>Do rascunho a exportacao</h3>
+                  <h3>Otimizacao e escala</h3>
                   <p>
-                    Formatos de exportacao e otimizacao de desempenho e tempo
-                    de trabalho no seu fluxo de edicao.
+                    Metricas, ROI, remarketing e gestao de clientes e
+                    precificacao de servicos.
                   </p>
                 </div>
               </div>
@@ -1610,35 +1653,35 @@
         <div class="wrap">
           <div class="sec-head center reveal">
             <span class="eyebrow">Esse curso e para voce que</span>
-            <h2>Quer transformar gravacoes soltas em video pronto.</h2>
+            <h2>Quer atrair mais clientes com anuncios pagos.</h2>
             <p>
-              Um percurso pratico para quem quer sair do zero — ou destravar
-              o proximo nivel — na edicao de video.
+              Um percurso pratico para quem quer criar, gerir e escalar
+              campanhas de trafego pago com tecnica de mercado.
             </p>
           </div>
           <div class="audience-grid">
             <article class="audience-card reveal">
               <span class="num">01</span>
-              <h3>Iniciantes entusiasmados</h3>
+              <h3>Empreendedores e empresarios</h3>
               <p>
-                Nunca editou um video, mas quer aprender do zero com pratica
-                guiada desde a primeira aula.
+                Donos de negocio que querem vender mais usando anuncios online
+                de forma consistente.
               </p>
             </article>
             <article class="audience-card reveal d1">
               <span class="num">02</span>
-              <h3>Criadores de conteudo</h3>
+              <h3>Marketing e agencias</h3>
               <p>
-                Ja grava para redes sociais e quer elevar o acabamento e a
-                narrativa dos proprios videos.
+                Profissionais de marketing, comunicacao e colaboradores de
+                agencias que querem se especializar em trafego pago.
               </p>
             </article>
             <article class="audience-card reveal d2">
               <span class="num">03</span>
-              <h3>Estudantes de audiovisual</h3>
+              <h3>Freelancers e transicao de carreira</h3>
               <p>
-                Busca tecnica de mercado para fortalecer portfolio, carreira
-                ou projetos autorais.
+                Autonomos e profissionais que querem uma nova especialidade
+                para atender clientes ou empreender.
               </p>
             </article>
           </div>
@@ -1649,58 +1692,73 @@
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="eyebrow">Depois do curso</span>
-            <h2>Voce sai editando com intencao.</h2>
+            <h2>Voce sai gerindo trafego com estrategia.</h2>
             <p>
               A formacao combina teoria objetiva, demonstracoes e exercicios
-              para que cada tecnica vire pratica ainda durante as aulas.
+              para que cada estrategia vire pratica ainda durante as aulas.
             </p>
           </div>
           <div class="outcomes">
             <article class="outcome reveal">
               <svg viewBox="0 0 24 24" fill="none">
-                <rect
-                  x="3"
-                  y="5"
-                  width="18"
-                  height="14"
-                  rx="2"
+                <path
+                  d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+                <path
+                  d="M8 12h8M8 16h5"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Estruturar campanhas no Meta Ads</h3>
+              <p>
+                CBO x ABO, segmentacao de publicos e criativos de alto
+                impacto.
+              </p>
+            </article>
+            <article class="outcome reveal d1">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="7"
                   stroke="currentColor"
                   stroke-width="2"
                 />
                 <path
-                  d="m9 13 3-3 2 2 4-4"
+                  d="m21 21-4.3-4.3"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <h3>Dominar pesquisa, display e YouTube</h3>
+              <p>
+                Campanhas completas no Google Ads, do primeiro clique ao
+                remarketing.
+              </p>
+            </article>
+            <article class="outcome reveal d2">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 5h16v14H4zM8 9h8M8 13h5"
                   stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                 />
               </svg>
-              <h3>Compreender os fundamentos</h3>
+              <h3>Instalar pixel e rastrear conversoes</h3>
               <p>
-                Conceitos, historico e logica por tras da edicao audiovisual
-                profissional.
+                Configure o rastreamento certo para medir cada resultado das
+                campanhas.
               </p>
             </article>
-            <article class="outcome reveal d1">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect
-                  x="4"
-                  y="6"
-                  width="16"
-                  height="12"
-                  rx="2"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <path d="M9 9v6l5-3-5-3Z" fill="currentColor" />
-              </svg>
-              <h3>Editar no celular com o CapCut</h3>
-              <p>
-                Domine um dos aplicativos mais usados para editar videos
-                direto do smartphone.
-              </p>
-            </article>
-            <article class="outcome reveal d2">
+            <article class="outcome reveal">
               <svg viewBox="0 0 24 24" fill="none">
                 <path
                   d="M4 18 10 8l4 6 2-3 4 7H4Z"
@@ -1715,13 +1773,13 @@
                   stroke-width="2"
                 />
               </svg>
-              <h3>Manipular videos com eficiencia</h3>
+              <h3>Escalar mantendo o ROI</h3>
               <p>
-                Corte, transicione e finalize com fluidez, sem travar no
-                processo tecnico.
+                Interprete metricas, corte gargalos e cresca o investimento
+                com seguranca.
               </p>
             </article>
-            <article class="outcome reveal">
+            <article class="outcome reveal d1">
               <svg viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 3v18M5 8h14M7 16h10"
@@ -1732,48 +1790,26 @@
                 <circle cx="9" cy="8" r="2" fill="currentColor" />
                 <circle cx="15" cy="16" r="2" fill="currentColor" />
               </svg>
-              <h3>Aplicar storytelling na edicao</h3>
+              <h3>Criar campanhas de remarketing</h3>
               <p>
-                Construa uma narrativa visual que segura a atencao do comeco
-                ao fim.
-              </p>
-            </article>
-            <article class="outcome reveal d1">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M4 7h16v12H4zM8 7l2-3h4l2 3"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                />
-              </svg>
-              <h3>Criar videos para diferentes nichos</h3>
-              <p>
-                Adapte tom, ritmo e formato para redes sociais, negocios ou
-                projetos autorais.
+                Recupere carrinhos abandonados e reative quem ja demonstrou
+                interesse.
               </p>
             </article>
             <article class="outcome reveal d2">
               <svg viewBox="0 0 24 24" fill="none">
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="9"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
                 <path
-                  d="M12 7v5l3 2"
+                  d="M3 21h18M5 21V7l7-4 7 4v14"
                   stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                 />
               </svg>
-              <h3>Otimizar desempenho e tempo</h3>
+              <h3>Montar seu plano de trafego</h3>
               <p>
-                Organize seu fluxo de trabalho para editar mais rapido, sem
-                perder qualidade.
+                Precifique servicos e gerencie clientes com um plano de
+                trafego pronto pra qualquer negocio.
               </p>
             </article>
           </div>
@@ -1791,23 +1827,23 @@
               <button
                 class="video-poster"
                 type="button"
-                aria-label="Assistir video de apresentacao do curso Edicao de Video"
+                aria-label="Assistir video de apresentacao do curso Trafego Pago"
                 data-video-poster
-                data-video-src="https://wp.tec360.com.br/wp-content/uploads/2024/02/HORIZONTAL-01_legendado_.mp4"
+                data-video-src="https://wp.tec360.com.br/wp-content/uploads/2025/02/trafegopago1_leg.mp4"
               >
                 <img
                   src="assets/hero.jpg"
                   alt=""
                   loading="lazy"
                   width="1024"
-                  height="682"
+                  height="683"
                 />
                 <span class="video-copy">
                   <span class="video-kicker">Aperte o play</span>
-                  <h3>Edicao de <span>Video</span></h3>
+                  <h3>Trafego <span>Pago</span></h3>
                   <p>
-                    Do corte ao acabamento: veja um pouco do que voce vai
-                    praticar em sala.
+                    Google Ads e Meta Ads na pratica: veja um pouco do que
+                    voce vai aprender em sala.
                   </p>
                 </span>
                 <span class="poster-play" aria-hidden="true">
@@ -1825,47 +1861,28 @@
         <div class="wrap">
           <div class="sec-head center reveal">
             <span class="eyebrow">O que os alunos dizem</span>
-            <h2>De curiosos a editando os proprios videos.</h2>
+            <h2>Resultado que aparece nas mensagens de clientes.</h2>
           </div>
-          <div class="testimonials">
-            <article class="quote reveal">
+          <div class="testimonial-wrap reveal d1">
+            <article class="quote">
               <div class="quote-head">
                 <img
-                  src="assets/patricia.jpg"
-                  alt="Patricia Pereira"
+                  src="assets/deivid.jpg"
+                  alt="Deivid Canisky"
                   loading="lazy"
                   width="480"
-                  height="518"
+                  height="480"
                 />
                 <cite>
-                  Patricia Pereira
-                  <span>Dentista</span>
+                  Deivid Canisky
+                  <span>Empresa Norte Solar</span>
                 </cite>
               </div>
               <blockquote>
-                Achei o curso bem didatico e proveitoso. De forma clara e
-                simples, consegui comecar a editar meus primeiros videos com
-                muito mais confianca.
-              </blockquote>
-            </article>
-            <article class="quote reveal d1">
-              <div class="quote-head">
-                <img
-                  src="assets/shaira.jpg"
-                  alt="Shaira Morandi"
-                  loading="lazy"
-                  width="480"
-                  height="640"
-                />
-                <cite>
-                  Shaira Morandi
-                  <span>Proprietaria e Coordenadora da Cultura Inglesa Colatina</span>
-                </cite>
-              </div>
-              <blockquote>
-                Tive uma experiencia maravilhosa. Pude aprender tecnicas e
-                dominar um aplicativo essencial para produzir videos de alta
-                qualidade.
+                Galera, os dois trafegos que fiz ontem ja estao dando
+                resultado. Tanto eu quanto o dono da empresa estamos recebendo
+                mensagens de pessoas com interesse. Obrigado aos professores e
+                a TEC360.
               </blockquote>
             </article>
           </div>
@@ -1876,31 +1893,31 @@
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="eyebrow">Metodologia de ensino</span>
-            <h2>Mais pratica e menos teoria.</h2>
+            <h2>Pratica orientada a resultados.</h2>
           </div>
           <div class="learning">
             <article class="learning-card reveal">
               <span>01</span>
               <h3>Aulas praticas</h3>
               <p>
-                Demonstracoes em tempo real e mao na massa desde o primeiro
-                corte, combinando teoria curta com muita pratica.
+                Teoria e pratica combinadas, com demonstracoes reais e
+                exercicios individuais e coletivos.
               </p>
             </article>
             <article class="learning-card reveal d1">
               <span>02</span>
-              <h3>Material complementar</h3>
+              <h3>Materiais e PBL</h3>
               <p>
-                E-books, quiz e slides liberados na plataforma online para
-                reforcar o aprendizado entre as aulas.
+                Slides, e-books e Project Based Learning para simular cenarios
+                reais de gestao de trafego.
               </p>
             </article>
             <article class="learning-card reveal d2">
               <span>03</span>
-              <h3>Avaliacao</h3>
+              <h3>Avaliacao continua</h3>
               <p>
-                Participacao em aula, entrega de projetos praticos e
-                exercicios ao longo da formacao.
+                Participacao em aula, trabalhos praticos e feedback constante
+                do instrutor.
               </p>
             </article>
           </div>
@@ -1911,38 +1928,169 @@
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="eyebrow">Conteudo programatico</span>
-            <h2>Um modulo completo, do corte a exportacao.</h2>
+            <h2>Duas trilhas completas: Meta Ads e Google Ads.</h2>
+          </div>
+
+          <div class="track-head reveal d1">
+            <span class="track-logo meta">M</span>
+            <div>
+              <h3>Facebook / Instagram Ads</h3>
+              <span>5 modulos sobre o ecossistema Meta Ads</span>
+            </div>
           </div>
           <div class="module-shell reveal d1">
             <aside class="module-aside">
-              <span class="eyebrow">Modulo</span>
-              <span class="big">01</span>
+              <span class="eyebrow">Trilha</span>
+              <span class="big">Meta</span>
             </aside>
             <div class="module-drawers">
               <details class="m-drawer" open>
                 <summary>
-                  <span class="m-name">Fundamentos da Edicao de Video</span>
+                  <span class="m-name"
+                    >I. Fundamentos e Estrutura do Meta Ads</span
+                  >
                   <span class="m-count">5 topicos</span>
                 </summary>
                 <ul>
-                  <li>Introducao a edicao: conceitos basicos e historico.</li>
-                  <li>Principais softwares e funcionalidades.</li>
-                  <li>Timeline e organizacao do projeto.</li>
-                  <li>Cortes, transicoes e efeitos basicos.</li>
-                  <li>Nocoes de audio na edicao.</li>
+                  <li>O que e trafego pago e o leilao do Meta Ads.</li>
+                  <li>As 5 habilidades essenciais do gestor de trafego.</li>
+                  <li>Psicologia do consumidor e anuncios persuasivos.</li>
+                  <li>Tipos de campanhas e objetivos.</li>
+                  <li>Pixel e API de conversoes: instalacao e rastreamento.</li>
                 </ul>
               </details>
               <details class="m-drawer">
                 <summary>
-                  <span class="m-name">Tecnicas Para Uma Excelente Edicao</span>
+                  <span class="m-name">II. Campanhas de Alto Impacto</span>
                   <span class="m-count">5 topicos</span>
                 </summary>
                 <ul>
-                  <li>Storytelling na edicao de video.</li>
-                  <li>Efeitos avancados e tecnicas de transicao.</li>
-                  <li>Correcao de cor e filtros.</li>
-                  <li>Sincronizacao de audio e video.</li>
-                  <li>Exportacao e formatos de video.</li>
+                  <li>Estrutura ideal: CBO vs ABO e testes A/B.</li>
+                  <li>Segmentacao: publicos frio, morno e quente.</li>
+                  <li>Publicos personalizados e lookalike.</li>
+                  <li>ChatGPT para criacao de anuncios.</li>
+                  <li>Criativos eficazes e formatos.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">III. Otimizando e Escalando</span>
+                  <span class="m-count">5 topicos</span>
+                </summary>
+                <ul>
+                  <li>Principais metricas e interpretacao.</li>
+                  <li>Estrategias de escala mantendo o ROI.</li>
+                  <li>Otimizacao de copy, criativos e orcamento.</li>
+                  <li>Analise de relatorios e identificacao de gargalos.</li>
+                  <li>Prevencao de bloqueios de conta.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">IV. Campanhas Estrategicas</span>
+                  <span class="m-count">4 topicos</span>
+                </summary>
+                <ul>
+                  <li>Campanhas para captura de leads.</li>
+                  <li>
+                    Campanhas para vendas diretas (e-commerce e
+                    infoprodutos).
+                  </li>
+                  <li>Campanhas de WhatsApp, Direct e Messenger.</li>
+                  <li>Estrategias de remarketing.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">V. Estrategia, Gestao e Monetizacao</span>
+                  <span class="m-count">3 topicos</span>
+                </summary>
+                <ul>
+                  <li>Plano de trafego pago para qualquer negocio.</li>
+                  <li>Precificacao e gestao de clientes.</li>
+                  <li>Automacao e regras inteligentes.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+          <div class="track-head reveal d2">
+            <span class="track-logo google">G</span>
+            <div>
+              <h3>Google Ads</h3>
+              <span>5 modulos sobre pesquisa, display, video e ajustes</span>
+            </div>
+          </div>
+          <div class="module-shell reveal d2">
+            <aside class="module-aside">
+              <span class="eyebrow">Trilha</span>
+              <span class="big">Google</span>
+            </aside>
+            <div class="module-drawers">
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">I. Primeiros Passos no Google Ads</span>
+                  <span class="m-count">5 topicos</span>
+                </summary>
+                <ul>
+                  <li>Funcionamento pratico da plataforma.</li>
+                  <li>Criacao e configuracao correta de conta.</li>
+                  <li>Instalacao de pixel e eventos de conversao.</li>
+                  <li>Publico-alvo e segmentacao inicial.</li>
+                  <li>Erros comuns a evitar.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">II. Rede de Pesquisa</span>
+                  <span class="m-count">5 topicos</span>
+                </summary>
+                <ul>
+                  <li>Criacao da primeira campanha de pesquisa.</li>
+                  <li>Selecao de palavras-chave e filtro de cliques.</li>
+                  <li>
+                    Estrategias de lance: CPC, CPA e maximizar conversoes.
+                  </li>
+                  <li>Titulos e descricoes impactantes.</li>
+                  <li>Analise de resultados iniciais.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">III. Rede de Display e Remarketing</span>
+                  <span class="m-count">5 topicos</span>
+                </summary>
+                <ul>
+                  <li>Funcionamento da Rede de Display.</li>
+                  <li>Criacao de anuncios graficos.</li>
+                  <li>Remarketing para retorno de clientes.</li>
+                  <li>Segmentacao para evitar desperdicios.</li>
+                  <li>Melhorias de performance.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">IV. Anuncios no YouTube</span>
+                  <span class="m-count">4 topicos</span>
+                </summary>
+                <ul>
+                  <li>Segmentacao e publico-alvo.</li>
+                  <li>Criacao passo a passo de campanhas em video.</li>
+                  <li>Performance Max para conversoes.</li>
+                  <li>Estrategias de escala no YouTube.</li>
+                </ul>
+              </details>
+              <details class="m-drawer">
+                <summary>
+                  <span class="m-name">V. Ajuste, Teste e Melhoria</span>
+                  <span class="m-count">5 topicos</span>
+                </summary>
+                <ul>
+                  <li>Interpretacao de metricas.</li>
+                  <li>Solucao de campanhas sem gasto.</li>
+                  <li>Como evitar concentracao de orcamento.</li>
+                  <li>Testes de anuncios e publicos.</li>
+                  <li>Ajustes de lances e segmentacoes.</li>
                 </ul>
               </details>
             </div>
@@ -1954,16 +2102,16 @@
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="eyebrow">Carga horaria e periodicidade</span>
-            <h2>Tres encontros seguidos para sair editando.</h2>
+            <h2>Cinco encontros para sair anunciando.</h2>
           </div>
           <div class="schedule-grid">
             <article class="schedule-card reveal">
-              <b>12 horas</b>
+              <b>20 horas</b>
               <span>Carga horaria total, 100% presencial.</span>
             </article>
             <article class="schedule-card reveal d1">
-              <b>9 a 11/09</b>
-              <span>Tres dias seguidos de setembro, das 18h30 as 22h30.</span>
+              <b>22, 23, 24, 28 e 29/07</b>
+              <span>Cinco encontros de julho, das 18h as 22h.</span>
             </article>
             <article class="schedule-card reveal d2">
               <b>TEC360</b>
@@ -1981,21 +2129,22 @@
           <div class="instructor-photo reveal">
             <img
               src="assets/instrutor.png"
-              alt="Luiz Phillipe Dondone Cometti"
+              alt="Arthur Alexandre"
               loading="lazy"
-              width="622"
-              height="622"
+              width="150"
+              height="150"
             />
           </div>
           <div class="instructor-copy reveal d1">
             <span class="eyebrow">Com quem voce vai aprender</span>
-            <h2>Luiz Phillipe Dondone Cometti.</h2>
+            <h2>Arthur Alexandre.</h2>
             <p>
-              Iniciou a carreira aos 12 anos, com cursos de design grafico e
-              web design. Passou por empresas como PW Brasil, Riff Propaganda
-              e Target, ampliando o conhecimento em publicidade, design e
-              edicao. Fundador do "O Olho Gordo", atendendo grandes empresas
-              gastronomicas do Espirito Santo.
+              Profissional experiente em trafego pago, com foco em Google Ads
+              desde 2019 e Meta Ads desde 2022. Possui solida formacao em
+              Ciencias Contabeis e Administracao, e e mestrando na FUCAPE
+              Business School. Compartilha sua expertise em estrategias de
+              marketing digital, focando em maximizar o ROI e gerar trafego
+              qualificado.
             </p>
           </div>
         </div>
@@ -2026,23 +2175,25 @@
             <details class="reveal">
               <summary>Para quem e esse curso?</summary>
               <p>
-                Para iniciantes entusiasmados, criadores de conteudo e
-                estudantes de audiovisual interessados em dominar a edicao
-                de video, do zero ou para destravar o proximo nivel.
+                Profissionais de marketing e comunicacao, empreendedores e
+                empresarios, estudantes em transicao de carreira, freelancers,
+                autonomos e colaboradores de agencias de publicidade.
               </p>
             </details>
             <details class="reveal">
               <summary>Quais sao os pre-requisitos?</summary>
               <p>
-                Conhecimento basico de informatica e interesse em edicao de
-                video. Nao e necessaria experiencia previa na area.
+                Nao e necessario conhecimento previo em gestao de trafego, mas
+                e recomendada familiaridade basica com o uso de computadores.
+                Leve um notebook e tenha uma conta ativa em Google Ads e
+                Facebook/Instagram Ads.
               </p>
             </details>
             <details class="reveal">
               <summary>Como a TEC360 avalia os alunos?</summary>
               <p>
-                A avaliacao considera participacao em aula, entrega de
-                projetos praticos e exercicios ao longo da formacao.
+                A avaliacao e continua, com participacao em aula e trabalhos
+                praticos, alem de feedback constante do instrutor.
               </p>
             </details>
             <details class="reveal">
@@ -2056,9 +2207,8 @@
             <details class="reveal">
               <summary>Vou receber material didatico?</summary>
               <p>
-                Sim, e-books, quiz e slides complementares sao
-                disponibilizados na plataforma online para reforcar o
-                aprendizado.
+                Sim, slides e e-books complementares sao disponibilizados para
+                reforcar o aprendizado durante e apos o curso.
               </p>
             </details>
             <details class="reveal">
@@ -2076,16 +2226,16 @@
       <section class="cta" id="inscricao">
         <div class="wrap cta-box">
           <div class="reveal">
-            <span class="eyebrow">Edicao de Video</span>
-            <h2>Solte a criatividade. Edite como profissional.</h2>
+            <span class="eyebrow">Trafego Pago</span>
+            <h2>Liberte o potencial do seu negocio.</h2>
             <p>
-              Garanta sua vaga e saia sabendo cortar, narrar e finalizar
-              videos com qualidade profissional, do celular ou do computador.
+              Garanta sua vaga e aprenda a criar, gerir e escalar campanhas de
+              trafego pago no Google Ads e no Meta Ads.
             </p>
           </div>
           <a
             class="btn btn-primary reveal d1"
-            href="https://tec360.eadplataforma.app/checkout/offer/course/36/fcacdabf2bd13bb33f4045d45eca89e4"
+            href="https://tec360.eadplataforma.app/checkout/offer/course/33/jkpd3lu1q42z"
           >
             Fazer inscricao
             <svg viewBox="0 0 24 24" fill="none">
